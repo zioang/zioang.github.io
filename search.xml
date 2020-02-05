@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>zioang-blog</title>
+    <title>使用Hexo与GitHub Pages来搭建个人博客</title>
     <url>/2020/02/06/zioang-blog/</url>
     <content><![CDATA[<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>&emsp;&emsp;这段时间因为疫情而一直呆在家里快无聊疯了，寻思着找点事干。刚好现在准备学点东西，然后想做做笔记什么的，于是就有了这个博客的诞生。</p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;博客是由<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>与<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>结合搭建的一个静态网站，由于之前完全没接触过<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>这个框架，于是乎就打算以此作为博客的第一篇文章，边学习边记录，并来记录下她诞生的过程。</p>
