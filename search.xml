@@ -95,7 +95,10 @@
 
 <p>&emsp;&emsp;至此，我们的博客算是正式创建好了，之后就可以根据自己的需求进行个性化更改了。</p>
 <h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>&emsp;&emsp;博客的域名是可以自定义的，只要你有一个属于自己的域名，那么你就可以将GitHub提供的这个链接替换成自己的专属域名。如果需要的话，可以利用搜索引擎查找下，这类资料网上还是挺多的。</p>
-]]></content>
+<a href= "https://github.com/zioang/zioang.github.io" target="_blank" style="margin-top: 20px; text-decoration: none;">
+    <img src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/github.png" style="width: 20px; height: 20px; margin-right: 6px; float: left">
+    <p style=" line-height: 20px; font-size: 16px; color: black; font-family: Hiragino Sans GB, WenQuanYi Micro Hei;">项目地址</p>
+</a>]]></content>
       <categories>
         <category>日常折腾</category>
       </categories>
