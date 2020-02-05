@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://zioang.fun/sitemap.xml
-Sitemap: http://zioang.fun/baidusitemap.xml
+Sitemap: https://zioang.fun/sitemap.xml
+Sitemap: https://zioang.fun/baidusitemap.xml
