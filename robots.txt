@@ -11,7 +11,6 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Disallow: /about/
 
 Sitemap: http://zioang.fun/sitemap.xml
 Sitemap: http://zioang.fun/baidusitemap.xml
