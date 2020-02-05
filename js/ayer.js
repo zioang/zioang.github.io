@@ -1,31 +1,38 @@
-(function ($) {
+(function ($)
+{
   //
   // Search
   var $searchWrap = $('.search-form-wrap'),
     isSearchAnim = false,
     searchAnimDuration = 200;
 
-  var startSearchAnim = function () {
+  var startSearchAnim = function ()
+  {
     isSearchAnim = true;
   };
 
-  var stopSearchAnim = function (callback) {
-    setTimeout(function () {
+  var stopSearchAnim = function (callback)
+  {
+    setTimeout(function ()
+    {
       isSearchAnim = false;
       callback && callback();
     }, searchAnimDuration);
   };
 
-  $('.nav-item-search').on('click', function () {
+  $('.nav-item-search').on('click', function ()
+  {
     if (isSearchAnim) return;
     startSearchAnim();
     $searchWrap.addClass('on');
-    stopSearchAnim(function () {
+    stopSearchAnim(function ()
+    {
       $('.local-search-input').focus();
     });
   });
 
-  $(document).mouseup(function (e) {
+  $(document).mouseup(function (e)
+  {
     var _con = $('.local-search');
     if (!_con.is(e.target) && _con.has(e.target).length === 0) {
       $searchWrap.removeClass('on');
@@ -35,22 +42,28 @@
   //
   // 移动设备侦测
   var isMobile = {
-    Android: function () {
+    Android: function ()
+    {
       return navigator.userAgent.match(/Android/i);
     },
-    BlackBerry: function () {
+    BlackBerry: function ()
+    {
       return navigator.userAgent.match(/BlackBerry/i);
     },
-    iOS: function () {
+    iOS: function ()
+    {
       return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
-    Opera: function () {
+    Opera: function ()
+    {
       return navigator.userAgent.match(/Opera Mini/i);
     },
-    Windows: function () {
+    Windows: function ()
+    {
       return navigator.userAgent.match(/IEMobile/i);
     },
-    any: function () {
+    any: function ()
+    {
       return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
   };
@@ -58,16 +71,19 @@
   //
   // 建议在移动端不初始化，其实 /search.xml 文件还挺大的，
   if ($('.local-search').size()) {
-    $.getScript('/js/search.js', function () {
+    $.getScript('/js/search.js', function ()
+    {
       searchFunc("/search.xml", 'local-search-input', 'local-search-result');
     });
   }
 
   //
   // Share
-  $('body').on('click', function () {
+  $('body').on('click', function ()
+  {
     $('.article-share-box.on').removeClass('on');
-  }).on('click', '.article-share-link', function (e) {
+  }).on('click', '.article-share-link', function (e)
+  {
     e.stopPropagation();
 
     var $this = $(this),
@@ -105,11 +121,14 @@
       top: offset.top + 25,
       left: offset.left
     }).addClass('on');
-  }).on('click', '.article-share-box', function (e) {
+  }).on('click', '.article-share-box', function (e)
+  {
     e.stopPropagation();
-  }).on('click', '.article-share-box-input', function () {
+  }).on('click', '.article-share-box-input', function ()
+  {
     $(this).select();
-  }).on('click', '.article-share-box-link', function (e) {
+  }).on('click', '.article-share-box-link', function (e)
+  {
     e.preventDefault();
     e.stopPropagation();
 
@@ -138,15 +157,18 @@
   });
 
   // scroll down
-  $(document).ready(function ($) {
-    $('.anchor').click(function (e) {
+  $(document).ready(function ($)
+  {
+    $('.anchor').click(function (e)
+    {
       e.preventDefault();
       $('main').animate({ scrollTop: $('.cover').height() }, 'smooth');
     });
   });
 
   // To top
-  (function ($) {
+  (function ($)
+  {
     // When to show the scroll link
     // higher number = scroll link appears further down the page
     var upperLimit = 1000;
@@ -159,7 +181,8 @@
 
     // Show and hide the scroll to top link based on scroll position
     scrollElem.hide();
-    $('.content').scroll(function () {
+    $('.content').scroll(function ()
+    {
       var scrollTop = $('.content').scrollTop();
       if (scrollTop > upperLimit) {
         $(scrollElem).stop().fadeTo(300, 1); // fade back in
@@ -169,7 +192,8 @@
     });
 
     // Scroll to top animation on click
-    $(scrollElem).click(function () {
+    $(scrollElem).click(function ()
+    {
       $('.content').animate({ scrollTop: 0 }, scrollSpeed); return false;
     });
   })(jQuery);
@@ -178,12 +202,14 @@
   var $content = $('.content'),
     $sidebar = $('.sidebar');
 
-  $('.navbar-toggle').on('click', function () {
+  $('.navbar-toggle').on('click', function ()
+  {
     $content.toggleClass('on');
     $sidebar.toggleClass('on');
   });
 
-  $($content).on('click', function () {
+  $($content).on('click', function ()
+  {
     $content.removeClass('on');
     $sidebar.removeClass('on');
   });
@@ -194,11 +220,13 @@
   }
 
   // reward
-  $('#reward-btn').on('click', function () {
+  $('#reward-btn').on('click', function ()
+  {
     $('#mask').fadeIn(100)
     $('#reward').fadeIn(100)
   });
-  $('#reward .close, #mask').on('click', function () {
+  $('#reward .close, #mask').on('click', function ()
+  {
     $('#mask').fadeOut(100)
     $('#reward').fadeOut(100)
   })
