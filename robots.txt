@@ -13,5 +13,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /about/
 
-Sitemap: https://zioang.fun/sitemap.xml
-Sitemap: https://zioang.fun/baidusitemap.xml
+Sitemap: http://zioang.fun/sitemap.xml
+Sitemap: http://zioang.fun/baidusitemap.xml
