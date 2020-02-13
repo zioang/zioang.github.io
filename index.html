@@ -113,79 +113,15 @@
 
       
       <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>&emsp;&emsp;VSCode相比起IDE，其轻便、插件丰富、功能繁多是我选择其作为C++日常使用的编辑器的原因。对于我这种，只写写一些简单程序，用来学习算法和数据结构，并且空闲时间，还能写写python脚本和网站，VSCode可谓首选。</p>
-<h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><p>&emsp;&emsp;<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a>十分的方便，直接去官网下载即可。下载后好，一路点击继续，等到安装结束即可。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/image-1-1600x667.png">
-    <br>
-</center>
-
-<h3 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h3><h4 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h4><p>&emsp;&emsp;如果想在VSCode上快速的开始使用C++编写程序，那么<strong>C/C++</strong>这款插件是微软官方发布的一款专门针对C和C++的插件。打开VSCode，然后点击插件图标，在搜索框中直接搜索<strong>C/C++</strong>，下载数量和评分最高的那个就是了（一般搜出来的第一个就是）。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/BCAAAAE4-8B7F-4A42-B9FB-535725BBAADF.png">
-    <br>
-</center>
-
-<h4 id="Chinese-Simplified"><a href="#Chinese-Simplified" class="headerlink" title="Chinese (Simplified)"></a>Chinese (Simplified)</h4><p>&emsp;&emsp;<strong>Chinese (Simplified)</strong> 是微软官方发布的用来解决VSCode汉化问题的一款插件，如果你对满屏的英文感觉头疼的话，那建议可以尝试下安装这款插件哦。安装方式同上。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/302A82E3-752E-4C3A-BFD4-020FAA60B1F8.png">
-    <br>
-</center>
-
-<h4 id="CodeLLDB"><a href="#CodeLLDB" class="headerlink" title="CodeLLDB"></a>CodeLLDB</h4><p>&emsp;&emsp;如果在Mac OS X Catalina版本上这款插件是必须安装的，不安装<strong>CodeLLDB</strong> 这款插件的话，那么你就会遇到无法调试程序这个问题。原因是苹果在macOS Catalina上取消了对lldb支持，于是我们就必须寻找对应的替代品。为了解决这个问题，我谷歌了挺久，最后在官方Github上的<a href="https://github.com/microsoft/vscode-cpptools/issues/3829" target="_blank" rel="noopener">issue</a>中发现了解决方法。官方给出的解决方法就是安装这款插件来替代X-Code中的lldb-mi。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/3BC45F5E-E5FE-49E3-9EA2-38AC26114321.png">
-    <br>
-</center>
-
-<h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><p>&emsp;&emsp;首先，我们需要一个专门存放C/C++代码的地方，以后要编写C++代码时，直接在VSCode打开对应的文件夹就行了。这样做的好处就是，不必反复的配置运行环境。如下图所示，<strong>.vscode</strong>这个文件夹是用来存放环境配置文件的，而<strong>demo</strong>这个文件夹，是用来存放自己的程序的，你可以创建多个类似与demo的这种文件夹。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/84451EF7-5FB4-49EE-A3CF-8A6D3578201C.png">
-    <br>
-</center>
-
-<h4 id="配置-launch-json"><a href="#配置-launch-json" class="headerlink" title="配置 launch.json"></a>配置 launch.json</h4><p>&emsp;&emsp;进入左侧的调试页面，点击<strong>创建launch.json文件</strong>，就会自动在你的工作目录下新建一个.vscode文件来存放你的调试配置。这里我们选择C/C++: (lldb) Launch。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/image-5.png">
-    <br>
-</center>
-
-<p>&emsp;&emsp;<strong>launch.json</strong>这个文件中的配置，<a href="https://go.microsoft.com/fwlink/?linkid=830387" target="_blank" rel="noopener">官方的文档</a>里有详细的说明。下面的配置，是我通过不断尝试所最终决定下来的。其中唯一特别的是这块：<code>&quot;program&quot;: &quot;${workspaceFolder}/tmp/${fileBasenameNoExtension}.out&quot;</code> 它会在当前目录下新建一个tmp的文件夹来存放编译后的文件，这样的好处是，有一个专门存放编译文件的地方，让程序所在的目录看起来清爽点。如果对以下配置有不接的地方，只要将<strong>鼠标长放在对应参数上</strong>就行了，它会显示出对应配置的说明。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;preLaunchTask&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;(lldb) Launch&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">            &quot;args&quot;: [],</span><br><span class="line">            &quot;stopAtEntry&quot;: false,</span><br><span class="line">            &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;,</span><br><span class="line">            &quot;environment&quot;: [],</span><br><span class="line">            &quot;externalConsole&quot;: true,</span><br><span class="line">            &quot;MIMode&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;logging&quot;: &#123;</span><br><span class="line">                &quot;trace&quot;: true,</span><br><span class="line">                &quot;traceResponse&quot;: true,</span><br><span class="line">                &quot;engineLogging&quot;: true,</span><br><span class="line">                &quot;programOutput&quot;: true,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="配置-task-json"><a href="#配置-task-json" class="headerlink" title="配置 task.json"></a>配置 task.json</h4><p>&emsp;&emsp;这里我们直接使用快捷键<strong>command + P</strong>，然后在弹出的搜索框中输入 <strong>&gt;task</strong> 来新建一个生成任务即可。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 120px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/1581579434251.jpg">
-    <br>
-</center>
-
-<p>&emsp;&emsp;打开<strong>task.json</strong>这个文件，对其进行以下配置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;g++&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;$&#123;file&#125;&quot;,</span><br><span class="line">                &quot;-std&#x3D;c++17&quot;,</span><br><span class="line">                &quot;-o&quot;,</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">                &quot;-g&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;group&quot;: &quot;build&quot;,</span><br><span class="line">            &quot;presentation&quot;: &#123;</span><br><span class="line">                &quot;echo&quot;: true,</span><br><span class="line">                &quot;focus&quot;: false,</span><br><span class="line">                &quot;panel&quot;: &quot;shared&quot;,</span><br><span class="line">                &quot;showReuseMessage&quot;: true,</span><br><span class="line">                &quot;clear&quot;: true,</span><br><span class="line">                &quot;reveal&quot;: &quot;silent&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="测试配置"><a href="#测试配置" class="headerlink" title="测试配置"></a>测试配置</h3><p>&emsp;&emsp;上述步骤都正确完成后，那么就新建一个c++程序来测试下环境是否配置成功吧。</p>
-<h4 id="编写一个简单的demo"><a href="#编写一个简单的demo" class="headerlink" title="编写一个简单的demo"></a>编写一个简单的demo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int a &#x3D; 1;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="设置断点，并编译代码"><a href="#设置断点，并编译代码" class="headerlink" title="设置断点，并编译代码"></a>设置断点，并编译代码</h4><p>&emsp;&emsp;VSCode设置断点的方式和其他IDE一样，如果是在不清楚的话，建议搜一下。然后你可以选择在调试界面中，单击<strong>运行和调试旁的三角形</strong>，也可以直接使用快捷键<strong>FN + F5</strong>来进行调试。程序编译运行后，可以在<strong>VSCode左边</strong>看见对应调试信息，然后可以在<strong>VSCode上边</strong>看见控制工具栏。如果这些都能看见，并且弹出对应的控制台，那么环境就配置成功了。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 120px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/1581580268989.jpg">
-    <br>
-</center>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;以上就是在Mac OS上使用VSCode配置C++/C语言的开发环境。后期可以根据自己的需求，去修改配置文件对应的选项，并对VSCode进行一些个性化修改就是了。经过一段时间使用，VSCode在日常使用来讲，给我的感觉远比使用IDE来的舒适，因此希望你也会喜欢。</p>
-
+      
+      <a class="article-more-link" href="/2020/02/13/mac-vscode-c++/">阅读更多...</a>
+      
       
       <!-- 打赏 -->
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/13/mac-vscode-c++/" data-id="ck6kg6u0u00003cz5g4e36908"
+      <a data-url="https://www.zioang.fun/2020/02/13/mac-vscode-c++/" data-id="ck6kg9tlg000170z54d8yb011"
         class="article-share-link">分享</a>
         
       
@@ -256,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/07/support-vector-vachine/" data-id="ck6kg6u1f00073cz51kaie1y7"
+      <a data-url="https://www.zioang.fun/2020/02/07/support-vector-vachine/" data-id="ck6kg9tlj000370z56ehu687d"
         class="article-share-link">分享</a>
         
       
@@ -328,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/06/zioang-blog/" data-id="ck6kg6u1g00093cz52k51drva"
+      <a data-url="https://www.zioang.fun/2020/02/06/zioang-blog/" data-id="ck6kg9tln000670z58sgq6mj8"
         class="article-share-link">分享</a>
         
       
