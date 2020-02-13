@@ -1,13 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>使用Hexo与GitHub Pages来搭建个人博客</title>
-    <url>/2020/02/06/zioang-blog/</url>
-    <content><![CDATA[<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>&emsp;&emsp;这段时间因为疫情而一直呆在家里快无聊疯了，寻思着找点事干。刚好现在准备学点东西，然后想做做笔记什么的，于是就有了这个博客的诞生。</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;博客是由<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>与<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>结合搭建的一个静态网站，由于之前完全没接触过<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>这个框架，于是乎就打算以此作为博客的第一篇文章，边学习边记录，并来记录下她诞生的过程。</p>
+    <title>VSCode配置c/c++环境(MacOS)</title>
+    <url>/2020/02/13/mac-vscode-c++/</url>
+    <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>&emsp;&emsp;VSCode相比起IDE，其轻便、插件丰富、功能繁多是我选择其作为C++日常使用的编辑器的原因。对于我这种，只写写一些简单程序，用来学习算法和数据结构，并且空闲时间，还能写写python脚本和网站，VSCode可谓首选。</p>
+<h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><p>&emsp;&emsp;<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a>十分的方便，直接去官网下载即可。下载后好，一路点击继续，等到安装结束即可。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/image-1-1600x667.png">
+    <br>
+</center>
+
+<h3 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h3><h4 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h4><p>&emsp;&emsp;如果想在VSCode上快速的开始使用C++编写程序，那么<strong>C/C++</strong>这款插件是微软官方发布的一款专门针对C和C++的插件。打开VSCode，然后点击插件图标，在搜索框中直接搜索<strong>C/C++</strong>，下载数量和评分最高的那个就是了（一般搜出来的第一个就是）。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/BCAAAAE4-8B7F-4A42-B9FB-535725BBAADF.png">
+    <br>
+</center>
+
+<h4 id="Chinese-Simplified"><a href="#Chinese-Simplified" class="headerlink" title="Chinese (Simplified)"></a>Chinese (Simplified)</h4><p>&emsp;&emsp;<strong>Chinese (Simplified)</strong> 是微软官方发布的用来解决VSCode汉化问题的一款插件，如果你对满屏的英文感觉头疼的话，那建议可以尝试下安装这款插件哦。安装方式同上。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/302A82E3-752E-4C3A-BFD4-020FAA60B1F8.png">
+    <br>
+</center>
+
+<h4 id="CodeLLDB"><a href="#CodeLLDB" class="headerlink" title="CodeLLDB"></a>CodeLLDB</h4><p>&emsp;&emsp;如果在Mac OS X Catalina版本上这款插件是必须安装的，不安装<strong>CodeLLDB</strong> 这款插件的话，那么你就会遇到无法调试程序这个问题。原因是苹果在macOS Catalina上取消了对lldb支持，于是我们就必须寻找对应的替代品。为了解决这个问题，我谷歌了挺久，最后在官方Github上的<a href="https://github.com/microsoft/vscode-cpptools/issues/3829" target="_blank" rel="noopener">issue</a>中发现了解决方法。官方给出的解决方法就是安装这款插件来替代X-Code中的lldb-mi。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/3BC45F5E-E5FE-49E3-9EA2-38AC26114321.png">
+    <br>
+</center>
+
+<h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><p>&emsp;&emsp;首先，我们需要一个专门存放C/C++代码的地方，以后要编写C++代码时，直接在VSCode打开对应的文件夹就行了。这样做的好处就是，不必反复的配置运行环境。如下图所示，<strong>.vscode</strong>这个文件夹是用来存放环境配置文件的，而<strong>demo</strong>这个文件夹，是用来存放自己的程序的，你可以创建多个类似与demo的这种文件夹。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 500px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/84451EF7-5FB4-49EE-A3CF-8A6D3578201C.png">
+    <br>
+</center>
+
+<h4 id="配置-launch-json"><a href="#配置-launch-json" class="headerlink" title="配置 launch.json"></a>配置 launch.json</h4><p>&emsp;&emsp;进入左侧的调试页面，点击<strong>创建launch.json文件</strong>，就会自动在你的工作目录下新建一个.vscode文件来存放你的调试配置。这里我们选择C/C++: (lldb) Launch。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/image-5.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;<strong>launch.json</strong>这个文件中的配置，<a href="https://go.microsoft.com/fwlink/?linkid=830387" target="_blank" rel="noopener">官方的文档</a>里有详细的说明。下面的配置，是我通过不断尝试所最终决定下来的。其中唯一特别的是这块：<code>&quot;program&quot;: &quot;${workspaceFolder}/tmp/${fileBasenameNoExtension}.out&quot;</code> 它会在当前目录下新建一个tmp的文件夹来存放编译后的文件，这样的好处是，有一个专门存放编译文件的地方，让程序所在的目录看起来清爽点。如果对以下配置有不接的地方，只要将<strong>鼠标长放在对应参数上</strong>就行了，它会显示出对应配置的说明。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;preLaunchTask&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;(lldb) Launch&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">            &quot;args&quot;: [],</span><br><span class="line">            &quot;stopAtEntry&quot;: false,</span><br><span class="line">            &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;,</span><br><span class="line">            &quot;environment&quot;: [],</span><br><span class="line">            &quot;externalConsole&quot;: true,</span><br><span class="line">            &quot;MIMode&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;logging&quot;: &#123;</span><br><span class="line">                &quot;trace&quot;: true,</span><br><span class="line">                &quot;traceResponse&quot;: true,</span><br><span class="line">                &quot;engineLogging&quot;: true,</span><br><span class="line">                &quot;programOutput&quot;: true,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置-task-json"><a href="#配置-task-json" class="headerlink" title="配置 task.json"></a>配置 task.json</h4><p>&emsp;&emsp;这里我们直接使用快捷键<strong>command + P</strong>，然后在弹出的搜索框中输入 <strong>&gt;task</strong> 来新建一个生成任务即可。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 120px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/1581579434251.jpg">
+    <br>
+</center>
+
+<p>&emsp;&emsp;打开<strong>task.json</strong>这个文件，对其进行以下配置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;g++&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;$&#123;file&#125;&quot;,</span><br><span class="line">                &quot;-std&#x3D;c++17&quot;,</span><br><span class="line">                &quot;-o&quot;,</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">                &quot;-g&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;group&quot;: &quot;build&quot;,</span><br><span class="line">            &quot;presentation&quot;: &#123;</span><br><span class="line">                &quot;echo&quot;: true,</span><br><span class="line">                &quot;focus&quot;: false,</span><br><span class="line">                &quot;panel&quot;: &quot;shared&quot;,</span><br><span class="line">                &quot;showReuseMessage&quot;: true,</span><br><span class="line">                &quot;clear&quot;: true,</span><br><span class="line">                &quot;reveal&quot;: &quot;silent&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试配置"><a href="#测试配置" class="headerlink" title="测试配置"></a>测试配置</h3><p>&emsp;&emsp;上述步骤都正确完成后，那么就新建一个c++程序来测试下环境是否配置成功吧。</p>
+<h4 id="编写一个简单的demo"><a href="#编写一个简单的demo" class="headerlink" title="编写一个简单的demo"></a>编写一个简单的demo</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int a &#x3D; 1;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置断点，并编译代码"><a href="#设置断点，并编译代码" class="headerlink" title="设置断点，并编译代码"></a>设置断点，并编译代码</h4><p>&emsp;&emsp;VSCode设置断点的方式和其他IDE一样，如果是在不清楚的话，建议搜一下。然后你可以选择在调试界面中，单击<strong>运行和调试旁的三角形</strong>，也可以直接使用快捷键<strong>FN + F5</strong>来进行调试。程序编译运行后，可以在<strong>VSCode左边</strong>看见对应调试信息，然后可以在<strong>VSCode上边</strong>看见控制工具栏。如果这些都能看见，并且弹出对应的控制台，那么环境就配置成功了。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 120px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/1581580268989.jpg">
+    <br>
+</center>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;以上就是在Mac OS上使用VSCode配置C++/C语言的开发环境。后期可以根据自己的需求，去修改配置文件对应的选项，并对VSCode进行一些个性化修改就是了。经过一段时间使用，VSCode在日常使用来讲，给我的感觉远比使用IDE来的舒适，因此希望你也会喜欢。</p>
+]]></content>
+      <categories>
+        <category>日常折腾</category>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>支持向量机模型(Support Vector Machine)的概念</title>
+    <url>/2020/02/07/support-vector-vachine/</url>
+    <content><![CDATA[<h2 id="SVM简介"><a href="#SVM简介" class="headerlink" title="SVM简介"></a>SVM简介</h2><p>&emsp;&emsp;在机器学习中，支持向量机是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。对于<strong>样本数很少</strong>的情况下，用SVM模型这个算法基本上都会得出一个<strong>比较好</strong>的结果。给定一组训练实例，每个训练实例被标记为属于两个类别中的一个或另一个，SVM训练算法创建一个将新的实例分配给两个类别之一的模型，使其成为非概率二元线性分类器。SVM模型是将实例表示为空间中的点，这样映射就使得单独类别的实例被尽可能宽的明显的间隔分开。然后，将新的实例映射到同一空间，并基于它们落在间隔的哪一侧来预测所属类别。</p>
 <a id="more"></a>
 
-<h3 id="搭建需求"><a href="#搭建需求" class="headerlink" title="搭建需求"></a>搭建需求</h3><ul>
+<h2 id="SVM线性模型"><a href="#SVM线性模型" class="headerlink" title="SVM线性模型"></a>SVM线性模型</h2><h3 id="什么叫线性模型"><a href="#什么叫线性模型" class="headerlink" title="什么叫线性模型"></a>什么叫线性模型</h3><p>&emsp;&emsp;存在一组<strong>线性可分(Linear Separable)</strong>的数据样本集，其在空间中的分布如下图1所示。由图1可得知，该数据由两种训练样本所组成，将粉红色圆圈所代表的训练样本命名为class1，将蓝色圆圈所代表的训练样本命名为class2。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/757DBA49-4730-42C5-B15D-F898F6D691FE.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 1、线性可分的数据样本集</div>
+</center>
+
+<p>&emsp;&emsp;现在，我们需要构建一个叫做线性模型的算法，该算法能够在图1中画出一条直线，将图1中的class1和class2分割开来。那现在就存在一个问题，如果存在着<strong>一条直线</strong>能够分割class1和class2，那么肯定也就存在着<strong>无数条直线</strong>可以用来分割class1和class2。现在存在3条直线（事实上远不止这三条）如图2所示，那么哪一条才是<strong>最优</strong>的呢？</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/Image001.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 2、分割数据样本集的三条直线</div>
+</center>
+
+<p>&emsp;&emsp;由肉眼直观地判断，可大概推断出，大多数人可能会选择1号线，而事实上1号线是最优的一条线（假设1号线为最优的线）。那么这时候就牵扯到一个问题：为什么1号线是最好的。</p>
+<p>&emsp;&emsp;SVM的发明者Vapink是这么假设的：首先我们需要定义一个<strong>性能指标</strong>，然后对于<strong>每一条线</strong>，我们都能算出一个<strong>对应</strong>的性能指标；其次，我们可以说1号线对于这样的性能指标来说，其能够算到<strong>最大</strong>。</p>
+<h4 id="性能指标的计算"><a href="#性能指标的计算" class="headerlink" title="性能指标的计算"></a>性能指标的计算</h4><ol>
+<li>首先，我们需要让1号线分别向class1和class2方向<strong>平移</strong>，直到其<strong>插到</strong>对应分类的<strong>某个或某几个圆圈</strong>为止，如图3所示。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/Image002.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 3、平移1号线</div>
+</center>
+
+<ol start="2">
+<li>其次，我们对1号线做<strong>性能指标</strong>，即1号线到其平移后得出的两条虚线的距离（也就是图4中的d），而这个1号线是使这个<strong>距离d</strong>最大的一条线。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/Image003.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 4、对1号线做性能指标</div>
+</center>
+
+<ol start="3">
+<li>最后，当<strong>线的斜率</strong>一样时，即我们平移1号线后所得出的所有线，也能得到这个最大距离的值d，那么哪条才是我们需要的呢？因此，这里我们需要对1号线做一个<strong>限制</strong>，那就是一号线到其两条虚线的<strong>距离相等</strong>，这样得出来的线才是最优的。</li>
+</ol>
+<h3 id="线性模型的数学描述"><a href="#线性模型的数学描述" class="headerlink" title="线性模型的数学描述"></a>线性模型的数学描述</h3><h4 id="数学定义"><a href="#数学定义" class="headerlink" title="数学定义"></a>数学定义</h4><ol>
+<li>d：间隔(margin)，即上面提到的距离。</li>
+<li>支持向量(Support Vectors): 平行线插到的向量。</li>
+<li>训练数据及标签：$$ (x_1, y_1), (x_2, y_2), (x_3, y_3)……(x_n, y_n) $$<br>其中，<strong>x</strong>代表上面图中所描绘圆圈在坐标中的<strong>位置</strong>，即<strong>向量</strong>；<strong>y</strong>代表<strong>标签</strong>，以上述问题为例，数据样本集中只有两种分类，因此y只能<strong>表示为+1或-1</strong>。</li>
+<li>线性模型：<br>I. 超平面的参数：<strong>( 𝜔, b )</strong><br>II. 超平面(Hyper plane)的线性函数: $$ \omega^T * X + b = 0 $$<br>这里的ω也是一个<strong>向量</strong>，其<strong>维度与x相同</strong>，而b是一个<strong>常数</strong>。</li>
+<li>训练集线性可分的定义：<br> 对于所有的训练样本 $$ {(x_i, y_i)}_{i\in[1, n]} $$<br> 都 ∃ ( 𝜔, b ) ，使：<br> $$ 对\ \ \forall i \in [1, n]， $$<br> 有以下情况：<br> $$ I. 若\ \ y_i = +1，则\omega^T * x_i \geq 0 $$<br> $$ II. 若\ \ y_i = -1， 则\omega^T * x_i &lt; 0 $$<br> 因此，我们最终可得到一个公式：<br> $$ y_i[\omega^T * x_i + b] &gt;= 0 …………(公式1) $$</li>
+</ol>
+<h3 id="未完-有空再补上"><a href="#未完-有空再补上" class="headerlink" title="未完 有空再补上"></a>未完 有空再补上</h3>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>支持向量机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Hexo与GitHub Pages来搭建个人博客</title>
+    <url>/2020/02/06/zioang-blog/</url>
+    <content><![CDATA[<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>&emsp;&emsp;这段时间因为疫情而一直呆在家里快无聊疯了，寻思着找点事干。刚好现在准备学点东西，然后想做做笔记什么的，于是就有了这个博客的诞生。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;博客是由<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>与<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>结合搭建的一个静态网站，由于之前完全没接触过<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>这个框架，于是乎就打算以此作为博客的第一篇文章，边学习边记录，并来记录下她诞生的过程。</p>
+<a id="more"></a>
+
+<h2 id="搭建需求"><a href="#搭建需求" class="headerlink" title="搭建需求"></a>搭建需求</h2><ul>
 <li>首先得有个<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>账号，登录后点击<strong>New repository</strong>来创建一个新仓库，仓库名必须为：用户名.github.io（<strong>这个用户名是你GitHub的账号名称</strong>）。下面这张图片，就是我创建的对应仓库。</li>
 </ul>
 <center>
@@ -36,7 +190,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="初始化博客项目"><a href="#初始化博客项目" class="headerlink" title="初始化博客项目"></a>初始化博客项目</h3><p>&emsp;&emsp;在终端中进入项目想要创建的路径，然后输入：<code>hexo init blog(这里的blog可以更改为你想要的项目名)</code> 这里有一点需要注意下的是，安装过程中可能会因<strong>xcode-select</strong>的版本而报错，因此更新下版本就好了，在终端中依次输入以下命令即可：</p>
+<h2 id="初始化博客项目"><a href="#初始化博客项目" class="headerlink" title="初始化博客项目"></a>初始化博客项目</h2><p>&emsp;&emsp;在终端中进入项目想要创建的路径，然后输入：<code>hexo init blog(这里的blog可以更改为你想要的项目名)</code> 这里有一点需要注意下的是，安装过程中可能会因<strong>xcode-select</strong>的版本而报错，因此更新下版本就好了，在终端中依次输入以下命令即可：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rm -rf &#x2F;Library&#x2F;Developer&#x2F;CommandLineTools</span><br><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;项目安装结束后，我们来写第一篇文章来测试下效果吧。为了检测我们的网站雏形，分别按顺序输入以下三条命令（<strong>注意，所有的Hexo命令都要在对应blog的根目录出运行</strong>）：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n first</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
@@ -55,7 +209,7 @@
 <p>&emsp;&emsp;下面介绍下<strong>Hexo</strong>的常用命令：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g # 安装Hexo</span><br><span class="line">npm update hexo -g # 升级</span><br><span class="line">hexo init xxx # 初始化博客</span><br><span class="line"></span><br><span class="line">hexo n &quot;blog name&quot; # 新建文章，会在&#x2F;source&#x2F;_posts&#x2F;这个路径下生成一个新的md，因此文章内容按照Markdwon格式来写就行了</span><br><span class="line">hexo g &#x3D;&#x3D; hexo generate # 生成</span><br><span class="line">hexo s &#x3D;&#x3D; hexo server # 启动服务预览</span><br><span class="line">hexo d &#x3D;&#x3D; hexo deploy # 部署</span><br><span class="line"></span><br><span class="line">hexo server # Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s # 静态模式</span><br><span class="line">hexo server -p 5000 # 更改端口</span><br><span class="line">hexo server -i 192.168.1.1 # 自定义 IP</span><br><span class="line">hexo clean # 清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
 
-<h3 id="更改网站的主题"><a href="#更改网站的主题" class="headerlink" title="更改网站的主题"></a>更改网站的主题</h3><p>&emsp;&emsp;我用的是<a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a>主题，如果想要试试其他主题的话，可以到Hexo官网的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题专栏</a>中找找有没有喜欢的。找到自己新颖的主题后，在终端用<strong>Git</strong>克隆对应主题到blog目录下即可，这里以Ayer主题为例，在终端输入：<code>git clone https://github.com/Shen-Yu/hexo-theme-ayer.git themes/ayer</code>。<br>&emsp;&emsp;耐心等待主题安装完成后，在终端中输入(路径为blog根目录)：<code>vi _config.yml</code>。在该配置文件中找到<strong>theme</strong>这个配置项，将其更改为<code>theme: ayer</code>就行了。</p>
+<h2 id="更改网站的主题"><a href="#更改网站的主题" class="headerlink" title="更改网站的主题"></a>更改网站的主题</h2><p>&emsp;&emsp;我用的是<a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a>主题，如果想要试试其他主题的话，可以到Hexo官网的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题专栏</a>中找找有没有喜欢的。找到自己新颖的主题后，在终端用<strong>Git</strong>克隆对应主题到blog目录下即可，这里以Ayer主题为例，在终端输入：<code>git clone https://github.com/Shen-Yu/hexo-theme-ayer.git themes/ayer</code>。<br>&emsp;&emsp;耐心等待主题安装完成后，在终端中输入(路径为blog根目录)：<code>vi _config.yml</code>。在该配置文件中找到<strong>theme</strong>这个配置项，将其更改为<code>theme: ayer</code>就行了。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/4A0F3F66-62FA-4A8D-8714-7D0E86390D29.png">
@@ -67,7 +221,7 @@
 </center>
 
 <p>&emsp;&emsp;这里对于主题的配置不多介绍，每个主题都有对应的文档可以查看，而且挺多都是有中文文档的，因此绝对比我讲的更加清晰。</p>
-<h3 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h3><p>&emsp;&emsp;<a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">Hexo官方</a>给出了多种推送方式，这里我们用<strong>Git</strong>来推送网站。首先，我们安装下<strong>Git</strong>的部署插件，在终端中输入命令(<strong>blog根目录下</strong>)：<code>npm install hexo-deployer-git --save</code> 然后，我们在终端中输入：<code>vi _config.yml</code>，在该文件中找到<strong>deploy</strong>这一项，完成以下配置：</p>
+<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p>&emsp;&emsp;<a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">Hexo官方</a>给出了多种推送方式，这里我们用<strong>Git</strong>来推送网站。首先，我们安装下<strong>Git</strong>的部署插件，在终端中输入命令(<strong>blog根目录下</strong>)：<code>npm install hexo-deployer-git --save</code> 然后，我们在终端中输入：<code>vi _config.yml</code>，在该文件中找到<strong>deploy</strong>这一项，完成以下配置：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: 仓库的完整路径</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
 <center>
@@ -94,7 +248,7 @@
 </center>
 
 <p>&emsp;&emsp;至此，我们的博客算是正式创建好了，之后就可以根据自己的需求进行个性化更改了。</p>
-<h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>&emsp;&emsp;博客的域名是可以自定义的，只要你有一个属于自己的域名，那么你就可以将GitHub提供的这个链接替换成自己的专属域名。如果需要的话，可以利用搜索引擎查找下，这类资料网上还是挺多的。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>&emsp;&emsp;博客的域名是可以自定义的，只要你有一个属于自己的域名，那么你就可以将GitHub提供的这个链接替换成自己的专属域名。如果需要的话，可以利用搜索引擎查找下，这类资料网上还是挺多的。</p>
 <a href= "https://github.com/zioang/zioang.github.io" target="_blank" style="margin-top: 20px; text-decoration: none;">
     <img src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/github.png" style="width: 20px; height: 20px; margin-right: 6px; float: left">
     <p style=" line-height: 20px; font-size: 16px; color: black; font-family: Hiragino Sans GB, WenQuanYi Micro Hei;">项目地址</p>
