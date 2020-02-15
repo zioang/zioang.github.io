@@ -116,28 +116,28 @@
 <h4 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h4><p>&emsp;&emsp;运用分而治之的思想，主要是通过<strong>递归</strong>来实现的，当数据量很大时，会占用十分大的内存消耗，因此该方法并不能很好的工作，复杂度： <strong>O(nlogn)</strong>。</p>
 <p>&emsp;&emsp;<strong>解题思路</strong>：首先将整个序列不断<strong>切半分</strong>，直到得到个只含<strong>一个数的子序列</strong>，如下图所示。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 75px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 75px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img1.png">
     <br>
 </center>
 
 <p>然后将其中的每个数和其左或右边的数进行<strong>相加</strong>，用相加后得到的值和原值进行<strong>比较</strong>，并<strong>保留较大的一方</strong>。例如以下图所示：4 + (-3) = 1 &lt; 4 ，保留 4; 5 + (-2) = 3 &lt; 5，保留 5 ；(-1) + 2 = 1 &lt; 2，保留 2 ； 6 + (-2) = 4 &lt; 6 ，保留 6。 这里每一步的计算，我们都要保留最大的那个和。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 90px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 90px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img2.png">
     <br>
 </center>
 
 <p>利用上述的思想，重复第二步操作便可得下图结果，即左边从 4 开始向右走，不断累加到 5 便停止，最终得到的 6 便是该阶段所能获得的最大子列和；而右边因为是从 -1 开始的，当值不大于 0 时，我们不考虑，因此从 2 开始向右走， 不断累加到6便停止，最终得到的 8 便是该阶段所能得到的最大子列和，将其与左边的进行比较，保留较大的值即可。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 95px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img3.png">
     <br>
 </center>
 
 <p>通过不断的回溯，最终我们需要考虑的一个跨越边界的问题，即左右两边的值相加是否能得到一个更大的值。如下图所示，从 -2 开始，一直累加到 4 为止，此时我们便能得到左侧的最大值，而从 -1 开始，一直累加到 6 为止，此时我们便能得到右侧的最大值，将它们相加与之前得到的左右两边的最大值比较，其中较大的值便是我们所求问题的答案。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 110px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 120px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img4.png">
     <br>
 </center>
@@ -154,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/15/maxSubSeqSum/" data-id="ck6ng5xhh0001zsz512tt2hw0"
+      <a data-url="https://www.zioang.fun/2020/02/15/maxSubSeqSum/" data-id="ck6ngosh900028vz5ffae3g3f"
         class="article-share-link">分享</a>
         
       
