@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>vscode搭建c/c++环境(MacOS)</title>
+    <title>最大子序列和</title>
+    <url>/2020/02/15/maxSubSeqSum/</url>
+    <content><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>&emsp;&emsp;给定一个包含N个整数的序列$$ {A_1, A_2, A_3……A_N}， $$ 求该序列中的子序列的最大和，即：<br>$$ sum = max(0, \sum_j^{k=i}A_k) $$</p>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p><strong>input</strong>: 4, -3, 5, -2, -1, 2, 6, -2<br><strong>output</strong>: 11</p>
+<a id="more"></a>
+
+<h3 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h3><h4 id="暴力法一"><a href="#暴力法一" class="headerlink" title="暴力法一"></a>暴力法一</h4><p>&emsp;&emsp;暴力法一是最简单粗暴的方法，通过三重嵌套循环，枚举每个子序列的大小，然后记录并返回最终值，其复杂度: <strong>O(n^3)</strong>。<br>&emsp;&emsp;第一个循环 <strong>i</strong> 指定子列左端的下标，第二个循环 <strong>j</strong> 指定子列右端的下标，第三个循环 <strong>k</strong> 用来累加计算 i-&gt;j 的和，<strong>thisSum</strong> 记录A[i]-&gt; A[j]的子列和，<strong>maxSum</strong> 记录最大的累加和。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum, maxSum &#x3D; 0;</span><br><span class="line">    int i, j, k;</span><br><span class="line"></span><br><span class="line">    for (i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        for (j &#x3D; i; j &lt; N; ++j) &#123;</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">            for (k &#x3D; i; k &lt;&#x3D; j; ++k) &#123;</span><br><span class="line">                thisSum +&#x3D; A[k];</span><br><span class="line">                if (thisSum &gt; maxSum)</span><br><span class="line">                    maxSum &#x3D; thisSum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="暴力法二"><a href="#暴力法二" class="headerlink" title="暴力法二"></a>暴力法二</h4><p>&emsp;&emsp;暴力法二是在暴力法一的基础上进行了优化，将三重循环减到两重，大大减少了循环次数，因此其复杂度: <strong>O(n^2)</strong>。<br>&emsp;&emsp;这个方法少了第 k 个循环，合理优化了代码，对于相同的 i ，不同的 j ，只需<strong>在 j-1 次的基础上累加当前项</strong>即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum, maxSum &#x3D; 0;</span><br><span class="line">    int i, j;</span><br><span class="line"></span><br><span class="line">    for (i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        thisSum &#x3D; 0;</span><br><span class="line">        for (j &#x3D; i; j &lt; N; ++j) &#123;</span><br><span class="line">            thisSum +&#x3D; A[j];</span><br><span class="line">            if (thisSum &gt; maxSum)</span><br><span class="line">                maxSum &#x3D; thisSum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h4><p>&emsp;&emsp;运用分而治之的思想，主要是通过<strong>递归</strong>来实现的，当数据量很大时，会占用十分大的内存消耗，因此该方法并不能很好的工作，复杂度： <strong>O(nlogn)</strong>。</p>
+<p>&emsp;&emsp;<strong>解题思路</strong>：首先将整个序列不断<strong>切半分</strong>，直到得到个只含<strong>一个数的子序列</strong>，如下图所示。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 75px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img1.png">
+    <br>
+</center>
+
+<p>然后将其中的每个数和其左或右边的数进行<strong>相加</strong>，用相加后得到的值和原值进行<strong>比较</strong>，并<strong>保留较大的一方</strong>。例如以下图所示：4 + (-3) = 1 &lt; 4 ，保留 4; 5 + (-2) = 3 &lt; 5，保留 5 ；(-1) + 2 = 1 &lt; 2，保留 2 ； 6 + (-2) = 4 &lt; 6 ，保留 6。 这里每一步的计算，我们都要保留最大的那个和。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 90px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img2.png">
+    <br>
+</center>
+
+<p>利用上述的思想，重复第二步操作便可得下图结果，即左边从 4 开始向右走，不断累加到 5 便停止，最终得到的 6 便是该阶段所能获得的最大子列和；而右边因为是从 -1 开始的，当值不大于 0 时，我们不考虑，因此从 2 开始向右走， 不断累加到6便停止，最终得到的 8 便是该阶段所能得到的最大子列和，将其与左边的进行比较，保留较大的值即可。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 95px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img3.png">
+    <br>
+</center>
+
+<p>通过不断的回溯，最终我们需要考虑的一个跨越边界的问题，即左右两边的值相加是否能得到一个更大的值。如下图所示，从 -2 开始，一直累加到 4 为止，此时我们便能得到左侧的最大值，而从 -1 开始，一直累加到 6 为止，此时我们便能得到右侧的最大值，将它们相加与之前得到的左右两边的最大值比较，其中较大的值便是我们所求问题的答案。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 110px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img4.png">
+    <br>
+</center>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int l, int r) &#123;</span><br><span class="line">    &#x2F;&#x2F; 当分割到只剩下标0的元素时，</span><br><span class="line">    &#x2F;&#x2F; 判断其是否大于0，如果大于0的话就保留其值并返回，否则返回0</span><br><span class="line">    if (l &#x3D;&#x3D; r)</span><br><span class="line">        if (A[l] &gt; 0)</span><br><span class="line">            return A[l];</span><br><span class="line">        else</span><br><span class="line">            return 0;</span><br><span class="line"></span><br><span class="line">    int mid &#x3D; (l + r) &#x2F; 2;</span><br><span class="line">    &#x2F;&#x2F; 获取每个阶段左右两边的最大值</span><br><span class="line">    int maxLeftSum &#x3D; maxSubSeqSum3(A, l, mid);</span><br><span class="line">    int maxRightSum &#x3D; maxSubSeqSum3(A, mid + 1, r);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 计算左边子序列和的最大值</span><br><span class="line">    int maxLeftBorderSum &#x3D; 0, leftBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid; i &gt;&#x3D; l; --i) &#123;</span><br><span class="line">        leftBorderSum +&#x3D; A[i];</span><br><span class="line">        if (leftBorderSum &gt; maxLeftBorderSum)</span><br><span class="line">            maxLeftBorderSum &#x3D; leftBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 计算右边子序列和的最大值</span><br><span class="line">    int maxRightBorderSum &#x3D; 0, rightBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid + 1; i &lt;&#x3D; r; ++i) &#123;</span><br><span class="line">        rightBorderSum +&#x3D; A[i];</span><br><span class="line">        if (rightBorderSum &gt; maxRightBorderSum)</span><br><span class="line">            maxRightBorderSum &#x3D; rightBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return max(maxLeftSum, </span><br><span class="line">            max(maxRightSum, </span><br><span class="line">                maxLeftBorderSum + maxRightBorderSum));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C++</category>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>分治</tag>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode搭建c/c++调试环境(MacOS)</title>
     <url>/2020/02/13/mac-vscode-c++/</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>&emsp;&emsp;vscode相比起IDE，其轻便、插件丰富、功能繁多是我选择其作为C++日常使用的编辑器的原因。对于我这种，只写写一些简单程序，用来学习算法和数据结构，并且空闲时间，还能写写python脚本和网站，vscode可谓首选。</p>
 <a id="more"></a>

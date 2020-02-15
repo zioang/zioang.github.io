@@ -11,7 +11,7 @@
   <script type="text/javascript" src="/js/cet4.js"></script>
 
   <title>
-    支持向量机模型(Support Vector Machine)的概念 |  Zioang&#39;s Blog
+    最大子序列和 |  Zioang&#39;s Blog
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-support-vector-vachine" class="article article-type-post" itemscope
+  <article id="post-maxSubSeqSum" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  支持向量机模型(Support Vector Machine)的概念
+  最大子序列和
 </h1>
   
 
@@ -53,12 +53,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/02/07/support-vector-vachine/" class="article-date">
-  <time datetime="2020-02-07T11:20:11.000Z" itemprop="datePublished">2020-02-07</time>
+      <a href="/2020/02/15/maxSubSeqSum/" class="article-date">
+  <time datetime="2020-02-15T08:23:30.000Z" itemprop="datePublished">2020-02-15</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+    <a class="article-category-link" href="/categories/C/">C++</a> / <a class="article-category-link" href="/categories/C/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
   </div>
 
       
@@ -103,70 +103,48 @@
       
 
       
-      <h2 id="SVM简介"><a href="#SVM简介" class="headerlink" title="SVM简介"></a>SVM简介</h2><p>&emsp;&emsp;在机器学习中，支持向量机是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。对于<strong>样本数很少</strong>的情况下，用SVM模型这个算法基本上都会得出一个<strong>比较好</strong>的结果。给定一组训练实例，每个训练实例被标记为属于两个类别中的一个或另一个，SVM训练算法创建一个将新的实例分配给两个类别之一的模型，使其成为非概率二元线性分类器。SVM模型是将实例表示为空间中的点，这样映射就使得单独类别的实例被尽可能宽的明显的间隔分开。然后，将新的实例映射到同一空间，并基于它们落在间隔的哪一侧来预测所属类别。</p>
+      <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>&emsp;&emsp;给定一个包含N个整数的序列$$ {A_1, A_2, A_3……A_N}， $$ 求该序列中的子序列的最大和，即：<br>$$ sum = max(0, \sum_j^{k=i}A_k) $$</p>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p><strong>input</strong>: 4, -3, 5, -2, -1, 2, 6, -2<br><strong>output</strong>: 11</p>
 <a id="more"></a>
 
-<h2 id="SVM线性模型"><a href="#SVM线性模型" class="headerlink" title="SVM线性模型"></a>SVM线性模型</h2><h3 id="什么叫线性模型"><a href="#什么叫线性模型" class="headerlink" title="什么叫线性模型"></a>什么叫线性模型</h3><p>&emsp;&emsp;存在一组<strong>线性可分(Linear Separable)</strong>的数据样本集，其在空间中的分布如下图1所示。由图1可得知，该数据由两种训练样本所组成，将粉红色圆圈所代表的训练样本命名为class1，将蓝色圆圈所代表的训练样本命名为class2。</p>
+<h3 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h3><h4 id="暴力法一"><a href="#暴力法一" class="headerlink" title="暴力法一"></a>暴力法一</h4><p>&emsp;&emsp;暴力法一是最简单粗暴的方法，通过三重嵌套循环，枚举每个子序列的大小，然后记录并返回最终值，其复杂度: <strong>O(n^3)</strong>。<br>&emsp;&emsp;第一个循环 <strong>i</strong> 指定子列左端的下标，第二个循环 <strong>j</strong> 指定子列右端的下标，第三个循环 <strong>k</strong> 用来累加计算 i-&gt;j 的和，<strong>thisSum</strong> 记录A[i]-&gt; A[j]的子列和，<strong>maxSum</strong> 记录最大的累加和。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum, maxSum &#x3D; 0;</span><br><span class="line">    int i, j, k;</span><br><span class="line"></span><br><span class="line">    for (i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        for (j &#x3D; i; j &lt; N; ++j) &#123;</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">            for (k &#x3D; i; k &lt;&#x3D; j; ++k) &#123;</span><br><span class="line">                thisSum +&#x3D; A[k];</span><br><span class="line">                if (thisSum &gt; maxSum)</span><br><span class="line">                    maxSum &#x3D; thisSum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="暴力法二"><a href="#暴力法二" class="headerlink" title="暴力法二"></a>暴力法二</h4><p>&emsp;&emsp;暴力法二是在暴力法一的基础上进行了优化，将三重循环减到两重，大大减少了循环次数，因此其复杂度: <strong>O(n^2)</strong>。<br>&emsp;&emsp;这个方法少了第 k 个循环，合理优化了代码，对于相同的 i ，不同的 j ，只需<strong>在 j-1 次的基础上累加当前项</strong>即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum, maxSum &#x3D; 0;</span><br><span class="line">    int i, j;</span><br><span class="line"></span><br><span class="line">    for (i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        thisSum &#x3D; 0;</span><br><span class="line">        for (j &#x3D; i; j &lt; N; ++j) &#123;</span><br><span class="line">            thisSum +&#x3D; A[j];</span><br><span class="line">            if (thisSum &gt; maxSum)</span><br><span class="line">                maxSum &#x3D; thisSum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h4><p>&emsp;&emsp;运用分而治之的思想，主要是通过<strong>递归</strong>来实现的，当数据量很大时，会占用十分大的内存消耗，因此该方法并不能很好的工作，复杂度： <strong>O(nlogn)</strong>。</p>
+<p>&emsp;&emsp;<strong>解题思路</strong>：首先将整个序列不断<strong>切半分</strong>，直到得到个只含<strong>一个数的子序列</strong>，如下图所示。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/757DBA49-4730-42C5-B15D-F898F6D691FE.png">
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 75px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img1.png">
     <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">图 1、线性可分的数据样本集</div>
 </center>
 
-<p>&emsp;&emsp;现在，我们需要构建一个叫做线性模型的算法，该算法能够在图1中画出一条直线，将图1中的class1和class2分割开来。那现在就存在一个问题，如果存在着<strong>一条直线</strong>能够分割class1和class2，那么肯定也就存在着<strong>无数条直线</strong>可以用来分割class1和class2。现在存在3条直线（事实上远不止这三条）如图2所示，那么哪一条才是<strong>最优</strong>的呢？</p>
+<p>然后将其中的每个数和其左或右边的数进行<strong>相加</strong>，用相加后得到的值和原值进行<strong>比较</strong>，并<strong>保留较大的一方</strong>。例如以下图所示：4 + (-3) = 1 &lt; 4 ，保留 4; 5 + (-2) = 3 &lt; 5，保留 5 ；(-1) + 2 = 1 &lt; 2，保留 2 ； 6 + (-2) = 4 &lt; 6 ，保留 6。 这里每一步的计算，我们都要保留最大的那个和。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/Image001.png">
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 90px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img2.png">
     <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">图 2、分割数据样本集的三条直线</div>
 </center>
 
-<p>&emsp;&emsp;由肉眼直观地判断，可大概推断出，大多数人可能会选择1号线，而事实上1号线是最优的一条线（假设1号线为最优的线）。那么这时候就牵扯到一个问题：为什么1号线是最好的。</p>
-<p>&emsp;&emsp;SVM的发明者Vapink是这么假设的：首先我们需要定义一个<strong>性能指标</strong>，然后对于<strong>每一条线</strong>，我们都能算出一个<strong>对应</strong>的性能指标；其次，我们可以说1号线对于这样的性能指标来说，其能够算到<strong>最大</strong>。</p>
-<h4 id="性能指标的计算"><a href="#性能指标的计算" class="headerlink" title="性能指标的计算"></a>性能指标的计算</h4><ol>
-<li>首先，我们需要让1号线分别向class1和class2方向<strong>平移</strong>，直到其<strong>插到</strong>对应分类的<strong>某个或某几个圆圈</strong>为止，如图3所示。</li>
-</ol>
+<p>利用上述的思想，重复第二步操作便可得下图结果，即左边从 4 开始向右走，不断累加到 5 便停止，最终得到的 6 便是该阶段所能获得的最大子列和；而右边因为是从 -1 开始的，当值不大于 0 时，我们不考虑，因此从 2 开始向右走， 不断累加到6便停止，最终得到的 8 便是该阶段所能得到的最大子列和，将其与左边的进行比较，保留较大的值即可。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/Image002.png">
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 95px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img3.png">
     <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">图 3、平移1号线</div>
 </center>
 
-<ol start="2">
-<li>其次，我们对1号线做<strong>性能指标</strong>，即1号线到其平移后得出的两条虚线的距离（也就是图4中的d），而这个1号线是使这个<strong>距离d</strong>最大的一条线。</li>
-</ol>
+<p>通过不断的回溯，最终我们需要考虑的一个跨越边界的问题，即左右两边的值相加是否能得到一个更大的值。如下图所示，从 -2 开始，一直累加到 4 为止，此时我们便能得到左侧的最大值，而从 -1 开始，一直累加到 6 为止，此时我们便能得到右侧的最大值，将它们相加与之前得到的左右两边的最大值比较，其中较大的值便是我们所求问题的答案。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/Image003.png">
+    <img style="border-radius: 0.3125em; margin-top: 10px; margin-bottom: 15px; width: 400px; height: 110px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/maxSubSeqSum-img4.png">
     <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">图 4、对1号线做性能指标</div>
 </center>
 
-<ol start="3">
-<li>最后，当<strong>线的斜率</strong>一样时，即我们平移1号线后所得出的所有线，也能得到这个最大距离的值d，那么哪条才是我们需要的呢？因此，这里我们需要对1号线做一个<strong>限制</strong>，那就是一号线到其两条虚线的<strong>距离相等</strong>，这样得出来的线才是最优的。</li>
-</ol>
-<h3 id="线性模型的数学描述"><a href="#线性模型的数学描述" class="headerlink" title="线性模型的数学描述"></a>线性模型的数学描述</h3><h4 id="数学定义"><a href="#数学定义" class="headerlink" title="数学定义"></a>数学定义</h4><ol>
-<li>d：间隔(margin)，即上面提到的距离。</li>
-<li>支持向量(Support Vectors): 平行线插到的向量。</li>
-<li>训练数据及标签：$$ (x_1, y_1), (x_2, y_2), (x_3, y_3)……(x_n, y_n) $$<br>其中，<strong>x</strong>代表上面图中所描绘圆圈在坐标中的<strong>位置</strong>，即<strong>向量</strong>；<strong>y</strong>代表<strong>标签</strong>，以上述问题为例，数据样本集中只有两种分类，因此y只能<strong>表示为+1或-1</strong>。</li>
-<li>线性模型：<br>I. 超平面的参数：<strong>( 𝜔, b )</strong><br>II. 超平面(Hyper plane)的线性函数: $$ \omega^T * X + b = 0 $$<br>这里的ω也是一个<strong>向量</strong>，其<strong>维度与x相同</strong>，而b是一个<strong>常数</strong>。</li>
-<li>训练集线性可分的定义：<br> 对于所有的训练样本 $$ {(x_i, y_i)}_{i\in[1, n]} $$<br> 都 ∃ ( 𝜔, b ) ，使：<br> $$ 对\ \ \forall i \in [1, n]， $$<br> 有以下情况：<br> $$ I. 若\ \ y_i = +1，则\omega^T * x_i \geq 0 $$<br> $$ II. 若\ \ y_i = -1， 则\omega^T * x_i &lt; 0 $$<br> 因此，我们最终可得到一个公式：<br> $$ y_i[\omega^T * x_i + b] &gt;= 0 …………(公式1) $$</li>
-</ol>
-<h3 id="未完-有空再补上"><a href="#未完-有空再补上" class="headerlink" title="未完 有空再补上"></a>未完 有空再补上</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int l, int r) &#123;</span><br><span class="line">    &#x2F;&#x2F; 当分割到只剩下标0的元素时，</span><br><span class="line">    &#x2F;&#x2F; 判断其是否大于0，如果大于0的话就保留其值并返回，否则返回0</span><br><span class="line">    if (l &#x3D;&#x3D; r)</span><br><span class="line">        if (A[l] &gt; 0)</span><br><span class="line">            return A[l];</span><br><span class="line">        else</span><br><span class="line">            return 0;</span><br><span class="line"></span><br><span class="line">    int mid &#x3D; (l + r) &#x2F; 2;</span><br><span class="line">    &#x2F;&#x2F; 获取每个阶段左右两边的最大值</span><br><span class="line">    int maxLeftSum &#x3D; maxSubSeqSum3(A, l, mid);</span><br><span class="line">    int maxRightSum &#x3D; maxSubSeqSum3(A, mid + 1, r);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 计算左边子序列和的最大值</span><br><span class="line">    int maxLeftBorderSum &#x3D; 0, leftBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid; i &gt;&#x3D; l; --i) &#123;</span><br><span class="line">        leftBorderSum +&#x3D; A[i];</span><br><span class="line">        if (leftBorderSum &gt; maxLeftBorderSum)</span><br><span class="line">            maxLeftBorderSum &#x3D; leftBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 计算右边子序列和的最大值</span><br><span class="line">    int maxRightBorderSum &#x3D; 0, rightBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid + 1; i &lt;&#x3D; r; ++i) &#123;</span><br><span class="line">        rightBorderSum +&#x3D; A[i];</span><br><span class="line">        if (rightBorderSum &gt; maxRightBorderSum)</span><br><span class="line">            maxRightBorderSum &#x3D; rightBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return max(maxLeftSum, </span><br><span class="line">            max(maxRightSum, </span><br><span class="line">                maxLeftBorderSum + maxRightBorderSum));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
       <!-- 打赏 -->
       
@@ -176,11 +154,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/07/support-vector-vachine/" data-id="ck6nfsd480000byz5465ve1qd"
+      <a data-url="https://www.zioang.fun/2020/02/15/maxSubSeqSum/" data-id="ck6nfsd4j0006byz5fsnt944g"
         class="article-share-link">分享</a>
         
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" rel="tag">支持向量机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E6%B2%BB/" rel="tag">分治</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li></ul>
 
     </footer>
 
@@ -190,19 +168,10 @@
   
   <nav class="article-nav">
     
+    
       <a href="/2020/02/13/mac-vscode-c++/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            vscode搭建c/c++调试环境(MacOS)
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2020/02/06/zioang-blog/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">使用Hexo与GitHub Pages来搭建个人博客</div>
+        <div class="article-nav-title">vscode搭建c/c++调试环境(MacOS)</div>
       </a>
     
   </nav>
