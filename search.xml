@@ -46,10 +46,12 @@
 
 ]]></content>
       <categories>
-        <category>-[C++] -[数据结构与算法]</category>
+        <category>C++</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
-        <tag>-[分治] -[动态规划]</tag>
+        <tag>分治</tag>
+        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -126,10 +128,11 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;以上就是在Mac OS上使用vscode配置C++/C语言的开发环境。后期可以根据自己的需求，去修改配置文件对应的选项，并对vscode进行一些个性化修改就是了。经过一段时间使用，vscode在日常使用来讲，给我的感觉远比使用IDE来的舒适，因此希望你也会喜欢。</p>
 ]]></content>
       <categories>
-        <category>-[日常折腾] -[C++]</category>
+        <category>日常折腾</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>-[vscode]</tag>
+        <tag>vscode</tag>
       </tags>
   </entry>
   <entry>
@@ -200,10 +203,11 @@
 </ol>
 <h3 id="未完-有空再补上"><a href="#未完-有空再补上" class="headerlink" title="未完 有空再补上"></a>未完 有空再补上</h3>]]></content>
       <categories>
-        <category>-[机器学习]</category>
+        <category>机器学习</category>
       </categories>
       <tags>
-        <tag>-[笔记] -[支持向量机]</tag>
+        <tag>笔记</tag>
+        <tag>支持向量机</tag>
       </tags>
   </entry>
   <entry>
@@ -306,10 +310,10 @@
     <p style=" line-height: 20px; font-size: 16px; color: black; font-family: Hiragino Sans GB, WenQuanYi Micro Hei;">项目地址</p>
 </a>]]></content>
       <categories>
-        <category>-[日常折腾]</category>
+        <category>日常折腾</category>
       </categories>
       <tags>
-        <tag>-[博客相关]</tag>
+        <tag>博客相关</tag>
       </tags>
   </entry>
 </search>
