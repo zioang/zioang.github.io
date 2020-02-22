@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>白嫖教育版 Microsoft Office 365</title>
+    <url>/2020/02/23/microsoft-office/</url>
+    <content><![CDATA[<p>&emsp;&emsp;记录下白嫖教育版 <strong>Microsoft Office 365</strong> 的经过，方便以后如果遗忘掉，在换新机或者重装后需要再找攻略。此方法是通过教育邮箱了获取教育版的Office 365，因此该方法的优势在于只要主账号不过期，那么子账号其实是可以一直用下去的，相当于永久账号了（一次注册，永久使用。</p>
+<a id="more"></a>
+
+<h3 id="第一步：-获取临时邮箱"><a href="#第一步：-获取临时邮箱" class="headerlink" title="第一步： 获取临时邮箱"></a>第一步： 获取临时邮箱</h3><p>&emsp;&emsp;首先，我们注册教育邮箱前，需要去获取个临时的邮箱来接受验证码。这里我是去<a href="http://24mail.chacuo.net/" target="_blank" rel="noopener">查错网</a>，生成了一个临时邮箱ID，你可以用自己创建的ID，也可以用站方随机生成的ID。如下图所示，在临时邮箱ID那个框框中，自定义一个自己的ID后，点击下设置邮箱即可。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img1.png">
+    <br>
+</center>
+
+<h3 id="第二部：注册-Office-365-教育版账号"><a href="#第二部：注册-Office-365-教育版账号" class="headerlink" title="第二部：注册 Office 365 教育版账号"></a>第二部：注册 Office 365 教育版账号</h3><p>&emsp;&emsp;首先，打开<strong>Office 365 教育版</strong>的<a href="https://signup.microsoft.com/signup?sku=faculty" target="_blank" rel="noopener">注册网页</a>。然后，在该网页中，你可以看见官方要求输入<strong>学校电子邮件地址</strong>的框框，这里你需要用到你在第一步申请的<strong>临时邮箱ID</strong>，例如：我在第一步中申请的临时邮箱ID - <strong>beqnlp82370</strong>。有了临时邮箱ID后，你只需在ID后跟 <strong>@stu.mao.office.gy</strong>，即 <strong><a href="mailto:beqnlp82370@stu.mao.office.gy">beqnlp82370@stu.mao.office.gy</a></strong>（这里的邮箱ID换成你自己的）。最后到达用户信息界面，如下图所示。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 500px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img2.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;这里面，最重要的是这个验证码的，其他随意。验证码会发送到下图这里，大概需要五分钟以上才会接受到，因此在五分钟后，你可以时刻查看下当前的邮件数量，如果邮件数量不是0，而又页面中没有显示邮件时，刷新当前页面即可（这部分耗时最长，建议耐心等待下，我是等了快15分钟才收到注册码的。如果第一个五分钟没有收到验证码，建议重新发送注册码，然后再耐心等待，如还不行，可尝试换个临时邮箱ID）。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img3.png">
+    <br>
+</center>
+
+<h3 id="第三步：访问面板组"><a href="#第三步：访问面板组" class="headerlink" title="第三步：访问面板组"></a>第三步：访问面板组</h3><p>&emsp;&emsp;首先进入<a href="https://account.activedirectory.windowsazure.com/r#/groups" target="_blank" rel="noopener">面板组</a>，然后找到<strong>我加入的组</strong>这一栏，你会发现当前<strong>我加入的组</strong>为空，此时你就需要点击<strong>加入组</strong>，找到<strong>Office 365</strong>这个组，点击加入组，在弹出来的框中任意输入提交即可，管理员会自动审核通知，因此你会秒进组。操作到这一步，你就已经完成的差不多了。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img4.png">
+    <br>
+</center>
+
+<h3 id="第四步：下载-Office-365"><a href="#第四步：下载-Office-365" class="headerlink" title="第四步：下载 Office 365"></a>第四步：下载 Office 365</h3><p>&emsp;&emsp;打开 Office 365 的<a href="https://signup.microsoft.com/" target="_blank" rel="noopener">登录网址</a>，输入你之前注册的账号密码后，他会跳转到绑定手机号的页面，如下图所示。你可以绑定，也可以不绑定（点击取消即可），不绑定的话，你每次登录都可能会重定向到该页面，这里看个人喜好吧。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img5.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;之后，进入 Office 365 的主页，下载安装自己需要的应用。安装好后，登录自己的教育邮箱账号便可以安心使用了。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img6.png">
+    <br>
+</center>
+
+
+<h3 id="注意事项-一定要看"><a href="#注意事项-一定要看" class="headerlink" title="注意事项(一定要看)"></a>注意事项(一定要看)</h3><p>&emsp;&emsp;因为用的是教育邮箱，主账号(即管理员账号)是可以看到<strong>所有人</strong>的 <strong>OneDrive</strong> 内容的，因此千万不要往该账号的 OneDrive 中上传个人资料，以免造成不可挽回的损失。你可以将 OneDrive 账号替换成个人私用的，这样的话，就可避免上述问题。</p>
+]]></content>
+      <categories>
+        <category>日常折腾</category>
+      </categories>
+      <tags>
+        <tag>office</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>最大子序列和</title>
     <url>/2020/02/15/maxSubSeqSum/</url>
     <content><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>给定一个包含N个整数的序列：$$ {A_1, A_2, A_3……A_N}， $$ 求该序列中的子序列的最大和，即：$$ sum = max(0, \sum_j^{k=i}A_k) $$</p>
