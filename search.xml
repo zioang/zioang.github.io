@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JetBrains 第一次赏金任务(白嫖三个月激活码)</title>
+    <url>/2020/03/11/jetbrains-quest-first-prize/</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>&emsp;&emsp;今天下午突然收到朋友发来一个链接，是<strong>JetBrains</strong>公司发的一条<a href="https://twitter.com/jetbrains/status/1236986174075482113" target="_blank" rel="noopener">推特</a>。一开始我还是云里雾里的，结果后面听朋友讲，是JetBrains公司发起的一个小活动，可以白嫖三个月激活码。虽然我自己用的是学生账号，并不需要激活码，但是闲着无聊，还是去参加了这个小活动，其实还挺有意思的(可以看成是一个小型CTF比赛吧,2333。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311180319.png">
+    <br>
+</center>
+
+<a id="more"></a>
+
+<h3 id="解谜"><a href="#解谜" class="headerlink" title="解谜"></a>解谜</h3><p>&emsp;&emsp;整个活动由好几个谜题构成，下面我们就一个一个谜题展开来慢慢叙述吧。</p>
+<h4 id="第一个谜题"><a href="#第一个谜题" class="headerlink" title="第一个谜题"></a>第一个谜题</h4><p>&emsp;&emsp;第一个谜题其实就是解出上面推特中的隐藏信息。相信稍微了解<strong>CTF</strong>内容的人，都能很快的猜到，这串数字肯定是能转译成文字的（要不然根本没法往下面解啊。于是，我试了下将其翻译成<strong>ascii</strong>，结果还真一次就过了（随便搜一个十六进制转ascii码的网站就行了）。于是，我们便有了下一步的思路，那便是线索就在官网的代码中。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311181101.png">
+    <br>
+</center>
+
+<h4 id="第二个谜题"><a href="#第二个谜题" class="headerlink" title="第二个谜题"></a>第二个谜题</h4><p>&emsp;&emsp;前往下一个阶段的线索，就出在 JetBrains 官网的源码中。首先，我们进入 <a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains 官网首页</a>，然后右键获取网页的源代码。当你看到源码的时候，肯定会一脸头疼，毕竟你要从中找到一个还不知道是什么的线索。但是，可能是官方也并不想游戏难度太大，只要你有足够的耐心，慢慢往下找，你会很快就找到谜题二的答案。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311181949.png">
+    <br>
+</center>
+
+<h4 id="第三个谜题"><a href="#第三个谜题" class="headerlink" title="第三个谜题"></a>第三个谜题</h4><p>&emsp;&emsp;从上图我圈出来的文字中可以得知，JetBrains有很多产品，但是在他们的 “ 产品 “ 页面上有一个看起来像个玩笑，我们需要找到它，而且他们还提醒，使用<strong>chrome的隐身模式</strong>。于是，我们打开隐身模式，进入到<a href="https://www.jetbrains.com/products.html" target="_blank" rel="noopener">产品页面</a>。在众多产品中，我们可以发现这么一个异类(下图中我已圈出)。为什么这么讲呢，因为大家可以观察其他产品都会介绍该产品是干什么的，而只有<strong>JK</strong>这个应用，只有<strong>Dare to learn more</strong>这行字，而JK这两个字容易让人联想到<strong>Joke</strong>这个词，因此我们尝试的去点击下它，获取到了前往下一阶段的线索。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311182540.png">
+    <br>
+</center>
+
+<h4 id="第四个谜题"><a href="#第四个谜题" class="headerlink" title="第四个谜题"></a>第四个谜题</h4><p>&emsp;&emsp;前三个谜题，都可谓没什么难度，但是最后几个就开始稍微有点意思了。第四个的问题，就在点击<strong>JK</strong>产品后弹出的信息框中。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311183212.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;由内容可知，他们给出了一个链接（ <a href="https://jb.gg/###" target="_blank" rel="noopener">https://jb.gg/###</a> ），但是该链接目前有三位数字不知道。而我们的任务就是解答出他下面的问题：500 - 5000之间的<strong>质数</strong>有多少个。这里，我用欧拉筛快速查了遍，于是<a href="https://jb.gg/574" target="_blank" rel="noopener">前往第五个谜题的线索</a>就有了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int MAXN &#x3D; 10000000 + 5;</span><br><span class="line"></span><br><span class="line">int book[MAXN], vis[MAXN];</span><br><span class="line"></span><br><span class="line">void find(int num) &#123;</span><br><span class="line">    int ct &#x3D; 1;</span><br><span class="line">    book[1] &#x3D; 2;</span><br><span class="line">    vis[1] &#x3D; 1;</span><br><span class="line">    for (int i &#x3D; 2; i &lt;&#x3D; num; i++) &#123;</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            book[ct++] &#x3D; i;</span><br><span class="line">        for (int j &#x3D; 1; j &lt;&#x3D; ct &amp;&amp; i * book[j] &lt;&#x3D; num; j++) &#123;</span><br><span class="line">            vis[i * book[j]] &#x3D; 1;</span><br><span class="line">            if (i % book[j] &#x3D;&#x3D; 0)</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    find(5000);</span><br><span class="line">    int cnt &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; 500; i &lt;&#x3D; 5000; ++i)</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            ++cnt;</span><br><span class="line">    cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第五个谜题"><a href="#第五个谜题" class="headerlink" title="第五个谜题"></a>第五个谜题</h4><p>&emsp;&emsp;这个谜题其实我是没有解出来，是特意去查了下的，因为该阶段需要你比较了解<strong>JetBrains</strong>的产品内容，而我对于 JetBrains 并不熟悉，只用过几款产品罢了。 </p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 500px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311184027.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;即便是像我这种不熟悉的人，也能知道谜底肯定与<strong>YT</strong>这款产品有关。但是，也仅此而已。因此我去查了查图里那串字符到底是什么意思，还真让我搜到了。<br>&emsp;&emsp;图中<strong>YT</strong>那个Logo其实是YouTrack在JebBrains网站的问题区。知道这个后，那么下面那串字符也就很容易知道是什么了，那当然就是问题的编号咯。于是，我们得到了第五个谜题的<a href="https://youtrack.jetbrains.com/issue/MPS-31816" target="_blank" rel="noopener">答案</a></p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311185056.png">
+    <br>
+</center>
+
+<h4 id="第六个谜题"><a href="#第六个谜题" class="headerlink" title="第六个谜题"></a>第六个谜题</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Qlfh$#Li#|rx#duh#uhdglqj#wklv#|rx#pxvw#kdyh#zrunhg#rxw#krz#wr#ghfu|sw#lw1#Wklv#lv#rxu#lvvxh#wudfnhu#ghvljqhg#iru#djloh#whdpv1#Lw#lv#iuhh#iru#xs#wr#6#xvhuv#lq#Forxg#dqg#iru#43#xvhuv#lq#Vwdqgdorqh&#x2F;#vr#li#|rx#zdqw#wr#jlyh#lw#d#jr#lq#|rxu#whdp#wkhq#zh#wrwdoo|#uhfrpphqg#lw1#|rx#kdyh#ilqlvkhg#wkh#iluvw#Txhvw&#x2F;#qrz#lw“v#wlph#wr#uhghhp#|rxu#iluvw#sul&#125;h1#Wkh#frgh#iru#wkh#iluvw#txhvw#lv#‟WkhGulyhWrGhyhors†1#Jr#wr#wkh#Txhvw#Sdjh#dqg#xvh#wkh#frgh#wr#fodlp#|rxu#sul&#125;h1#kwwsv&#x3D;22zzz1mhweudlqv1frp2surpr2txhvw2</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在这个谜题里，官方告诉我们解题的关键便是要重新去思考。看到这，官方在谜题二中挖的一个坑在便被填上了。大家可以在看看谜题二中那篇文的最后一段。下图我已用红色圈出来了，这里有个key：<strong>Good luck! == Jrrg#oxfn$</strong>，而这个key就是我们解这题的关键。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311185916.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;观察<strong>Good luck! == Jrrg#oxfn$</strong>这个字符串，我们可以发现它是一个等式，这便意味着我们解题的关键就在于为什么它们会相等。稍微思考片刻，我发现了一个疑点：<strong>oo</strong> –&gt; <strong>rr</strong>。凭此，我初步怀疑这是一个简单的解密题，而且还是个凯撒码。于是，我尝试着在草稿纸上模拟移位了下，发现确实如此。由此，我们就能很快的去解码官方给的那串字符了。这里我用C++简单模拟了下，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    string str &#x3D; &quot;&quot;;&#x2F;&#x2F; 这里放官方那串字符</span><br><span class="line">    for (int i &#x3D; 0; i &lt; str.length(); ++i) &#123;</span><br><span class="line">        char c &#x3D; str[i];</span><br><span class="line">        if (isalpha(c)) &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if ((c &gt;&#x3D; 62 &amp;&amp; c &lt; 65) || (c &gt; 94 &amp;&amp; c &lt; 97))</span><br><span class="line">                c +&#x3D; 26;</span><br><span class="line">            else if ((c &gt; 90 &amp;&amp; c &lt;&#x3D; 93) || (c &gt; 122 &amp;&amp; c &lt;&#x3D; 125))</span><br><span class="line">                c -&#x3D; 26;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if (isalpha(c))</span><br><span class="line">                c &#x3D; toupper(c);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        str[i] &#x3D; c;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;运行程序后，我们便完成了本次活动。从运行结果中，我们可以获得本次活动的密钥以及<a href="https://www.jetbrains.com/promo/quest/" target="_blank" rel="noopener">激活的地址</a>。这里为了保留点乐趣，我把密钥打码了，大家可以自己试试。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311191201.png">
+    <br>
+</center>
+
+<h3 id="领取活动奖品"><a href="#领取活动奖品" class="headerlink" title="领取活动奖品"></a>领取活动奖品</h3><p>&emsp;&emsp;打开之前获得的网址，在里面输入自己的邮箱以及刚获取到的密钥，当成功跳转到含有下面图片内容的页面时，你就成功领取到密钥了。只需稍等片刻，然后进入自己所填的邮箱找到<strong>JetBrains</strong>给你发的邮件，里面就包含了三个月的激活码。如果没看见，建议去垃圾邮件里看看。（我用的网易邮箱竟然直接把它收到垃圾邮件里去了，亏我还等了很久，因为出bug了。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311191555.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;最后，下面给出我收到的含有三个月激活码的邮件。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311192018.png">
+    <br>
+</center>]]></content>
+      <categories>
+        <category>日常折腾</category>
+      </categories>
+      <tags>
+        <tag>白嫖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS Catalina 10.15版本下使用Parallels 15导致电脑无声音问题</title>
     <url>/2020/03/10/parallels-voice-problem/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑音乐播放时正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐是能正常播放的，但是却没办法输出，令人甚是头疼。</p>
@@ -103,7 +199,7 @@
         <category>日常折腾</category>
       </categories>
       <tags>
-        <tag>office</tag>
+        <tag>白嫖</tag>
       </tags>
   </entry>
   <entry>
