@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">674字</span>
+            <span class="post-count">672字</span>
         </span>
     </span>
 
@@ -103,11 +103,11 @@
       
 
       
-      <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑音乐播放时正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐是能正常播放的，但是却没办法输出，令人甚是头疼。</p>
+      <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑声音输出是正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐在后台是在正常播放的，但是却没办法输出，令人甚是头疼。</p>
 <a id="more"></a>
 
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>&emsp;&emsp;为了解决这个问题，我查找了挺多信息，找到了三种解决方法（确切的说时两种，因为前两种方法其实时一样的），但是却还是没整明白问题处在哪里。</p>
-<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>&emsp;&emsp;第一种方法就是打开电脑的<strong>Activity Monitor</strong>，然后找到<strong>coreaudiod</strong>这个进程（它是MacOS的核心音频进程），找到后将其结束即可，它在被你结束进程后，当你再次播放音乐时会自动启动。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>&emsp;&emsp;为了解决这个问题，我查找了挺多信息，找到了三种解决方法（确切的说是两种，因为前两种方法其实是一样的），但是却还是没整明白问题处在哪里。</p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>&emsp;&emsp;第一种方法就是打开电脑的<strong>Activity Monitor</strong>，然后找到<strong>coreaudiod</strong>这个进程（它是MacOS的核心音频进程），找到后将其结束即可，它在被你结束进程后，将会自动启动。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200310201311.png">
@@ -115,8 +115,8 @@
 </center>
 
 <h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>&emsp;&emsp;第二种方法其实就是第一种方法的简化版本，它们的原理其实都是一样的，都是结束<strong>coreaudiod</strong>这个进程。首先你需要打开你的终端，然后输入：<code>sudo killall coreaudiod</code> 即可。该方法十分便捷，你可以把这个命令写成一个脚本，遇到问题时直接执行就可以了。</p>
-<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>&emsp;&emsp;第三种方法可以说是一劳永逸的方法（我使用了一段时间，暂时没有再出现过问题）。该方法是我在<strong>Parallels</strong>官方论坛中发现的，在论坛中可以看见，有许多人都遇到了这个问题，因此看起来可能是兼容的问题？？？有兴趣的人可以浏览<a href="https://forum.parallels.com/threads/when-a-vm-starts-earpods-stops-functioning.348837/#post-862582" target="_blank" rel="noopener">链接 1 🔗</a>中的#21楼回复和<a href="https://forum.parallels.com/threads/no-sound-at-catalina-10-15-2-parallels-desktop-15-1-2-for-mac.349141/page-2" target="_blank" rel="noopener">链接 2 🔗</a>中的#18楼的回复。</p>
-<p>&emsp;&emsp;下面，我将描述该如何去解决这个问题。</p>
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>&emsp;&emsp;第三种方法可以说是一劳永逸的方法（至少在我使用的这段时间，暂时没有再出现过问题）。该方法是我在<strong>Parallels</strong>官方论坛中发现的，在论坛中可以看见，有许多人都遇到了这个问题，因此看起来可能是兼容的问题？？？有兴趣的人可以浏览<a href="https://forum.parallels.com/threads/when-a-vm-starts-earpods-stops-functioning.348837/#post-862582" target="_blank" rel="noopener">链接 1 🔗</a>中的#21楼回复和<a href="https://forum.parallels.com/threads/no-sound-at-catalina-10-15-2-parallels-desktop-15-1-2-for-mac.349141/page-2" target="_blank" rel="noopener">链接 2 🔗</a>中的#18楼的回复。</p>
+<p>&emsp;&emsp;下面，我将描述该如何去解决这个问题：</p>
 <p>I、首先，<strong>shut down</strong>当前<strong>Parallels 15</strong>所在运行的环境。如果不知道该怎么关机的话，可以看下图。长点对应环境，就会显示操作栏，选中对应选项即可。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/03/10/parallels-voice-problem/" data-id="ck7n8iewf00060dtb235c0vfn"
+      <a data-url="https://www.zioang.fun/2020/03/10/parallels-voice-problem/" data-id="ck7nodg8v00001htba2a485pk"
         class="article-share-link">分享</a>
         
       
