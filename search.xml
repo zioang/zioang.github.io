@@ -1,7 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JetBrains 白嫖三个月激活码活动</title>
+    <title>JetBrains 白嫖三个月激活码活动(二)</title>
+    <url>/2020/03/12/jetbrains-quest-second-prize/</url>
+    <content><![CDATA[<p>&emsp;&emsp;本篇紧跟上篇主题，是<strong>JetBrains</strong>新发布的第二个任务。让我们瞧一瞧新任务所带来了些什么有意思的题目吧。</p>
+<h3 id="解谜"><a href="#解谜" class="headerlink" title="解谜"></a>解谜</h3><h4 id="谜题一"><a href="#谜题一" class="headerlink" title="谜题一"></a>谜题一</h4><p>&emsp;&emsp;在北京时间2020年3月11日19点，JetBrains 公司又在官方推特发布了第二个<a href="https://twitter.com/jetbrains/status/1237694815283879943" target="_blank" rel="noopener">活动线索</a>。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312051510.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;这次与之前不同的是，初看会以为他们竟然是发的是一条莫名其妙的推，但是静下心来仔细观察下，马上就能有思路了，可以说这题比活动一的简单了。为什么这么讲呢？其实观察这条推文，我们可以发现顺着读我们是没办法理解它的意思的，但是一旦我们反着读，那么马上就能知道这条推文所想表达的意思了。于是我就简单的反转了下字符串，得到下图中的信息。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 60px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312052353.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;图中，首先我们可得到第一个线索：<strong>product domain-specific language</strong>，而与这条信息有关的只有MPS这款产品的<a href="https://www.jetbrains.com/mps/" target="_blank" rel="noopener">主页</a>。然后，第二个线索是： <strong>Dutch tax</strong>，虽然我自始自终都没搞懂第二句话是什么意思，但还是靠这个关键字在页面上找到唯一与<strong>Dutch tax</strong>相关的地方，如下图。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312053717.png">
+    <br>
+</center>
+
+<p>而第三个线索(那便是最后一句话)便是: 藏木于林。根据官方的提示，我们可以想到，要隐藏一段文字，那最好的方法便是将其融入背景，于是<strong>Cmd/Ctrl+A</strong>这个小提示便用上了。最后，我们便得到了这么一句话: <strong>This is our 20th year as a company,we have shared numbers in our JetBrains Annual report, sharing the section with 18,650 numbers will progress your quest.</strong></p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312054706.png">
+    <br>
+</center>
+
+<a id="more"></a>
+
+<h3 id="谜题二"><a href="#谜题二" class="headerlink" title="谜题二"></a>谜题二</h3><p>&emsp;&emsp;根据谜题一得到的线索，我们打开google直接搜<strong>JetBrains 2019 Annual Report</strong>，于是得到了谜题二线索所在的页面。根据官方提示，我们得知通往下一关的钥匙肯定与18，650和section分享有关。而该页面唯一与这两个点有联系的，那便是<strong>7th Annual Hackathon</strong>这部分内容。整页只有这块内容是有分享按钮的，且当我们把这部分的数字全部相加时，会发现结果刚好等于18，650。因此，我们便得到了前往谜题三的钥匙：<code>I have found the JetBrains Quest! Sometimes you just need to look closely at the Haskell language, Hello,World! in the hackathon lego brainstorms project https://blog.jetbrains.com/blog/2019/11/22/jetbrains-7th-annual-hackathon/ #JetBrainsQuest https://www.jetbrains.com/company/annualreport/2019/ via @JetBrains</code></p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312060418.png">
+    <br>
+</center>
+
+<h3 id="谜题四"><a href="#谜题四" class="headerlink" title="谜题四"></a>谜题四</h3><p>&emsp;&emsp;谜题四其实十分简单，线索也都在谜题三的答案中给我们了。首先，我们进入谜题三所给的网站，然后找到<strong>lego brainstorms</strong>这部分。观察这部分的内容，我们会发现图片中存在着这样一段文字：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">d1D j00 kN0w J378r41n2 12 4lW4Y2 H1R1N9? ch3CK 0u7 73h K4r33r2 P493 4nD 533 1f 7H3r3 12 4 J08 F0r J00 0R 4 KW357 cH4LL3n93 70 90 fUr7h3r @ l3457.</span><br></pre></td></tr></table></figure>
+<p>这句话其实是英语火星文，翻译过来便是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Did you know Jetbrains is always hiring? Check out the careers page and see if there is a job for you or for quest challenge to go further atleast.</span><br></pre></td></tr></table></figure>
+
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312062210.png">
+    <br>
+</center>
+
+<h3 id="谜题五"><a href="#谜题五" class="headerlink" title="谜题五"></a>谜题五</h3><p>&emsp;&emsp;根据谜底四，我们直接进入 Jetbrains 的 <a href="https://www.jetbrains.com/careers/jobs/" target="_blank" rel="noopener">Job 页面</a>。当我们在Role选项框中选中<strong>any</strong>选项后，便得到了前进的线索。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312063737.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;点击该页面后，在跳转的页面中，我们可以找到通往谜题六的线索，便是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">To progress with your quest what you’ll need:</span><br><span class="line">To check out what we have for game developers.</span><br><span class="line">Be geeky enough to remember how you used to cheat at Konami games.</span><br><span class="line">Try cheating on the page.</span><br></pre></td></tr></table></figure>
+
+<h3 id="谜题六"><a href="#谜题六" class="headerlink" title="谜题六"></a>谜题六</h3><p>&emsp;&emsp;根据提示，我们打开进入谜题六的<a href="https://www.jetbrains.com/gamedev/" target="_blank" rel="noopener">页面</a>。此题的关键在于我们要知道科乐美的作弊码：<strong>↑↑↓↓←→←→BA</strong>(这秘籍应该没人不知道吧。在该页面中完成该秘籍后，会弹出一个弹球小游戏。击碎所有方块后，我们便能得到本次活动的激活码了。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312064750.png">
+    <br>
+</center>
+
+<h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>&emsp;&emsp;Jetbrains 这两个活动都挺有趣的，唯一令人难受的就是，想要能快速完美的解出每个问题，对于个人的英语水平要求真的有点高。反正有几个谜题我是一开始根本就没完全看懂。<br>&emsp;&emsp;最后附上领取成功的截图：</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312065540.png">
+    <br>
+</center>
+]]></content>
+      <categories>
+        <category>日常折腾</category>
+      </categories>
+      <tags>
+        <tag>白嫖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JetBrains 白嫖三个月激活码活动(一)</title>
     <url>/2020/03/11/jetbrains-quest-first-prize/</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>&emsp;&emsp;今天下午突然收到朋友发来一个链接，是<strong>JetBrains</strong>公司发的一条<a href="https://twitter.com/jetbrains/status/1236986174075482113" target="_blank" rel="noopener">推特</a>。一开始我还是云里雾里的，结果后面听朋友讲，是JetBrains公司发起的一个小活动，可以白嫖三个月激活码。虽然我自己用的是学生账号，并不需要激活码，但是闲着无聊，还是去参加了这个小活动，其实还挺有意思的(可以看成是一个小型CTF比赛吧,2333。</p>
 <center>
@@ -13,28 +96,28 @@
 <a id="more"></a>
 
 <h3 id="解谜"><a href="#解谜" class="headerlink" title="解谜"></a>解谜</h3><p>&emsp;&emsp;整个活动由好几个谜题构成，下面我们就一个一个谜题展开来慢慢叙述吧。</p>
-<h4 id="第一个谜题"><a href="#第一个谜题" class="headerlink" title="第一个谜题"></a>第一个谜题</h4><p>&emsp;&emsp;第一个谜题其实就是解出上面推特中的隐藏信息。相信稍微了解<strong>CTF</strong>内容的人，都能很快的猜到，这串数字肯定是能转译成文字的（要不然根本没法往下面解啊。于是，我试了下将其翻译成<strong>ascii</strong>，结果还真一次就过了（随便搜一个十六进制转ascii码的网站就行了）。于是，我们便有了下一步的思路，那便是线索就在官网的代码中。</p>
+<h4 id="谜题一"><a href="#谜题一" class="headerlink" title="谜题一"></a>谜题一</h4><p>&emsp;&emsp;第一个谜题其实就是解出上面推特中的隐藏信息。相信稍微了解<strong>CTF</strong>内容的人，都能很快的猜到，这串数字肯定是能转译成文字的（要不然根本没法往下面解啊。于是，我试了下将其翻译成<strong>ascii</strong>，结果还真一次就过了（随便搜一个十六进制转ascii码的网站就行了）。于是，我们便有了下一步的思路，那便是线索就在官网的代码中。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311181101.png">
     <br>
 </center>
 
-<h4 id="第二个谜题"><a href="#第二个谜题" class="headerlink" title="第二个谜题"></a>第二个谜题</h4><p>&emsp;&emsp;前往下一个阶段的线索，就出在 JetBrains 官网的源码中。首先，我们进入 <a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains 官网首页</a>，然后右键获取网页的源代码。当你看到源码的时候，肯定会一脸头疼，毕竟你要从中找到一个还不知道是什么的线索。但是，可能是官方也并不想游戏难度太大，只要你有足够的耐心，慢慢往下找，你会很快就找到谜题二的答案。</p>
+<h4 id="谜题二"><a href="#谜题二" class="headerlink" title="谜题二"></a>谜题二</h4><p>&emsp;&emsp;前往下一个阶段的线索，就出在 JetBrains 官网的源码中。首先，我们进入 <a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains 官网首页</a>，然后右键获取网页的源代码。当你看到源码的时候，肯定会一脸头疼，毕竟你要从中找到一个还不知道是什么的线索。但是，可能是官方也并不想游戏难度太大，只要你有足够的耐心，慢慢往下找，你会很快就找到谜题二的答案。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311181949.png">
     <br>
 </center>
 
-<h4 id="第三个谜题"><a href="#第三个谜题" class="headerlink" title="第三个谜题"></a>第三个谜题</h4><p>&emsp;&emsp;从上图我圈出来的文字中可以得知，JetBrains有很多产品，但是在他们的 “ 产品 “ 页面上有一个看起来像个玩笑，我们需要找到它，而且他们还提醒，使用<strong>chrome的隐身模式</strong>。于是，我们打开隐身模式，进入到<a href="https://www.jetbrains.com/products.html" target="_blank" rel="noopener">产品页面</a>。在众多产品中，我们可以发现这么一个异类(下图中我已圈出)。为什么这么讲呢，因为大家可以观察其他产品都会介绍该产品是干什么的，而只有<strong>JK</strong>这个应用，只有<strong>Dare to learn more</strong>这行字，而JK这两个字容易让人联想到<strong>Joke</strong>这个词，因此我们尝试的去点击下它，获取到了前往下一阶段的线索。</p>
+<h4 id="谜题三"><a href="#谜题三" class="headerlink" title="谜题三"></a>谜题三</h4><p>&emsp;&emsp;从上图我圈出来的文字中可以得知，JetBrains有很多产品，但是在他们的 “ 产品 “ 页面上有一个看起来像个玩笑，我们需要找到它，而且他们还提醒，使用<strong>chrome的隐身模式</strong>。于是，我们打开隐身模式，进入到<a href="https://www.jetbrains.com/products.html" target="_blank" rel="noopener">产品页面</a>。在众多产品中，我们可以发现这么一个异类(下图中我已圈出)。为什么这么讲呢，因为大家可以观察其他产品都会介绍该产品是干什么的，而只有<strong>JK</strong>这个应用，只有<strong>Dare to learn more</strong>这行字，而JK这两个字容易让人联想到<strong>Joke</strong>这个词，因此我们尝试的去点击下它，获取到了前往下一阶段的线索。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311182540.png">
     <br>
 </center>
 
-<h4 id="第四个谜题"><a href="#第四个谜题" class="headerlink" title="第四个谜题"></a>第四个谜题</h4><p>&emsp;&emsp;前三个谜题，都可谓没什么难度，但是最后几个就开始稍微有点意思了。第四个的问题，就在点击<strong>JK</strong>产品后弹出的信息框中。</p>
+<h4 id="谜题四"><a href="#谜题四" class="headerlink" title="谜题四"></a>谜题四</h4><p>&emsp;&emsp;前三个谜题，都可谓没什么难度，但是最后几个就开始稍微有点意思了。第四个的问题，就在点击<strong>JK</strong>产品后弹出的信息框中。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311183212.png">
@@ -44,7 +127,7 @@
 <p>&emsp;&emsp;由内容可知，他们给出了一个链接（ <a href="https://jb.gg/###" target="_blank" rel="noopener">https://jb.gg/###</a> ），但是该链接目前有三位数字不知道。而我们的任务就是解答出他下面的问题：500 - 5000之间的<strong>质数</strong>有多少个。这里，我用欧拉筛快速查了遍，于是<a href="https://jb.gg/574" target="_blank" rel="noopener">前往第五个谜题的线索</a>就有了。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int MAXN &#x3D; 10000000 + 5;</span><br><span class="line"></span><br><span class="line">int book[MAXN], vis[MAXN];</span><br><span class="line"></span><br><span class="line">void find(int num) &#123;</span><br><span class="line">    int ct &#x3D; 1;</span><br><span class="line">    book[1] &#x3D; 2;</span><br><span class="line">    vis[1] &#x3D; 1;</span><br><span class="line">    for (int i &#x3D; 2; i &lt;&#x3D; num; i++) &#123;</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            book[ct++] &#x3D; i;</span><br><span class="line">        for (int j &#x3D; 1; j &lt;&#x3D; ct &amp;&amp; i * book[j] &lt;&#x3D; num; j++) &#123;</span><br><span class="line">            vis[i * book[j]] &#x3D; 1;</span><br><span class="line">            if (i % book[j] &#x3D;&#x3D; 0)</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    find(5000);</span><br><span class="line">    int cnt &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; 500; i &lt;&#x3D; 5000; ++i)</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            ++cnt;</span><br><span class="line">    cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="第五个谜题"><a href="#第五个谜题" class="headerlink" title="第五个谜题"></a>第五个谜题</h4><p>&emsp;&emsp;这个谜题其实我是没有解出来，是特意去查了下的，因为该阶段需要你比较了解<strong>JetBrains</strong>的产品内容，而我对于 JetBrains 并不熟悉，只用过几款产品罢了。 </p>
+<h4 id="谜题五"><a href="#谜题五" class="headerlink" title="谜题五"></a>谜题五</h4><p>&emsp;&emsp;这个谜题其实我是没有解出来，是特意去查了下的，因为该阶段需要你比较了解<strong>JetBrains</strong>的产品内容，而我对于 JetBrains 并不熟悉，只用过几款产品罢了。 </p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 500px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311184027.png">
@@ -58,7 +141,7 @@
     <br>
 </center>
 
-<h4 id="第六个谜题"><a href="#第六个谜题" class="headerlink" title="第六个谜题"></a>第六个谜题</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：</p>
+<h4 id="谜题六"><a href="#谜题六" class="headerlink" title="谜题六"></a>谜题六</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Qlfh$#Li#|rx#duh#uhdglqj#wklv#|rx#pxvw#kdyh#zrunhg#rxw#krz#wr#ghfu|sw#lw1#Wklv#lv#rxu#lvvxh#wudfnhu#ghvljqhg#iru#djloh#whdpv1#Lw#lv#iuhh#iru#xs#wr#6#xvhuv#lq#Forxg#dqg#iru#43#xvhuv#lq#Vwdqgdorqh&#x2F;#vr#li#|rx#zdqw#wr#jlyh#lw#d#jr#lq#|rxu#whdp#wkhq#zh#wrwdoo|#uhfrpphqg#lw1#|rx#kdyh#ilqlvkhg#wkh#iluvw#Txhvw&#x2F;#qrz#lw“v#wlph#wr#uhghhp#|rxu#iluvw#sul&#125;h1#Wkh#frgh#iru#wkh#iluvw#txhvw#lv#‟WkhGulyhWrGhyhors†1#Jr#wr#wkh#Txhvw#Sdjh#dqg#xvh#wkh#frgh#wr#fodlp#|rxu#sul&#125;h1#kwwsv&#x3D;22zzz1mhweudlqv1frp2surpr2txhvw2</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;在这个谜题里，官方告诉我们解题的关键便是要重新去思考。看到这，官方在谜题二中挖的一个坑在便被填上了。大家可以在看看谜题二中那篇文的最后一段。下图我已用红色圈出来了，这里有个key：<strong>Good luck! == Jrrg#oxfn$</strong>，而这个key就是我们解这题的关键。</p>
 <center>
@@ -140,8 +223,8 @@
         <category>日常折腾</category>
       </categories>
       <tags>
-        <tag>parallels</tag>
         <tag>macOS</tag>
+        <tag>parallels</tag>
       </tags>
   </entry>
   <entry>
@@ -332,12 +415,12 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;以上就是在Mac OS上使用vscode配置C++/C语言的开发环境。后期可以根据自己的需求，去修改配置文件对应的选项，并对vscode进行一些个性化修改就是了。经过一段时间使用，vscode在日常使用来讲，给我的感觉远比使用IDE来的舒适，因此希望你也会喜欢。</p>
 ]]></content>
       <categories>
-        <category>日常折腾</category>
         <category>C++</category>
+        <category>日常折腾</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
         <tag>vscode</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
