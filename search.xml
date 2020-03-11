@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JetBrains 第一次赏金任务(白嫖三个月激活码)</title>
+    <title>JetBrains 白嫖三个月激活码活动</title>
     <url>/2020/03/11/jetbrains-quest-first-prize/</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>&emsp;&emsp;今天下午突然收到朋友发来一个链接，是<strong>JetBrains</strong>公司发的一条<a href="https://twitter.com/jetbrains/status/1236986174075482113" target="_blank" rel="noopener">推特</a>。一开始我还是云里雾里的，结果后面听朋友讲，是JetBrains公司发起的一个小活动，可以白嫖三个月激活码。虽然我自己用的是学生账号，并不需要激活码，但是闲着无聊，还是去参加了这个小活动，其实还挺有意思的(可以看成是一个小型CTF比赛吧,2333。</p>
 <center>
@@ -140,8 +140,8 @@
         <category>日常折腾</category>
       </categories>
       <tags>
-        <tag>parallels</tag>
         <tag>macOS</tag>
+        <tag>parallels</tag>
       </tags>
   </entry>
   <entry>
@@ -336,8 +336,8 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
         <tag>vscode</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
