@@ -3,7 +3,7 @@
   <entry>
     <title>图的基本概念</title>
     <url>/2020/03/21/graph/</url>
-    <content><![CDATA[<h3 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h3><p>&emsp;&emsp;<strong>图(Graph)</strong> 是由一个 <strong>非空的顶点集合V(Verex)</strong> 和一个描述 <strong>顶点之间多对多关系的边（或弧）集合E(Edge)</strong> 组成的一种数据结构，它可以形式化地表示为：<strong>G＝（V，E）</strong>， 其中:<br> $${V={v|v \in 某个数据对象集}}，$$<br>    $$ E={（v_i，v_j）|v_i，v_j \in V}，$$<br>    $$ 或 E={&lt;v_i，v_j&gt; | v_i，v_j \in V且&lt;v_i,v_j&gt;表示从v_i到v_j的一条单向通路}$$</p>
+    <content><![CDATA[<h3 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h3><p>&emsp;&emsp;<strong>图 (Graph)</strong> 是由一个 <strong>非空的顶点集合 V (Verex)</strong> 和一个描述 <strong>顶点之间多对多关系的边（或弧）集合 E (Edge)</strong> 组成的一种数据结构，它可以形式化地表示为：<strong>G＝（V，E）</strong>， 其中:<br>    $$ V = \lbrace v|v \in 某个数据对象集 \rbrace ，$$<br>    $$ E = \lbrace（v_i，v_j）| v_i，v_j \in V \rbrace， $$<br>或 $ E = \lbrace &lt;v_i，v_j&gt; | v_i，v_j \in V 且 &lt;v_i,v_j&gt; 表示从 v_i 到 v_j 的一条单向通路 \rbrace 。$</p>
 <p>&emsp;&emsp;通常 <strong>V(G)： 表示图G的顶点集。E(G)： 表示图G的边集。</strong> E(G) 可以是空集，若E(G) 为空，则图G只有顶点、没有边。综上所述，我们可以发现，其实 <strong>线性表和树</strong> 也都是图的一种。</p>
 <p>&emsp;&emsp;以杭州地铁规划图为例，我们可以将每个 <strong>站点</strong> 都看作 <strong>图的顶点</strong>，然后可以把 <strong>站与站之间的轨道</strong> 看作 <strong>图的边</strong>。最后，我们将所有站点归为集合V，而把所有轨道归为集合E，这样便组成了一个图。</p>
 <center>
@@ -14,51 +14,181 @@
 
 <a id="more"></a>
 
-<h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><p>I、<strong>无向图 :</strong> 若每条边均 <strong>没有方向</strong> ，则称G为无向图。无向图中的边均是 <strong>顶点的无序对</strong>，无序对通常用圆括号表示。</p>
+<h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><ul>
+<li><strong>无向图 :</strong> 若每条边均 <strong>没有方向</strong> ，则称G为无向图。无向图中的边均是 <strong>顶点的无序对</strong>，无序对通常用圆括号表示。</li>
+</ul>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428171701.png">
     <br>
 </center>
 
-<p>II、<strong>有向图 :</strong> 若每条边均 <strong>有方向</strong> ，则称G为有向图。有向边又称为弧，<strong>弧的始点称为弧尾，弧的终点称为弧头</strong> 。</p>
+<ul>
+<li><strong>有向图 :</strong> 若每条边均 <strong>有方向</strong> ，则称G为有向图。有向边又称为弧，<strong>弧的始点称为弧尾，弧的终点称为弧头</strong> 。</li>
+</ul>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428171812.png">
     <br>
 </center>
 
-<p>III、<strong>网络 :</strong> 在图的 <strong>每条边上</strong> 附上相关的 <strong>数值</strong>，这种与图的边相关的数值叫 <strong>权</strong> 。权可以表示 <strong>两个顶点之间的距离、耗费等具有某种意义的数</strong> 。若将图的每条边都赋上一个权，则称这种 <strong>带权图</strong> 为 <strong>网络</strong> 。 其中，每条边既可以是有向的，也可以是无向的。</p>
+<ul>
+<li><strong>网络 :</strong> 在图的 <strong>每条边上</strong> 附上相关的 <strong>数值</strong>，这种与图的边相关的数值叫 <strong>权</strong> 。权可以表示 <strong>两个顶点之间的距离、耗费等具有某种意义的数</strong> 。若将图的每条边都赋上一个权，则称这种 <strong>带权图</strong> 为 <strong>网络</strong> 。 其中，每条边既可以是有向的，也可以是无向的。</li>
+</ul>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428172701.png">
     <br>
 </center>
 
-<p>IV、<strong>完全图 :</strong> <strong>每对顶点之间</strong> 都恰巧 <strong>连有一条边</strong> 的简单图我们将其称为 <strong>完全图</strong> ，而完全图也可以分为 <strong>有向完全图</strong> 和 <strong>无向完全图</strong>。 </p>
-<p>&emsp;&emsp;<strong>无向完全图 :</strong> 其每对不同的顶点之间都恰巧连 <strong>有一条边相连</strong> 。 由其性质可得，无向完全图边(e)与顶点(n)的关系公式: <strong>e = n(n-1)/2</strong> 。</p>
+<ul>
+<li><p><strong>完全图 :</strong> <strong>每对顶点之间</strong> 都恰巧 <strong>连有一条边</strong> 的简单图我们将其称为 <strong>完全图</strong> ，而完全图也可以分为 <strong>有向完全图</strong> 和 <strong>无向完全图</strong>。</p>
+<ul>
+<li><p><strong>无向完全图 :</strong> 其每对不同的顶点之间都恰巧连 <strong>有一条边相连</strong> 。 由其性质可得，无向完全图 边(e) 与 顶点(n) 的关系公式: <strong>e = n(n-1)/2</strong> 。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428173929.png">
     <br>
 </center>
-
-<p>&emsp;&emsp;<strong>有向完全图 :</strong> 其每对不同的顶点通过 <strong>一对唯一的边缘（每个方向一个）</strong> 连接。由其性质可得，有向完全图边(e)与顶点(n)的关系公式: <strong>e = n(n-1)</strong> 。</p>
+</li>
+<li><p><strong>有向完全图 :</strong> 其每对不同的顶点通过 <strong>一对唯一的边缘（每个方向一个）</strong> 连接。由其性质可得，有向完全图 边(e) 与 顶点(n) 的关系公式: <strong>e = n(n-1)</strong> 。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428173946.png">
     <br>
 </center>
+</li>
+</ul>
+</li>
+<li><p><strong>顶点的度 :</strong> 与 <strong>该顶点相关联的边的数目</strong> ，顶点 v 的度记为 <strong>D(v)</strong>。顶点 $v_i$ 的 <strong>度数</strong> 是邻接矩阵中 <strong>第i行或第i列值为1的元素个数</strong> ，即<br>  $$ \quad D(v_i) = \sum_{j=0}^{n-1} A[i, j] = \sum_{j=0}^{n-1} A[j, i] $$</p>
+</li>
+<li><p><strong>顶点的入度 :</strong> 有向图中，以 <strong>顶点 v 为终点的边的数目</strong> ，顶点 v 的入度记为 <strong>ID(v)</strong> 。顶点 $v_i$ 的 <strong>入度</strong> 是邻接矩阵中 <strong>第i列值为1的元素的个数</strong> ，即<br>  $$ \quad ID(v_i) = \sum_{j=0}^{n-1} A[j, i] $$</p>
+</li>
+<li><p><strong>顶点的出度 :</strong> 有向图中，以 <strong>顶点 v 为始点的边的数目</strong> 。顶点 v 的出度记为 <strong>OD(v)</strong>。顶点 $v_i$ 的 <strong>出度</strong> 是邻接矩阵中 <strong>第i行值为1的元素个数</strong> ，即<br>  $$ \quad OD(v_i) = \sum_{j=0}^{n-1} A[i, j] $$</p>
+</li>
+<li><p><strong>有向图中，顶点各度之间的关系 :</strong> D(v) = ID(v) + OD(v)</p>
+</li>
+<li><p><strong>顶点数(n)、边数(e)和度数D(v)之间的关系 :</strong><br>  $$ e = \frac{1}{2} * \sum_{i=1}^n * D(v_i) $$</p>
+</li>
+<li><p><strong>子图 :</strong> 若给定两个图 <strong>$G_i$</strong> 和 <strong>$G_j$</strong> ，其中 $G_i$ =（ $v_i$，$e_i$ ），$G_j$=（ $v_j$，$e_j$ ），若满足 <strong>$v_i \subseteq v_j$，$e_i \subseteq e_j$</strong> ，则称 <strong>$G_u$ 是 $G_j$ 的子图</strong> 。 </p>
+</li>
+<li><p><strong>路径 :</strong> 一个长度为 <strong>k</strong> 的路径是一个 <strong>非空的顶点和边的交错序列 $v_0 e_0、v_1 e_1、 … 、 v_{k-1} e_{k-1}$</strong> ，使得对于所有 <strong>$i &lt; k$</strong> 均有 <strong>$e_i$ = $v_i * v_{i+1}$</strong> 。特别的，当 <strong>$v_0 = v_k$</strong> 时，称这个路径是 <strong>闭的(closed)</strong> ，当路径中的顶点互不相同，得到 <strong>G 的一条路</strong> 。</p>
+<ul>
+<li><p><strong>路径长度 :</strong> 该路径上 <strong>边或弧的数目</strong> 。</p>
+</li>
+<li><p><strong>简单路径 :</strong> 如果一条路径上 <strong>除了起点 $v_0$ 和终点 $v_k$ 相同外，其余顶点均不相同</strong> ，则称此路径为一条 <strong>简单路径</strong>。起点和终点相同( $v_0$ = $v_k$)的简单路径称为 <strong>简单回路或简单环</strong> 。 </p>
+</li>
+</ul>
+</li>
+<li><p><strong>连通图 :</strong></p>
+<ul>
+<li><p>如果 <strong>G是无向图</strong> 中，若 <strong>从顶点 $v_i$ 到顶点 $v_j$ 有路径相连 ( 当然从 $v_j$ 到 $v_i$ 也一定有路径 )</strong> ，则称 <strong>$v_i$ 和 $v_j$ 是连通的</strong> 。例如下图，任意两个顶点之间都能够连通，则称此无向图为连通图。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428171701.png">
+    <br>
+</center>
+</li>
+<li><p><strong>无向图G</strong> 的 <strong>极大连通子图</strong> 称为 G 的 <strong>连通分量</strong> 。根据连通分量的定义，可知任何 <strong>连通图的连通分量是其自身</strong> ，<strong>非连通的无向图有多个极大连通子图（连通分量）</strong> 。 例如下图，由于左边的无向图 G 为 <strong>非连通图</strong> ，但我们可以将其分成右边这三个 <strong>极大连通子图</strong> ，由于它们都满足连通图的性质，因此它们都是无向图 G 的连通分量。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428190636.png">
+    <br>
+</center>
+</li>
+<li><p>图 G 为 <strong>无向完全图</strong> 时 <strong>边最多</strong> ，有 <strong>n(n-1)/2</strong> 条边。图 G 为 <strong>无向连通图（刚够连通条件，即n-1条边）</strong> 时 <strong>边数最少</strong> 。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>强连通图 :</strong></p>
+<ul>
+<li><p>如果 <strong>G是有向图</strong> ，若 <strong>两个顶点 $v_i$ ，$v_j$ 间 ( $v_i &gt; v_j$ ) 有一条从 $v_i$ 到 $v_j$ 的有向路径，同时还有一条从 $v_j$ 到 $v_i$ 的有向路径</strong>，则称两个顶点 <strong>强连通</strong> 。例如下图，有向图图 G 中的顶点(A，B)、(A，D)、(A，C)、(B，D)、(B，C)、(C，D)之间都 <strong>存在两条相反的有向路径</strong> ，因此顶点(A，B)、(A，D)、(A，C)、(B，D)、(B，C)、(C，D)分别 <strong>强连通</strong>，而根据强连通图的定义，如果有向图 G 的 <strong>每两个顶点都强连通</strong> ，称 G 是一个 <strong>强连通图</strong> 。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428173946.png">
+    <br>
+</center>
+</li>
+<li><p>根据 <strong>强连通图</strong> 的定义，可知强连通图的 <strong>唯一</strong> 强连通分量是其 <strong>自身</strong> ，而 <strong>非强连通的有向图有多个强连通分量</strong> 。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428195422.png">
+    <br>
+</center>
+</li>
+<li><p>图 G 为 <strong>有向完全图</strong> 时 <strong>边最多</strong> ，有 <strong>n(n-1)</strong> 条边。图 G 为 <strong>首尾相连的有向环</strong> 时 <strong>边数最少</strong> ，仅有 <strong>n</strong> 条边。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
+<li><p>邻接矩阵十分直观、简单且好理解。</p>
+</li>
+<li><p>方便检查 <strong>任意一对顶点是否存在边</strong> 。</p>
+</li>
+<li><p>方便查找 <strong>任一顶点的所有“邻接点” （ 有边直接相邻的顶点 ）</strong> 。</p>
+</li>
+<li><p>方便计算 <strong>任一顶点的“度”</strong> 。（ <strong>从 $v_i$ 点发出的边数为出度</strong> ，<strong>指向 $v_i$ 点的边数为入度</strong> ）</p>
+<ul>
+<li><p>无向图：对应 <strong>行或列</strong> 非零元素的个数。</p>
+</li>
+<li><p>有向图：对应 <strong>行</strong> 非零元素的个数为 <strong>“出度”</strong> ，对应 <strong>列</strong> 非零元素的个数为 <strong>“入度”</strong> 。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="缺点（不考虑压缩）："><a href="#缺点（不考虑压缩）：" class="headerlink" title="缺点（不考虑压缩）："></a>缺点（不考虑压缩）：</h4><ul>
+<li><p>浪费空间：存 <strong>稀疏图（ 点很多而边很少 ）</strong> 有大量无效元素。</p>
+<ul>
+<li>存 <strong>稠密图（ 特别是完全图 ）</strong> 还是很合算的。</li>
+</ul>
+</li>
+<li><p>浪费时间：统计 <strong>稀疏图</strong> 中共有多少条边。</p>
+</li>
+</ul>
+<h4 id="非网络邻接矩阵"><a href="#非网络邻接矩阵" class="headerlink" title="非网络邻接矩阵"></a>非网络邻接矩阵</h4><p>&emsp;&emsp;给定图 G = ( V，E )，其中V(G) = { $v_0$ … $v_i$ … $v_{n-1}$ }，可以将其转换成 <strong>N 阶方阵 G’ [N][N] ( N 个顶点的从0 到 N-1 编号 )</strong> 。因此 G 的邻接矩阵具有如下性质：<br>$$G[i][j] = \begin{cases} \quad 1 \quad \quad 若&lt;v_i，v_j&gt;是G中的边 \ \quad 0 \quad \quad 否则 \end{cases}$$</p>
+<p>&emsp;&emsp;于是，现在存在图 G 为无向图，将其转换为邻接矩阵后，便如下图（ 0 意味这两个顶点间不存在边，而 1 意味着两个顶点间存在边）。根据所画出的邻接矩阵，我们可以发现 <strong>无向图的邻接矩阵是对称的</strong>，而 <strong>有向图的邻接矩阵</strong> 却 <strong>不一定是对称的</strong>，感兴趣的可以自己尝试着画个看看。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428212504.png">
+    <br>
+</center>
 
-<p>V、<strong>顶点的度 :</strong> 与 <strong>该顶点相关联的边的数目</strong> ，顶点v的度记为 <strong>D(v)</strong> 。</p>
-<p>VI、<strong>顶点的入度 :</strong> 有向图中，以 <strong>顶点v为终点的边的数目</strong> ，顶点v的入度记为 <strong>ID(v)</strong> 。</p>
-<p>VII、<strong>顶点的出度 :</strong> 有向图中，以 <strong>顶点v为始点的边的数目</strong> 。顶点v的出度记为 <strong>OD(v)</strong>。</p>
-<p>VIII、<strong>有向图中，顶点各度之间的关系 :</strong> D(v) = ID(v) + OD(v)</p>
-<p>IX、<strong>顶点数(n)、边数(e)和度数D(v)之间的关系 :</strong>  $$ e = \frac{1}{2} * \sum_{i=1}^n * D(v_i)$$</p>
-<p>X、<strong>子图 :</strong> 若给定两个图 <strong>G<sub>i</sub></strong> 和 <strong>G<sub>j</sub></strong> ，其中 G<sub>i</sub> =（ V<sub>i</sub>，E<sub>i</sub> ），G<sub>j</sub>=（ V<sub>j</sub>，E<sub>j</sub> ），若满足 <strong>V<sub>i</sub> ⊆ V<sub>j</sub>，E<sub>i</sub> ⊆ E<sub>j</sub></strong> ，则称 <strong>G<sub>u</sub> 是 G<sub>j</sub> 的子图</strong> 。 </p>
-<p>XI、<strong>路径 :</strong> 一个长度为 <strong>k</strong> 的路径是一个 <strong>非空的顶点和边的交错序列 v<sub>0</sub> e<sub>0</sub>、v<sub>1</sub> e<sub>1</sub> … v<sub>k-1</sub> e<sub>k-1</sub></strong> ，使得对于所有 <strong>i &lt; k</strong> 均有 <strong>e<sub>i</sub> = v<sub>i</sub> * v<sub>i+1</sub></strong> 。特别的，当 <strong>v<sub>0</sub> = v<sub>k</sub></strong> 时，称这个路径是<strong>闭的(closed)</strong> ，当路径中的顶点互不相同，得到 <strong>G的一条路</strong> 。</p>
-<p>XII、<strong>路径长度 :</strong> 该路径上 <strong>边或弧的数目</strong> 。</p>
-<p>XIII.<strong>简单路径 :</strong> 如果一条路径上 <strong>除了起点v<sub>0</sub>和终点<sub>k</sub>相同外，其余顶点均不相同</strong> ，则称此路径为一条 <strong>简单路径</strong>。起点和终点相同(v<sub>0</sub> = v<sub>k</sub>)的简单路径称为 <strong>简单回路或简单环</strong> 。 </p>
+<h4 id="网络邻接矩阵"><a href="#网络邻接矩阵" class="headerlink" title="网络邻接矩阵"></a>网络邻接矩阵</h4><p>&emsp;&emsp;当 G =（V，E）是一个<strong>网络图</strong>时，G 的邻接矩阵是具有如下性质的 n 阶方阵：<br>$$ A[i，j] = \begin{cases} \quad W_{ij} \quad 当 \ (v_i， v_j) \ 或 \ &lt;v_i，v_j&gt; \ \in E(G) \ \quad 0 \quad \quad 当 \ (v_i， v_j) \ 或 \ &lt;v_i，v_j&gt; \ \notin E(G) \ 且 \ i=j \ \quad \infty \quad \ \  当 \ (v_i， v_j) \ 或 \ &lt;v_i，v_j&gt; \ \notin E(G) \ 且 \ i \neq j \ \end{cases} $$<br>其中$W_{ij}$表示边上的 <strong>权值</strong>；$\infty$ 表示一个计算机 <strong>允许的、大于所有边上权值的数</strong> 。 </p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428222711.png">
+    <br>
+</center>
+
+<h4 id="存储问题"><a href="#存储问题" class="headerlink" title="存储问题"></a>存储问题</h4><p>&emsp;&emsp;根据上面提到的，无向图的邻接矩阵是对称的，那么我们就可以思考一个问题：<strong>是否存在其他方法，在存储无向图时能节约更多的空间？</strong> 答案是： <strong>存在</strong> 。 根据对称性质，其实我们可以只 <strong>存储一半的数据</strong> ，那么当图的数据很大时，这节省下来的空间时十分客观的。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>&emsp;&emsp;对于无向图 G ，我们可以用一个长度为 <strong>N(N+1)/2 的一维数组A存储</strong> $ \ \lbrace G_{00}，G_{10}，G_{11}，… \ ，G_{n-1 \quad 0}，… \ ，G_{n-1 \quad n-1} \rbrace $ ，则 $G_{ij}$ 在A中对应的下标是: $ \ (i * ( i + 1 ) / 2 + j ) $ 。而对于 <strong>网络</strong> ，只要把 <strong>G[i][j]的值</strong> 定义为 <strong>边 $ &lt;v_i，v_j&gt; $ 的权重</strong> 即可。若 $ (v_i，v_j) $ 之间 <strong>不存在边</strong> ，那么将其定义为 <strong>无穷</strong> 即可。</p>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><h4 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h4><ul>
+<li><p>方便寻找 <strong>任一顶点</strong> 的 <strong>所有邻接点</strong> 。</p>
+</li>
+<li><p>节约 <strong>稀疏图</strong> 的 <strong>空间</strong> 。</p>
+<ul>
+<li>需要 <strong>N 个头指针 + 2*E个结点</strong>（每个结点至少两个域）。</li>
+</ul>
+</li>
+<li><p>方便计算无向图任一顶点的度。</p>
+</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li><p>不方便判断 <strong>任意一对顶点的边是否存在</strong> 。</p>
+</li>
+<li><p>不方便计算有向图任一顶点的度：只能计算 <strong>出度</strong>，需要构造 <strong>逆邻接表（存指向自己的边）</strong> 来计算 <strong>出度</strong> 。</p>
+</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428230948.png">
+    <br>
+</center>
+
+<p>&emsp;&emsp;邻接表是图的一种 <strong>链式存储结构</strong>。在邻接表中，对图中 <strong>每个顶点</strong> 建立一个 <strong>带头结点的单链表</strong> ，并把该顶点的 <strong>所有相邻点串起来</strong> 。所有的 <strong>头结点</strong>构成一个数组，称为 <strong>头结点数组</strong>，用 <strong>G[N]</strong> 表示，对应矩阵每行的一个链表，<strong>只存非零元素</strong> 。</p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
@@ -112,48 +242,35 @@
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200414194819.png">
     </br>
 </center>
-</br>
 
 <ul>
 <li><p><strong>结点 :</strong> 数据元素，可分为孩子结点、双亲结点、兄弟结点、堂兄弟、祖先、子孙。除根结点外，其他任何一个结点有且只有一个双亲，有0或多个子女。</p>
-</br>
 </li>
 <li><p><strong>结点的度( Degree ) :</strong> 结点的 <strong>子树个数</strong>。</p>
-</br>
 </li>
 <li><p><strong>树的度 :</strong> 树的所有结点中最大的度数。</p>
-</br>
 </li>
 <li><p><strong>叶结点( Leaf ) :</strong> <strong>度为 0</strong> 的结点( 终端结点 )。</p>
-</br>
 </li>
 <li><p><strong>分支结点 :</strong> <strong>度大于 0</strong> 的结点( 非终端结点 )。 </p>
-</br>
 </li>
 <li><p><strong>树枝 :</strong> 树中连接两个结点的线段。</p>
-</br>
 </li>
 <li><p><strong>路径和路径的长度 :</strong> 从结点 N1 到 Nk 的 <strong>路径</strong> 为一个结点序列 N1、N2……Nk，Ni是N(i+1)的父结点。路径所包含边的个数为 <strong>路径的长度</strong>。</p>
-</br>
 </li>
 <li><p><strong>结点的层次( Level) :</strong> 规定 <strong>根结点在 1 层，</strong> 其他任一结点的层数是其父结点的层数加 1。</p>
-</br>
 </li>
 <li><p><strong>树的深度( Depth ) :</strong> 树中所有结点中的<strong>最大层次</strong>是这颗树的深度。</p>
-</br>
 </li>
 <li><p><strong>有序树 :</strong> 结点各子树从左至右有序，不能互换( 左为第一 )。</p>
-</br>
 </li>
 <li><p><strong>无序树 :</strong> 结点各子树可互换位置。</p>
-</br>
 </li>
 <li><p><strong>森( 树 )林 :</strong> m 颗互不相交的树的集合。</p>
 </li>
 </ul>
 <h3 id="树的逻辑结构"><a href="#树的逻辑结构" class="headerlink" title="树的逻辑结构"></a>树的逻辑结构</h3><ul>
 <li><p><strong>二元组表示法 :</strong> 一棵树 T = ( D, R)，其中 D = { A，B，C，D，E，F，G，H }，R = { r }， r = { &lt;A，B&gt; ，&lt;A，C&gt; ，&lt;A，D&gt; ，&lt;C，E&gt; ，&lt;C，F&gt; ，&lt;D，G&gt;， &lt;E， H&gt; } 。</p>
-</br>
 </li>
 <li><p><strong>树形表示法 :</strong> 上面提到的树 T 用树形表示法后，为以下形状：</p>
 </li>
@@ -163,7 +280,6 @@
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200414200424.png">
     </br>
 </center>
-</br>
 
 <ul>
 <li><strong>文氏图表示法 :</strong> 使用 <strong>集合以及集合的包含关系</strong> 描述树结构。</li>
@@ -173,7 +289,6 @@
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200414200709.png">
     </br>
 </center>
-</br>
 
 <ul>
 <li><strong>凹入表示法 :</strong> 使用 <strong>线段的伸缩关系</strong> 描述树结构。</li>
@@ -183,7 +298,6 @@
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200414200847.png">
     </br>
 </center>
-</br>
 
 <ul>
 <li><strong>括号表示法 :</strong> 将树的 <strong>根</strong> 结点写在 <strong>括号的左边</strong>，除根结点之外的 <strong>其余结点</strong> 写在 <strong>括号中</strong>，并用 <strong>逗号隔开</strong>。如，A ( B, C ( E ( H )，F)，D ( G ) )。</li>
@@ -742,8 +856,8 @@
 <h3 id="动态规划-待更新"><a href="#动态规划-待更新" class="headerlink" title="动态规划(待更新)"></a>动态规划(待更新)</h3><h3 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h3><p>&emsp;&emsp;因为最大连续子序列和只可能是以数组下标0～N-1中某个作为结尾。当遍历到第i个元素时，将其和当前子序列和的值(thisSum)相加，然后判断其是否大于0：如果大于0，则更新最大子序列和(maxSum)的值；否则，更新当前子序列和的值为0，算法复杂度：<strong>O(n)</strong>。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum &#x3D; 0, maxSum &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    for (int i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        &#x2F;&#x2F; 向右累加</span><br><span class="line">        thisSum +&#x3D; A[i];</span><br><span class="line">        if (thisSum &gt; maxSum)</span><br><span class="line">            maxSum &#x3D; thisSum;</span><br><span class="line">        else if (thisSum &lt; 0)  &#x2F;&#x2F; 如果为负则舍弃</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>数据结构与算法</category>
         <category>C++</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
         <tag>分治</tag>
@@ -825,8 +939,8 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;以上就是在Mac OS上使用vscode配置C++/C语言的开发环境。后期可以根据自己的需求，去修改配置文件对应的选项，并对vscode进行一些个性化修改就是了。经过一段时间使用，vscode在日常使用来讲，给我的感觉远比使用IDE来的舒适，因此希望你也会喜欢。</p>
 ]]></content>
       <categories>
-        <category>日常折腾</category>
         <category>C++</category>
+        <category>日常折腾</category>
       </categories>
       <tags>
         <tag>vscode</tag>
