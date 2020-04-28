@@ -11,7 +11,7 @@
   <script type="text/javascript" src="/js/cet4.js"></script>
 
   <title>
-    JetBrains 白嫖三个月激活码活动(二) |  Zioang&#39;s Blog
+    图的基本概念 |  Zioang&#39;s Blog
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-jetbrains-quest-second-prize" class="article article-type-post" itemscope
+  <article id="post-graph" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  JetBrains 白嫖三个月激活码活动(二)
+  图的基本概念
 </h1>
   
 
@@ -53,12 +53,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/03/12/jetbrains-quest-second-prize/" class="article-date">
-  <time datetime="2020-03-11T21:10:26.000Z" itemprop="datePublished">2020-03-12</time>
+      <a href="/2020/03/21/graph/" class="article-date">
+  <time datetime="2020-03-21T07:45:22.000Z" itemprop="datePublished">2020-03-21</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/">日常折腾</a>
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
   </div>
 
       
@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.1k字</span>
+            <span class="post-count">951字</span>
         </span>
     </span>
 
@@ -77,7 +77,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4分钟</span>
+            <span class="post-count">3分钟</span>
         </span>
     </span>
 </div>
@@ -103,78 +103,62 @@
       
 
       
-      <p>&emsp;&emsp;本篇紧跟上篇主题，是<strong>JetBrains</strong>新发布的第二个任务。让我们瞧一瞧新任务所带来了些什么有意思的题目吧。</p>
-<h3 id="谜题一"><a href="#谜题一" class="headerlink" title="谜题一"></a>谜题一</h3><p>&emsp;&emsp;在北京时间2020年3月11日19点，JetBrains 公司又在官方推特发布了第二个<a href="https://twitter.com/jetbrains/status/1237694815283879943" target="_blank" rel="noopener">活动线索</a>。</p>
+      <h3 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h3><p>&emsp;&emsp;<strong>图(Graph)</strong> 是由一个 <strong>非空的顶点集合V(Verex)</strong> 和一个描述 <strong>顶点之间多对多关系的边（或弧）集合E(Edge)</strong> 组成的一种数据结构，它可以形式化地表示为：<strong>G＝（V，E）</strong>， 其中:<br> $${V={v|v \in 某个数据对象集}}，$$<br>    $$ E={（v_i，v_j）|v_i，v_j \in V}，$$<br>    $$ 或 E={&lt;v_i，v_j&gt; | v_i，v_j \in V且&lt;v_i,v_j&gt;表示从v_i到v_j的一条单向通路}$$</p>
+<p>&emsp;&emsp;通常 <strong>V(G)： 表示图G的顶点集。E(G)： 表示图G的边集。</strong> E(G) 可以是空集，若E(G) 为空，则图G只有顶点、没有边。综上所述，我们可以发现，其实 <strong>线性表和树</strong> 也都是图的一种。</p>
+<p>&emsp;&emsp;以杭州地铁规划图为例，我们可以将每个 <strong>站点</strong> 都看作 <strong>图的顶点</strong>，然后可以把 <strong>站与站之间的轨道</strong> 看作 <strong>图的边</strong>。最后，我们将所有站点归为集合V，而把所有轨道归为集合E，这样便组成了一个图。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312051510.png">
-    <br>
-</center>
-
-<p>&emsp;&emsp;这次与之前不同的是，初看会以为他们竟然是发的是一条莫名其妙的推，但是静下心来仔细观察下，马上就能有思路了，可以说这题比活动一的简单了。为什么这么讲呢？其实观察这条推文，我们可以发现顺着读我们是没办法理解它的意思的，但是一旦我们反着读，那么马上就能知道这条推文所想表达的意思了。于是我就简单的反转了下字符串，得到下图中的信息。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 60px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312052353.png">
-    <br>
-</center>
-
-<p>&emsp;&emsp;图中，首先我们可得到第一个线索：<strong>product domain-specific language</strong>，而与这条信息有关的只有MPS这款产品的<a href="https://www.jetbrains.com/mps/" target="_blank" rel="noopener">主页</a>。然后，第二个线索是： <strong>Dutch tax</strong>，虽然我自始自终都没搞懂第二句话是什么意思，但还是靠这个关键字在页面上找到唯一与<strong>Dutch tax</strong>相关的地方，如下图。</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312053717.png">
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428165429.png">
     <br>
 </center>
 
 <a id="more"></a>
 
-<p>而第三个线索(那便是最后一句话)便是: 藏木于林。根据官方的提示，我们可以想到，要隐藏一段文字，那最好的方法便是将其融入背景，于是<strong>Cmd/Ctrl+A</strong>这个小提示便用上了。最后，我们便得到了这么一句话: <strong>This is our 20th year as a company,we have shared numbers in our JetBrains Annual report, sharing the section with 18,650 numbers will progress your quest.</strong></p>
+<h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><p>I、<strong>无向图 :</strong> 若每条边均 <strong>没有方向</strong> ，则称G为无向图。无向图中的边均是 <strong>顶点的无序对</strong>，无序对通常用圆括号表示。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312054706.png">
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428171701.png">
     <br>
 </center>
 
-<h3 id="谜题二"><a href="#谜题二" class="headerlink" title="谜题二"></a>谜题二</h3><p>&emsp;&emsp;根据谜题一得到的线索，我们打开google直接搜<strong>JetBrains 2019 Annual Report</strong>，于是得到了谜题二线索所在的页面。根据官方提示，我们得知通往下一关的钥匙肯定与18，650和section分享有关。而该页面唯一与这两个点有联系的，那便是<strong>7th Annual Hackathon</strong>这部分内容。整页只有这块内容是有分享按钮的，且当我们把这部分的数字全部相加时，会发现结果刚好等于18，650。因此，我们便得到了前往谜题三的钥匙：<code>I have found the JetBrains Quest! Sometimes you just need to look closely at the Haskell language, Hello,World! in the hackathon lego brainstorms project https://blog.jetbrains.com/blog/2019/11/22/jetbrains-7th-annual-hackathon/ #JetBrainsQuest https://www.jetbrains.com/company/annualreport/2019/ via @JetBrains</code></p>
+<p>II、<strong>有向图 :</strong> 若每条边均 <strong>有方向</strong> ，则称G为有向图。有向边又称为弧，<strong>弧的始点称为弧尾，弧的终点称为弧头</strong> 。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312060418.png">
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428171812.png">
     <br>
 </center>
 
-<h3 id="谜题三"><a href="#谜题三" class="headerlink" title="谜题三"></a>谜题三</h3><p>&emsp;&emsp;谜题三其实十分简单，线索也都在谜题三的答案中给我们了。首先，我们进入谜题三所给的网站，然后找到<strong>lego brainstorms</strong>这部分。观察这部分的内容，我们会发现图片中存在着这样一段文字：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d1D j00 kN0w J378r41n2 12 4lW4Y2 H1R1N9? ch3CK 0u7 73h K4r33r2 P493 4nD 533 1f 7H3r3 12 4 J08 F0r J00 0R 4 KW357 cH4LL3n93 70 90 fUr7h3r @ l3457.</span><br></pre></td></tr></table></figure>
-<p>这句话其实是英语火星文，翻译过来便是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Did you know Jetbrains is always hiring? Check out the careers page and see if there is a job for you or for quest challenge to go further atleast.</span><br></pre></td></tr></table></figure>
-
+<p>III、<strong>网络 :</strong> 在图的 <strong>每条边上</strong> 附上相关的 <strong>数值</strong>，这种与图的边相关的数值叫 <strong>权</strong> 。权可以表示 <strong>两个顶点之间的距离、耗费等具有某种意义的数</strong> 。若将图的每条边都赋上一个权，则称这种 <strong>带权图</strong> 为 <strong>网络</strong> 。 其中，每条边既可以是有向的，也可以是无向的。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312062210.png">
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428172701.png">
     <br>
 </center>
 
-<h3 id="谜题四"><a href="#谜题四" class="headerlink" title="谜题四"></a>谜题四</h3><p>&emsp;&emsp;根据谜底三，我们直接进入 Jetbrains 的 <a href="https://www.jetbrains.com/careers/jobs/" target="_blank" rel="noopener">Job 页面</a>。当我们在Role选项框中选中<strong>any</strong>选项后，便得到了前进的线索。</p>
+<p>IV、<strong>完全图 :</strong> <strong>每对顶点之间</strong> 都恰巧 <strong>连有一条边</strong> 的简单图我们将其称为 <strong>完全图</strong> ，而完全图也可以分为 <strong>有向完全图</strong> 和 <strong>无向完全图</strong>。 </p>
+<p>&emsp;&emsp;<strong>无向完全图 :</strong> 其每对不同的顶点之间都恰巧连 <strong>有一条边相连</strong> 。 由其性质可得，无向完全图边(e)与顶点(n)的关系公式: <strong>e = n(n-1)/2</strong> 。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312063737.png">
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428173929.png">
     <br>
 </center>
 
-<p>&emsp;&emsp;点击该页面后，在跳转的页面中，我们可以找到通往谜题五的线索，便是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">To progress with your quest what you’ll need:</span><br><span class="line">To check out what we have for game developers.</span><br><span class="line">Be geeky enough to remember how you used to cheat at Konami games.</span><br><span class="line">Try cheating on the page.</span><br></pre></td></tr></table></figure>
-
-<h3 id="谜题五"><a href="#谜题五" class="headerlink" title="谜题五"></a>谜题五</h3><p>&emsp;&emsp;根据提示，我们打开进入谜题五的<a href="https://www.jetbrains.com/gamedev/" target="_blank" rel="noopener">页面</a>。此题的关键在于我们要知道科乐美的作弊码：<strong>↑↑↓↓←→←→BA</strong>(这秘籍应该没人不知道吧。在该页面中完成该秘籍后，会弹出一个弹球小游戏。击碎所有方块后，我们便能得到本次活动的激活码了。</p>
+<p>&emsp;&emsp;<strong>有向完全图 :</strong> 其每对不同的顶点通过 <strong>一对唯一的边缘（每个方向一个）</strong> 连接。由其性质可得，有向完全图边(e)与顶点(n)的关系公式: <strong>e = n(n-1)</strong> 。</p>
 <center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312064750.png">
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428173946.png">
     <br>
 </center>
 
-<h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>&emsp;&emsp;Jetbrains 这两个活动都挺有趣的，唯一令人难受的就是，想要能快速完美的解出每个问题，对于个人的英语水平要求真的有点高。反正有几个谜题我是一开始根本就没完全看懂。<br>&emsp;&emsp;最后附上领取成功的截图：</p>
-<center>
-    <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312065540.png">
-    <br>
-</center>
+<p>V、<strong>顶点的度 :</strong> 与 <strong>该顶点相关联的边的数目</strong> ，顶点v的度记为 <strong>D(v)</strong> 。</p>
+<p>VI、<strong>顶点的入度 :</strong> 有向图中，以 <strong>顶点v为终点的边的数目</strong> ，顶点v的入度记为 <strong>ID(v)</strong> 。</p>
+<p>VII、<strong>顶点的出度 :</strong> 有向图中，以 <strong>顶点v为始点的边的数目</strong> 。顶点v的出度记为 <strong>OD(v)</strong>。</p>
+<p>VIII、<strong>有向图中，顶点各度之间的关系 :</strong> D(v) = ID(v) + OD(v)</p>
+<p>IX、<strong>顶点数(n)、边数(e)和度数D(v)之间的关系 :</strong>  $$ e = \frac{1}{2} * \sum_{i=1}^n * D(v_i)$$</p>
+<p>X、<strong>子图 :</strong> 若给定两个图 <strong>G<sub>i</sub></strong> 和 <strong>G<sub>j</sub></strong> ，其中 G<sub>i</sub> =（ V<sub>i</sub>，E<sub>i</sub> ），G<sub>j</sub>=（ V<sub>j</sub>，E<sub>j</sub> ），若满足 <strong>V<sub>i</sub> ⊆ V<sub>j</sub>，E<sub>i</sub> ⊆ E<sub>j</sub></strong> ，则称 <strong>G<sub>u</sub> 是 G<sub>j</sub> 的子图</strong> 。 </p>
+<p>XI、<strong>路径 :</strong> 一个长度为 <strong>k</strong> 的路径是一个 <strong>非空的顶点和边的交错序列 v<sub>0</sub> e<sub>0</sub>、v<sub>1</sub> e<sub>1</sub> … v<sub>k-1</sub> e<sub>k-1</sub></strong> ，使得对于所有 <strong>i &lt; k</strong> 均有 <strong>e<sub>i</sub> = v<sub>i</sub> * v<sub>i+1</sub></strong> 。特别的，当 <strong>v<sub>0</sub> = v<sub>k</sub></strong> 时，称这个路径是<strong>闭的(closed)</strong> ，当路径中的顶点互不相同，得到 <strong>G的一条路</strong> 。</p>
+<p>XII、<strong>路径长度 :</strong> 该路径上 <strong>边或弧的数目</strong> 。</p>
+<p>XIII.<strong>简单路径 :</strong> 如果一条路径上 <strong>除了起点v<sub>0</sub>和终点<sub>k</sub>相同外，其余顶点均不相同</strong> ，则称此路径为一条 <strong>简单路径</strong>。起点和终点相同(v<sub>0</sub> = v<sub>k</sub>)的简单路径称为 <strong>简单回路或简单环</strong> 。 </p>
 
       
       <!-- 打赏 -->
@@ -185,11 +169,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/03/12/jetbrains-quest-second-prize/" data-id="ck9jrnwqc00007lz5ecf85ya3"
+      <a data-url="https://www.zioang.fun/2020/03/21/graph/" data-id="ck9jrnwqj00017lz5b8nv0wfn"
         class="article-share-link">分享</a>
         
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%99%BD%E5%AB%96/" rel="tag">白嫖</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BE/" rel="tag">图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
 
@@ -199,19 +183,10 @@
   
   <nav class="article-nav">
     
+    
       <a href="/2020/03/21/tree/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            树的基本概念
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2020/03/11/jetbrains-quest-first-prize/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">JetBrains 白嫖三个月激活码活动(一)</div>
+        <div class="article-nav-title">树的基本概念</div>
       </a>
     
   </nav>
