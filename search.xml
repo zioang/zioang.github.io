@@ -123,7 +123,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
 <li><p>邻接矩阵十分直观、简单且好理解。</p>
 </li>
 <li><p>方便检查 <strong>任意一对顶点是否存在边</strong> 。</p>
@@ -139,7 +139,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="缺点（不考虑压缩）："><a href="#缺点（不考虑压缩）：" class="headerlink" title="缺点（不考虑压缩）："></a>缺点（不考虑压缩）：</h4><ul>
+<h4 id="缺点（不考虑压缩）"><a href="#缺点（不考虑压缩）" class="headerlink" title="缺点（不考虑压缩）"></a>缺点（不考虑压缩）</h4><ul>
 <li><p>浪费空间：存 <strong>稀疏图（ 点很多而边很少 ）</strong> 有大量无效元素。</p>
 <ul>
 <li>存 <strong>稠密图（ 特别是完全图 ）</strong> 还是很合算的。</li>
@@ -165,7 +165,7 @@
 
 <h4 id="存储问题"><a href="#存储问题" class="headerlink" title="存储问题"></a>存储问题</h4><p>&emsp;&emsp;根据上面提到的，无向图的邻接矩阵是对称的，那么我们就可以思考一个问题：<strong>是否存在其他方法，在存储无向图时能节约更多的空间？</strong> 答案是： <strong>存在</strong> 。 根据对称性质，其实我们可以只 <strong>存储一半的数据</strong> ，那么当图的数据很大时，这节省下来的空间时十分客观的。</p>
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>&emsp;&emsp;对于无向图 G ，我们可以用一个长度为 <strong>N(N+1)/2 的一维数组A存储</strong> $ \ \lbrace G_{00}，G_{10}，G_{11}，… \ ，G_{n-1 \quad 0}，… \ ，G_{n-1 \quad n-1} \rbrace $ ，则 $G_{ij}$ 在A中对应的下标是: $ \ (i * ( i + 1 ) / 2 + j ) $ 。而对于 <strong>网络</strong> ，只要把 <strong>G[i][j]的值</strong> 定义为 <strong>边 $ &lt;v_i，v_j&gt; $ 的权重</strong> 即可。若 $ (v_i，v_j) $ 之间 <strong>不存在边</strong> ，那么将其定义为 <strong>无穷</strong> 即可。</p>
-<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><h4 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h4><ul>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
 <li><p>方便寻找 <strong>任一顶点</strong> 的 <strong>所有邻接点</strong> 。</p>
 </li>
 <li><p>节约 <strong>稀疏图</strong> 的 <strong>空间</strong> 。</p>
@@ -176,7 +176,7 @@
 <li><p>方便计算无向图任一顶点的度。</p>
 </li>
 </ul>
-<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
 <li><p>不方便判断 <strong>任意一对顶点的边是否存在</strong> 。</p>
 </li>
 <li><p>不方便计算有向图任一顶点的度：只能计算 <strong>出度</strong>，需要构造 <strong>逆邻接表（存指向自己的边）</strong> 来计算 <strong>出度</strong> 。</p>
@@ -856,8 +856,8 @@
 <h3 id="动态规划-待更新"><a href="#动态规划-待更新" class="headerlink" title="动态规划(待更新)"></a>动态规划(待更新)</h3><h3 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h3><p>&emsp;&emsp;因为最大连续子序列和只可能是以数组下标0～N-1中某个作为结尾。当遍历到第i个元素时，将其和当前子序列和的值(thisSum)相加，然后判断其是否大于0：如果大于0，则更新最大子序列和(maxSum)的值；否则，更新当前子序列和的值为0，算法复杂度：<strong>O(n)</strong>。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum &#x3D; 0, maxSum &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    for (int i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        &#x2F;&#x2F; 向右累加</span><br><span class="line">        thisSum +&#x3D; A[i];</span><br><span class="line">        if (thisSum &gt; maxSum)</span><br><span class="line">            maxSum &#x3D; thisSum;</span><br><span class="line">        else if (thisSum &lt; 0)  &#x2F;&#x2F; 如果为负则舍弃</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>C++</category>
         <category>数据结构与算法</category>
+        <category>C++</category>
       </categories>
       <tags>
         <tag>分治</tag>
@@ -939,8 +939,8 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;以上就是在Mac OS上使用vscode配置C++/C语言的开发环境。后期可以根据自己的需求，去修改配置文件对应的选项，并对vscode进行一些个性化修改就是了。经过一段时间使用，vscode在日常使用来讲，给我的感觉远比使用IDE来的舒适，因此希望你也会喜欢。</p>
 ]]></content>
       <categories>
-        <category>C++</category>
         <category>日常折腾</category>
+        <category>C++</category>
       </categories>
       <tags>
         <tag>vscode</tag>
