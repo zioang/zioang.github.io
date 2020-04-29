@@ -103,9 +103,7 @@
       
 
       
-      <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑声音输出是正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐在后台是在正常播放的，但是却没办法输出，令人甚是头疼。</p>
-<a id="more"></a>
-
+      <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑声音输出是正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐在后台是在正常播放的，但是却没办法输出，令人甚是头疼。<br><a id="more"></a></p>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>&emsp;&emsp;为了解决这个问题，我查找了挺多信息，找到了三种解决方法（确切的说是两种，因为前两种方法其实是一样的），但是却还是没整明白问题处在哪里。</p>
 <h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>&emsp;&emsp;第一种方法就是打开电脑的<strong>Activity Monitor</strong>，然后找到<strong>coreaudiod</strong>这个进程（它是MacOS的核心音频进程），找到后将其结束即可，它在被你结束进程后，将会自动启动。</p>
 <center>
@@ -149,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/03/10/parallels-voice-problem/" data-id="ck9k1y5xe000bp2z5bfkl88yw"
+      <a data-url="https://www.zioang.fun/2020/03/10/parallels-voice-problem/" data-id="ck9lcjc84000oipz50kk96eoc"
         class="article-share-link">分享</a>
         
       
@@ -337,7 +335,7 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
   <div class="reward-box">
     
     <div class="reward-item">
@@ -555,6 +553,21 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

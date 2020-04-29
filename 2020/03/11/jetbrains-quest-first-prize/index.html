@@ -111,7 +111,6 @@
 </center>
 
 <a id="more"></a>
-
 <h3 id="解谜"><a href="#解谜" class="headerlink" title="解谜"></a>解谜</h3><p>&emsp;&emsp;整个活动由好几个谜题构成，下面我们就一个一个谜题展开来慢慢叙述吧。</p>
 <h4 id="谜题一"><a href="#谜题一" class="headerlink" title="谜题一"></a>谜题一</h4><p>&emsp;&emsp;第一个谜题其实就是解出上面推特中的隐藏信息。相信稍微了解<strong>CTF</strong>内容的人，都能很快的猜到，这串数字肯定是能转译成文字的（要不然根本没法往下面解啊。于是，我试了下将其翻译成<strong>ascii</strong>，结果还真一次就过了（随便搜一个十六进制转ascii码的网站就行了）。于是，我们便有了下一步的思路，那便是线索就在官网的代码中。</p>
 <center>
@@ -143,7 +142,6 @@
 
 <p>&emsp;&emsp;由内容可知，他们给出了一个链接（ <a href="https://jb.gg/###" target="_blank" rel="noopener">https://jb.gg/###</a> ），但是该链接目前有三位数字不知道。而我们的任务就是解答出他下面的问题：500 - 5000之间的<strong>质数</strong>有多少个。这里，我用欧拉筛快速查了遍，于是<a href="https://jb.gg/574" target="_blank" rel="noopener">前往第五个谜题的线索</a>就有了。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int MAXN &#x3D; 10000000 + 5;</span><br><span class="line"></span><br><span class="line">int book[MAXN], vis[MAXN];</span><br><span class="line"></span><br><span class="line">void find(int num) &#123;</span><br><span class="line">    int ct &#x3D; 1;</span><br><span class="line">    book[1] &#x3D; 2;</span><br><span class="line">    vis[1] &#x3D; 1;</span><br><span class="line">    for (int i &#x3D; 2; i &lt;&#x3D; num; i++) &#123;</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            book[ct++] &#x3D; i;</span><br><span class="line">        for (int j &#x3D; 1; j &lt;&#x3D; ct &amp;&amp; i * book[j] &lt;&#x3D; num; j++) &#123;</span><br><span class="line">            vis[i * book[j]] &#x3D; 1;</span><br><span class="line">            if (i % book[j] &#x3D;&#x3D; 0)</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    find(5000);</span><br><span class="line">    int cnt &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; 500; i &lt;&#x3D; 5000; ++i)</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            ++cnt;</span><br><span class="line">    cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h4 id="谜题五"><a href="#谜题五" class="headerlink" title="谜题五"></a>谜题五</h4><p>&emsp;&emsp;这个谜题其实我是没有解出来，是特意去查了下的，因为该阶段需要你比较了解<strong>JetBrains</strong>的产品内容，而我对于 JetBrains 并不熟悉，只用过几款产品罢了。 </p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 500px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -158,18 +156,14 @@
     <br>
 </center>
 
-<h4 id="谜题六"><a href="#谜题六" class="headerlink" title="谜题六"></a>谜题六</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Qlfh$#Li#|rx#duh#uhdglqj#wklv#|rx#pxvw#kdyh#zrunhg#rxw#krz#wr#ghfu|sw#lw1#Wklv#lv#rxu#lvvxh#wudfnhu#ghvljqhg#iru#djloh#whdpv1#Lw#lv#iuhh#iru#xs#wr#6#xvhuv#lq#Forxg#dqg#iru#43#xvhuv#lq#Vwdqgdorqh&#x2F;#vr#li#|rx#zdqw#wr#jlyh#lw#d#jr#lq#|rxu#whdp#wkhq#zh#wrwdoo|#uhfrpphqg#lw1#|rx#kdyh#ilqlvkhg#wkh#iluvw#Txhvw&#x2F;#qrz#lw“v#wlph#wr#uhghhp#|rxu#iluvw#sul&#125;h1#Wkh#frgh#iru#wkh#iluvw#txhvw#lv#‟WkhGulyhWrGhyhors†1#Jr#wr#wkh#Txhvw#Sdjh#dqg#xvh#wkh#frgh#wr#fodlp#|rxu#sul&#125;h1#kwwsv&#x3D;22zzz1mhweudlqv1frp2surpr2txhvw2</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;在这个谜题里，官方告诉我们解题的关键便是要重新去思考。看到这，官方在谜题二中挖的一个坑在便被填上了。大家可以在看看谜题二中那篇文的最后一段。下图我已用红色圈出来了，这里有个key：<strong>Good luck! == Jrrg#oxfn$</strong>，而这个key就是我们解这题的关键。</p>
+<h4 id="谜题六"><a href="#谜题六" class="headerlink" title="谜题六"></a>谜题六</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Qlfh$#Li#|rx#duh#uhdglqj#wklv#|rx#pxvw#kdyh#zrunhg#rxw#krz#wr#ghfu|sw#lw1#Wklv#lv#rxu#lvvxh#wudfnhu#ghvljqhg#iru#djloh#whdpv1#Lw#lv#iuhh#iru#xs#wr#6#xvhuv#lq#Forxg#dqg#iru#43#xvhuv#lq#Vwdqgdorqh&#x2F;#vr#li#|rx#zdqw#wr#jlyh#lw#d#jr#lq#|rxu#whdp#wkhq#zh#wrwdoo|#uhfrpphqg#lw1#|rx#kdyh#ilqlvkhg#wkh#iluvw#Txhvw&#x2F;#qrz#lw“v#wlph#wr#uhghhp#|rxu#iluvw#sul&#125;h1#Wkh#frgh#iru#wkh#iluvw#txhvw#lv#‟WkhGulyhWrGhyhors†1#Jr#wr#wkh#Txhvw#Sdjh#dqg#xvh#wkh#frgh#wr#fodlp#|rxu#sul&#125;h1#kwwsv&#x3D;22zzz1mhweudlqv1frp2surpr2txhvw2</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;在这个谜题里，官方告诉我们解题的关键便是要重新去思考。看到这，官方在谜题二中挖的一个坑在便被填上了。大家可以在看看谜题二中那篇文的最后一段。下图我已用红色圈出来了，这里有个key：<strong>Good luck! == Jrrg#oxfn$</strong>，而这个key就是我们解这题的关键。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311185916.png">
     <br>
 </center>
 
-<p>&emsp;&emsp;观察<strong>Good luck! == Jrrg#oxfn$</strong>这个字符串，我们可以发现它是一个等式，这便意味着我们解题的关键就在于为什么它们会相等。稍微思考片刻，我发现了一个疑点：<strong>oo</strong> –&gt; <strong>rr</strong>。凭此，我初步怀疑这是一个简单的解密题，而且还是个凯撒码。于是，我尝试着在草稿纸上模拟移位了下，发现确实如此。由此，我们就能很快的去解码官方给的那串字符了。这里我用C++简单模拟了下，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    string str &#x3D; &quot;&quot;;&#x2F;&#x2F; 这里放官方那串字符</span><br><span class="line">    for (int i &#x3D; 0; i &lt; str.length(); ++i) &#123;</span><br><span class="line">        char c &#x3D; str[i];</span><br><span class="line">        if (isalpha(c)) &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if ((c &gt;&#x3D; 62 &amp;&amp; c &lt; 65) || (c &gt; 94 &amp;&amp; c &lt; 97))</span><br><span class="line">                c +&#x3D; 26;</span><br><span class="line">            else if ((c &gt; 90 &amp;&amp; c &lt;&#x3D; 93) || (c &gt; 122 &amp;&amp; c &lt;&#x3D; 125))</span><br><span class="line">                c -&#x3D; 26;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if (isalpha(c))</span><br><span class="line">                c &#x3D; toupper(c);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        str[i] &#x3D; c;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;运行程序后，我们便完成了本次活动。从运行结果中，我们可以获得本次活动的密钥以及<a href="https://www.jetbrains.com/promo/quest/" target="_blank" rel="noopener">激活的地址</a>。这里为了保留点乐趣，我把密钥打码了，大家可以自己试试。</p>
+<p>&emsp;&emsp;观察<strong>Good luck! == Jrrg#oxfn$</strong>这个字符串，我们可以发现它是一个等式，这便意味着我们解题的关键就在于为什么它们会相等。稍微思考片刻，我发现了一个疑点：<strong>oo</strong> —&gt; <strong>rr</strong>。凭此，我初步怀疑这是一个简单的解密题，而且还是个凯撒码。于是，我尝试着在草稿纸上模拟移位了下，发现确实如此。由此，我们就能很快的去解码官方给的那串字符了。这里我用C++简单模拟了下，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    string str &#x3D; &quot;&quot;;&#x2F;&#x2F; 这里放官方那串字符</span><br><span class="line">    for (int i &#x3D; 0; i &lt; str.length(); ++i) &#123;</span><br><span class="line">        char c &#x3D; str[i];</span><br><span class="line">        if (isalpha(c)) &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if ((c &gt;&#x3D; 62 &amp;&amp; c &lt; 65) || (c &gt; 94 &amp;&amp; c &lt; 97))</span><br><span class="line">                c +&#x3D; 26;</span><br><span class="line">            else if ((c &gt; 90 &amp;&amp; c &lt;&#x3D; 93) || (c &gt; 122 &amp;&amp; c &lt;&#x3D; 125))</span><br><span class="line">                c -&#x3D; 26;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if (isalpha(c))</span><br><span class="line">                c &#x3D; toupper(c);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        str[i] &#x3D; c;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;运行程序后，我们便完成了本次活动。从运行结果中，我们可以获得本次活动的密钥以及<a href="https://www.jetbrains.com/promo/quest/" target="_blank" rel="noopener">激活的地址</a>。这里为了保留点乐趣，我把密钥打码了，大家可以自己试试。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311191201.png">
@@ -198,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/03/11/jetbrains-quest-first-prize/" data-id="ck9k1y5x90004p2z5823x327o"
+      <a data-url="https://www.zioang.fun/2020/03/11/jetbrains-quest-first-prize/" data-id="ck9lcjc7f0002ipz534ucecns"
         class="article-share-link">分享</a>
         
       
@@ -386,7 +380,7 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
   <div class="reward-box">
     
     <div class="reward-item">
@@ -604,6 +598,21 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

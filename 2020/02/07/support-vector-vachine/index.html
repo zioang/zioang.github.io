@@ -105,7 +105,6 @@
       
       <h2 id="SVM简介"><a href="#SVM简介" class="headerlink" title="SVM简介"></a>SVM简介</h2><p>&emsp;&emsp;在机器学习中，支持向量机是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。对于<strong>样本数很少</strong>的情况下，用SVM模型这个算法基本上都会得出一个<strong>比较好</strong>的结果。给定一组训练实例，每个训练实例被标记为属于两个类别中的一个或另一个，SVM训练算法创建一个将新的实例分配给两个类别之一的模型，使其成为非概率二元线性分类器。SVM模型是将实例表示为空间中的点，这样映射就使得单独类别的实例被尽可能宽的明显的间隔分开。然后，将新的实例映射到同一空间，并基于它们落在间隔的哪一侧来预测所属类别。</p>
 <a id="more"></a>
-
 <h2 id="SVM线性模型"><a href="#SVM线性模型" class="headerlink" title="SVM线性模型"></a>SVM线性模型</h2><h3 id="什么叫线性模型"><a href="#什么叫线性模型" class="headerlink" title="什么叫线性模型"></a>什么叫线性模型</h3><p>&emsp;&emsp;存在一组<strong>线性可分(Linear Separable)</strong>的数据样本集，其在空间中的分布如下图1所示。由图1可得知，该数据由两种训练样本所组成，将粉红色圆圈所代表的训练样本命名为class1，将蓝色圆圈所代表的训练样本命名为class2。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -143,7 +142,7 @@
     padding: 2px;">图 3、平移1号线</div>
 </center>
 
-<ol start="2">
+<ol>
 <li>其次，我们对1号线做<strong>性能指标</strong>，即1号线到其平移后得出的两条虚线的距离（也就是图4中的d），而这个1号线是使这个<strong>距离d</strong>最大的一条线。</li>
 </ol>
 <center>
@@ -156,15 +155,15 @@
     padding: 2px;">图 4、对1号线做性能指标</div>
 </center>
 
-<ol start="3">
+<ol>
 <li>最后，当<strong>线的斜率</strong>一样时，即我们平移1号线后所得出的所有线，也能得到这个最大距离的值d，那么哪条才是我们需要的呢？因此，这里我们需要对1号线做一个<strong>限制</strong>，那就是一号线到其两条虚线的<strong>距离相等</strong>，这样得出来的线才是最优的。</li>
 </ol>
 <h3 id="线性模型的数学描述"><a href="#线性模型的数学描述" class="headerlink" title="线性模型的数学描述"></a>线性模型的数学描述</h3><h4 id="数学定义"><a href="#数学定义" class="headerlink" title="数学定义"></a>数学定义</h4><ol>
 <li>d：间隔(margin)，即上面提到的距离。</li>
 <li>支持向量(Support Vectors): 平行线插到的向量。</li>
-<li>训练数据及标签：$$ (x_1, y_1), (x_2, y_2), (x_3, y_3)……(x_n, y_n) $$<br>其中，<strong>x</strong>代表上面图中所描绘圆圈在坐标中的<strong>位置</strong>，即<strong>向量</strong>；<strong>y</strong>代表<strong>标签</strong>，以上述问题为例，数据样本集中只有两种分类，因此y只能<strong>表示为+1或-1</strong>。</li>
-<li>线性模型：<br>I. 超平面的参数：<strong>( 𝜔, b )</strong><br>II. 超平面(Hyper plane)的线性函数: $$ \omega^T * X + b = 0 $$<br>这里的ω也是一个<strong>向量</strong>，其<strong>维度与x相同</strong>，而b是一个<strong>常数</strong>。</li>
-<li>训练集线性可分的定义：<br> 对于所有的训练样本 $$ {(x_i, y_i)}_{i\in[1, n]} $$<br> 都 ∃ ( 𝜔, b ) ，使：<br> $$ 对\ \ \forall i \in [1, n]， $$<br> 有以下情况：<br> $$ I. 若\ \ y_i = +1，则\omega^T * x_i \geq 0 $$<br> $$ II. 若\ \ y_i = -1， 则\omega^T * x_i &lt; 0 $$<br> 因此，我们最终可得到一个公式：<br> $$ y_i[\omega^T * x_i + b] &gt;= 0 …………(公式1) $$</li>
+<li>训练数据及标签：<script type="math/tex">(x_1, y_1), (x_2, y_2), (x_3, y_3)……(x_n, y_n)</script><br>其中，<strong>x</strong>代表上面图中所描绘圆圈在坐标中的<strong>位置</strong>，即<strong>向量</strong>；<strong>y</strong>代表<strong>标签</strong>，以上述问题为例，数据样本集中只有两种分类，因此y只能<strong>表示为+1或-1</strong>。</li>
+<li>线性模型：<br>I. 超平面的参数：<strong>( 𝜔, b )</strong><br>II. 超平面(Hyper plane)的线性函数: <script type="math/tex">\omega^T * X + b = 0</script><br>这里的ω也是一个<strong>向量</strong>，其<strong>维度与x相同</strong>，而b是一个<strong>常数</strong>。</li>
+<li>训练集线性可分的定义：<br> 对于所有的训练样本 <script type="math/tex">\{(x_i, y_i)\}_{i\in[1, n]}</script><br> 都 ∃ ( 𝜔, b ) ，使：<script type="math/tex; mode=display">对\ \ \forall i \in [1, n]，</script> 有以下情况：<script type="math/tex; mode=display">I. 若\ \ y_i = +1，则\omega^T * x_i \geq 0</script><script type="math/tex; mode=display">II. 若\ \ y_i = -1， 则\omega^T * x_i < 0</script> 因此，我们最终可得到一个公式：<script type="math/tex; mode=display">y_i[\omega^T * x_i + b] >= 0 …………(公式1)</script></li>
 </ol>
 <h3 id="未完-有空再补上"><a href="#未完-有空再补上" class="headerlink" title="未完 有空再补上"></a>未完 有空再补上</h3>
       
@@ -176,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/07/support-vector-vachine/" data-id="ck9k1y5xh000hp2z53biv3efh"
+      <a data-url="https://www.zioang.fun/2020/02/07/support-vector-vachine/" data-id="ck9lcjc82000mipz5fraeb7n7"
         class="article-share-link">分享</a>
         
       
@@ -364,7 +363,7 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
   <div class="reward-box">
     
     <div class="reward-item">
@@ -582,6 +581,21 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

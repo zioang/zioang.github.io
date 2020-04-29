@@ -118,27 +118,30 @@
 <p>III、<strong>可以有多个终端结点</strong>;</p>
 <p>&emsp;&emsp;因此，当我们判断一种数据类型是否为树时，只需观察：1)、子树是否 <strong>相交</strong> ; 2)、除了根结点外，每个结点是否有且只有 <strong>一个父节点</strong> ; 3)、一棵有N个结点的树，它的 <strong>边</strong> 是否为 <strong>N-1条</strong>。</p>
 <a id="more"></a>
-
-<h3 id="树形结构和线性结构的比较"><a href="#树形结构和线性结构的比较" class="headerlink" title="树形结构和线性结构的比较"></a>树形结构和线性结构的比较</h3><table>
+<h3 id="树形结构和线性结构的比较"><a href="#树形结构和线性结构的比较" class="headerlink" title="树形结构和线性结构的比较"></a>树形结构和线性结构的比较</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center"><strong>树结构</strong></th>
-<th align="center"><strong>线性结构</strong></th>
+<th style="text-align:center"><strong>树结构</strong></th>
+<th style="text-align:center"><strong>线性结构</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">根结点 ( 无前驱 )</td>
-<td align="center">第一个数据元素 ( 无前驱 )</td>
+<tbody>
+<tr>
+<td style="text-align:center">根结点 ( 无前驱 )</td>
+<td style="text-align:center">第一个数据元素 ( 无前驱 )</td>
 </tr>
 <tr>
-<td align="center">多个叶子结点 ( 无后继 )</td>
-<td align="center">最后一个数据元素 ( 无后继 )</td>
+<td style="text-align:center">多个叶子结点 ( 无后继 )</td>
+<td style="text-align:center">最后一个数据元素 ( 无后继 )</td>
 </tr>
 <tr>
-<td align="center">树中其他结点( 一个前驱, 多个后继 )</td>
-<td align="center">其他数据元素 ( 一个前驱,一个后继 )</td>
+<td style="text-align:center">树中其他结点( 一个前驱, 多个后继 )</td>
+<td style="text-align:center">其他数据元素 ( 一个前驱,一个后继 )</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200414194819.png">
@@ -172,7 +175,7 @@
 </li>
 </ul>
 <h3 id="树的逻辑结构"><a href="#树的逻辑结构" class="headerlink" title="树的逻辑结构"></a>树的逻辑结构</h3><ul>
-<li><p><strong>二元组表示法 :</strong> 一棵树 T = ( D, R)，其中 D = { A，B，C，D，E，F，G，H }，R = { r }， r = { &lt;A，B&gt; ，&lt;A，C&gt; ，&lt;A，D&gt; ，&lt;C，E&gt; ，&lt;C，F&gt; ，&lt;D，G&gt;， &lt;E， H&gt; } 。</p>
+<li><p><strong>二元组表示法 :</strong> 一棵树 T = ( D, R)，其中 D = { A，B，C，D，E，F，G，H }，R = { r }， r = { &lt; A，B &gt; ，&lt; A，C &gt; ，&lt; A，D &gt; ，&lt; C，E &gt; ，&lt; C，F &gt; ，&lt; D，G &gt;， &lt; E， H &gt; } 。</p>
 </li>
 <li><p><strong>树形表示法 :</strong> 上面提到的树 T 用树形表示法后，为以下形状：</p>
 </li>
@@ -209,77 +212,83 @@
 <h4 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h4><p>&emsp;&emsp;当树用 <strong>链式存储</strong> 时，可用 <strong>多重链表</strong> 来表示: 一个前驱指针，n 个后继指针。然而，我们可能<strong>无法合理的设计</strong>树中结点的结构类型样式: 1)、等长的结构可能太浪费，因为每个结点的度可能不同；2)、不等长的结构太复杂，因为需要定义好多种结构类型。</p>
 <h3 id="树的表示方法"><a href="#树的表示方法" class="headerlink" title="树的表示方法"></a>树的表示方法</h3><p>&emsp;&emsp;根据树的存储结构，我们可以用不同结构来表示同一颗树。其中，最常见的表示方法有: 双亲表示法、孩子表示法和孩子兄弟表示法。</p>
 <h5 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h5><p>&emsp;&emsp;在树中，除 <strong>根结点</strong> 没有双亲外，其他每个 <strong>结点的双亲</strong> 都是 <strong>唯一</strong> 的。根据树的这种性质，存储树中结点时，只需包含以下信息:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">结点的值</th>
-<th align="center">该结点的双亲下标</th>
+<th style="text-align:center">结点的值</th>
+<th style="text-align:center">该结点的双亲下标</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>data</strong></td>
-<td align="center"><strong>parent</strong></td>
-</tr>
-</tbody></table>
-<p>&emsp;&emsp;因此，我们可以将上述提到的树 T ，用双亲表示法为如下结构:</p>
-<table>
-<thead>
+<tbody>
 <tr>
-<th align="center">数组下标</th>
-<th align="center">data</th>
-<th align="center">parent</th>
+<td style="text-align:center"><strong>data</strong></td>
+<td style="text-align:center"><strong>parent</strong></td>
 </tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">A</td>
-<td align="center">-1 ( 根结点 )</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">B</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">C</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">D</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">E</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">F</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">G</td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">H</td>
-<td align="center">4</td>
-</tr>
-</tbody></table>
-<h4 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h4><p>&emsp;&emsp;采用孩子表示法表示一棵树时，树中 <strong>每个结点除了存储其自身的值之外， 还必须指出其所有子女的位置</strong> ，而根据子女位置的实现方法不同，孩子表示法可分为三种: 1)、指针方式; 2)、数组方式; 3)、链表方式。</p>
-<h5 id="指针方式"><a href="#指针方式" class="headerlink" title="指针方式"></a>指针方式</h5><table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">*child[ m ] ( 指针数组，数组元素指向每个子女 )</th>
-</tr>
-</thead>
+</tbody>
 </table>
+</div>
+<p>&emsp;&emsp;因此，我们可以将上述提到的树 T ，用双亲表示法为如下结构:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组下标</th>
+<th style="text-align:center">data</th>
+<th style="text-align:center">parent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">-1 ( 根结点 )</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h4><p>&emsp;&emsp;采用孩子表示法表示一棵树时，树中 <strong>每个结点除了存储其自身的值之外， 还必须指出其所有子女的位置</strong> ，而根据子女位置的实现方法不同，孩子表示法可分为三种: 1)、指针方式; 2)、数组方式; 3)、链表方式。</p>
+<h5 id="指针方式"><a href="#指针方式" class="headerlink" title="指针方式"></a>指针方式</h5><center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205456.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>指针方式的孩子表示法</strong> 表示为:</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 350px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -287,111 +296,109 @@
     <br>
 </center>
 
-<h5 id="数组方式"><a href="#数组方式" class="headerlink" title="数组方式"></a>数组方式</h5><table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">子女 1 下标</th>
-<th align="center">子女 2 下标</th>
-<th align="left">……</th>
-</tr>
-</thead>
-</table>
+<h5 id="数组方式"><a href="#数组方式" class="headerlink" title="数组方式"></a>数组方式</h5><center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205700.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>数组方式的孩子表示法</strong> 表示为:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数组下标</th>
-<th align="center">data</th>
-<th align="center">child[0]</th>
-<th align="center">child[1]</th>
-<th align="center">child[2]</th>
-<th align="center">……</th>
-<th align="center">child[n]</th>
+<th style="text-align:center">数组下标</th>
+<th style="text-align:center">data</th>
+<th style="text-align:center">child[0]</th>
+<th style="text-align:center">child[1]</th>
+<th style="text-align:center">child[2]</th>
+<th style="text-align:center">……</th>
+<th style="text-align:center">child[n]</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">A( root )</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">A( root )</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="center">B</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">C</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">D</td>
-<td align="center">6</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">E</td>
-<td align="center">7</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">F</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">G</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">H</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
-</tbody></table>
-<h5 id="链表方式"><a href="#链表方式" class="headerlink" title="链表方式"></a>链表方式</h5><p>&emsp;&emsp;由于指针方式和数组方式的孩子表示法均会造成 <strong>空间的浪费</strong>，因此链表方式是最合理利用空间的。链表方式分为两部: 1)、将每个结点存储在一 <strong>数组</strong> 中，每个数组元素 <strong>两个域</strong>，存储结构如下表; 2)、每个结点的子女形成一个 <strong>单链表</strong>，每个单链表的 <strong>头指针</strong>存放在数组元素 <strong>第二个域中</strong>。所以，n 个结点的树便有 n 个单链表。</p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">指向第一个孩子的指针</th>
-</tr>
-</thead>
+</tbody>
 </table>
+</div>
+<h5 id="链表方式"><a href="#链表方式" class="headerlink" title="链表方式"></a>链表方式</h5><p>&emsp;&emsp;由于指针方式和数组方式的孩子表示法均会造成 <strong>空间的浪费</strong>，因此链表方式是最合理利用空间的。链表方式分为两部: 1)、将每个结点存储在一 <strong>数组</strong> 中，每个数组元素 <strong>两个域</strong>，存储结构如下表; 2)、每个结点的子女形成一个 <strong>单链表</strong>，每个单链表的 <strong>头指针</strong>存放在数组元素 <strong>第二个域中</strong>。所以，n 个结点的树便有 n 个单链表。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205807.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>链表方式的孩子表示法</strong> 表示为:</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -400,15 +407,12 @@
 </center>
 
 <h4 id="孩子兄弟表示法"><a href="#孩子兄弟表示法" class="headerlink" title="孩子兄弟表示法"></a>孩子兄弟表示法</h4><p>&emsp;&emsp;在存储树中 <strong>每个结点</strong> 时，除了包含该 <strong>结点的值</strong> 外，还设置了两个指针域 <strong>first child</strong> 和 <strong>right sibling</strong>，分别指向该结点的 <strong>第一个子女和其右兄弟</strong>，即以 <strong>二叉链表方式</strong> 加以存储，因此该方法也常被称为 <strong>二叉树表示法</strong>。</p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">first child</th>
-<th align="left">right sibling</th>
-</tr>
-</thead>
-</table>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205845.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>孩子兄弟表示法</strong> 表示为:</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -427,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/03/21/tree/" data-id="ck9k1y5xg000ep2z5gtcmboki"
+      <a data-url="https://www.zioang.fun/2020/03/21/tree/" data-id="ck9lcjc81000jipz5htdub1oi"
         class="article-share-link">分享</a>
         
       
@@ -615,7 +619,7 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
   <div class="reward-box">
     
     <div class="reward-item">
@@ -833,6 +837,21 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

@@ -3,7 +3,10 @@
   <entry>
     <title>图的基本概念</title>
     <url>/2020/04/06/graph/</url>
-    <content><![CDATA[<h3 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h3><p>&emsp;&emsp;<strong>图 (Graph)</strong> 是由一个 <strong>非空的顶点集合 V (Verex)</strong> 和一个描述 <strong>顶点之间多对多关系的边（或弧）集合 E (Edge)</strong> 组成的一种数据结构，它可以形式化地表示为：<strong>G＝（V，E）</strong>， 其中:<br>    $$ V = \lbrace v|v \in 某个数据对象集 \rbrace ，$$<br>    $$ E = \lbrace（v_i，v_j）| v_i，v_j \in V \rbrace， $$<br>或 $ E = \lbrace &lt;v_i，v_j&gt; | v_i，v_j \in V 且 &lt;v_i,v_j&gt; 表示从 v_i 到 v_j 的一条单向通路 \rbrace 。$</p>
+    <content><![CDATA[<h3 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h3><p>&emsp;&emsp;<strong>图 (Graph)</strong> 是由一个 <strong>非空的顶点集合 V (Verex)</strong> 和一个描述 <strong>顶点之间多对多关系的边（或弧）集合 E (Edge)</strong> 组成的一种数据结构，它可以形式化地表示为：<strong>G＝（V，E）</strong>， 其中: </p>
+<script type="math/tex; mode=display">
+  V = \lbrace v|v \in 某个数据对象集 \rbrace ，</script><script type="math/tex; mode=display">
+  E = \lbrace（v_i，v_j）| v_i，v_j \in V \rbrace，</script><p>或$E = \lbrace &lt; v_i，v_j&gt; | v_i，v_j \in V 且 &lt; v_i,v_j &gt; 表示从 v_i 到 v_j 的一条单向通路 \rbrace 。$</p>
 <p>&emsp;&emsp;通常 <strong>V(G)： 表示图G的顶点集。E(G)： 表示图G的边集。</strong> E(G) 可以是空集，若E(G) 为空，则图G只有顶点、没有边。综上所述，我们可以发现，其实 <strong>线性表和树</strong> 也都是图的一种。</p>
 <p>&emsp;&emsp;以杭州地铁规划图为例，我们可以将每个 <strong>站点</strong> 都看作 <strong>图的顶点</strong>，然后可以把 <strong>站与站之间的轨道</strong> 看作 <strong>图的边</strong>。最后，我们将所有站点归为集合V，而把所有轨道归为集合E，这样便组成了一个图。</p>
 <center>
@@ -13,7 +16,6 @@
 </center>
 
 <a id="more"></a>
-
 <h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><ul>
 <li><strong>无向图 :</strong> 若每条边均 <strong>没有方向</strong> ，则称G为无向图。无向图中的边均是 <strong>顶点的无序对</strong>，无序对通常用圆括号表示。</li>
 </ul>
@@ -60,16 +62,20 @@
 </li>
 </ul>
 </li>
-<li><p><strong>顶点的度 :</strong> 与 <strong>该顶点相关联的边的数目</strong> ，顶点 v 的度记为 <strong>D(v)</strong>。顶点 $v_i$ 的 <strong>度数</strong> 是邻接矩阵中 <strong>第i行或第i列值为1的元素个数</strong> ，即<br>  $$ \quad D(v_i) = \sum_{j=0}^{n-1} A[i, j] = \sum_{j=0}^{n-1} A[j, i] $$</p>
-</li>
-<li><p><strong>顶点的入度 :</strong> 有向图中，以 <strong>顶点 v 为终点的边的数目</strong> ，顶点 v 的入度记为 <strong>ID(v)</strong> 。顶点 $v_i$ 的 <strong>入度</strong> 是邻接矩阵中 <strong>第i列值为1的元素的个数</strong> ，即<br>  $$ \quad ID(v_i) = \sum_{j=0}^{n-1} A[j, i] $$</p>
-</li>
-<li><p><strong>顶点的出度 :</strong> 有向图中，以 <strong>顶点 v 为始点的边的数目</strong> 。顶点 v 的出度记为 <strong>OD(v)</strong>。顶点 $v_i$ 的 <strong>出度</strong> 是邻接矩阵中 <strong>第i行值为1的元素个数</strong> ，即<br>  $$ \quad OD(v_i) = \sum_{j=0}^{n-1} A[i, j] $$</p>
-</li>
+<li><p><strong>顶点的度 :</strong> 与 <strong>该顶点相关联的边的数目</strong> ，顶点 v 的度记为 <strong>D(v)</strong>。顶点 $v_i$ 的 <strong>度数</strong> 是邻接矩阵中 <strong>第i行或第i列值为1的元素个数</strong> ，即</p>
+<script type="math/tex; mode=display">
+D(v_i) = \sum_{j=0}^{n-1} A[i, j] = \sum_{j=0}^{n-1} A[j, i]</script></li>
+<li><p><strong>顶点的入度 :</strong> 有向图中，以 <strong>顶点 v 为终点的边的数目</strong> ，顶点 v 的入度记为 <strong>ID(v)</strong> 。顶点 $v_i$ 的 <strong>入度</strong> 是邻接矩阵中 <strong>第i列值为1的元素的个数</strong> ，即</p>
+<script type="math/tex; mode=display">
+ID(v_i) = \sum_{j=0}^{n-1} A[j, i]</script></li>
+<li><p><strong>顶点的出度 :</strong> 有向图中，以 <strong>顶点 v 为始点的边的数目</strong> 。顶点 v 的出度记为 <strong>OD(v)</strong>。顶点 $v_i$ 的 <strong>出度</strong> 是邻接矩阵中 <strong>第i行值为1的元素个数</strong> ，即</p>
+<script type="math/tex; mode=display">
+OD(v_i) = \sum_{j=0}^{n-1} A[i, j]</script></li>
 <li><p><strong>有向图中，顶点各度之间的关系 :</strong> D(v) = ID(v) + OD(v)</p>
 </li>
-<li><p><strong>顶点数(n)、边数(e)和度数D(v)之间的关系 :</strong><br>  $$ e = \frac{1}{2} * \sum_{i=1}^n * D(v_i) $$</p>
-</li>
+<li><p><strong>顶点数(n)、边数(e)和度数D(v)之间的关系 :</strong> </p>
+<script type="math/tex; mode=display">
+e = \frac{1}{2} * \sum_{i=1}^n * D(v_i)</script></li>
 <li><p><strong>子图 :</strong> 若给定两个图 <strong>$G_i$</strong> 和 <strong>$G_j$</strong> ，其中 $G_i$ =（ $v_i$，$e_i$ ），$G_j$=（ $v_j$，$e_j$ ），若满足 <strong>$v_i \subseteq v_j$，$e_i \subseteq e_j$</strong> ，则称 <strong>$G_u$ 是 $G_j$ 的子图</strong> 。 </p>
 </li>
 <li><p><strong>路径 :</strong> 一个长度为 <strong>k</strong> 的路径是一个 <strong>非空的顶点和边的交错序列 $v_0 e_0、v_1 e_1、 … 、 v_{k-1} e_{k-1}$</strong> ，使得对于所有 <strong>$i &lt; k$</strong> 均有 <strong>$e_i$ = $v_i * v_{i+1}$</strong> 。特别的，当 <strong>$v_0 = v_k$</strong> 时，称这个路径是 <strong>闭的(closed)</strong> ，当路径中的顶点互不相同，得到 <strong>G 的一条路</strong> 。</p>
@@ -148,15 +154,27 @@
 <li><p>浪费时间：统计 <strong>稀疏图</strong> 中共有多少条边。</p>
 </li>
 </ul>
-<h4 id="非网络邻接矩阵"><a href="#非网络邻接矩阵" class="headerlink" title="非网络邻接矩阵"></a>非网络邻接矩阵</h4><p>&emsp;&emsp;给定图 G = ( V，E )，其中V(G) = { $v_0$ … $v_i$ … $v_{n-1}$ }，可以将其转换成 <strong>N 阶方阵 G’ [N][N] ( N 个顶点的从0 到 N-1 编号 )</strong> 。因此 G 的邻接矩阵具有如下性质：<br>$$G[i][j] = \begin{cases} \quad 1 \quad \quad 若&lt;v_i，v_j&gt;是G中的边 \ \quad 0 \quad \quad 否则 \end{cases}$$</p>
-<p>&emsp;&emsp;于是，现在存在图 G 为无向图，将其转换为邻接矩阵后，便如下图（ 0 意味这两个顶点间不存在边，而 1 意味着两个顶点间存在边）。根据所画出的邻接矩阵，我们可以发现 <strong>无向图的邻接矩阵是对称的</strong>，而 <strong>有向图的邻接矩阵</strong> 却 <strong>不一定是对称的</strong>，感兴趣的可以自己尝试着画个看看。</p>
+<h4 id="非网络邻接矩阵"><a href="#非网络邻接矩阵" class="headerlink" title="非网络邻接矩阵"></a>非网络邻接矩阵</h4><p>&emsp;&emsp;给定图 G = ( V，E )，其中V(G) = { $v_0$ … $v_i$ … $v_{n-1}$ }，可以将其转换成 <strong>N 阶方阵 G’ [N][N] ( N 个顶点的从0 到 N-1 编号 )</strong> 。因此 G 的邻接矩阵具有如下性质： </p>
+<script type="math/tex; mode=display">
+  G[i][j] = 
+  \begin{cases} 
+  1，& 若<v_i，v_j>是G中的边 \\ 
+  0，& 否则 
+  \end{cases}</script><p>&emsp;&emsp;于是，现在存在图 G 为无向图，将其转换为邻接矩阵后，便如下图（ 0 意味这两个顶点间不存在边，而 1 意味着两个顶点间存在边）。根据所画出的邻接矩阵，我们可以发现 <strong>无向图的邻接矩阵是对称的</strong>，而 <strong>有向图的邻接矩阵</strong> 却 <strong>不一定是对称的</strong>，感兴趣的可以自己尝试着画个看看。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428212504.png">
     <br>
 </center>
 
-<h4 id="网络邻接矩阵"><a href="#网络邻接矩阵" class="headerlink" title="网络邻接矩阵"></a>网络邻接矩阵</h4><p>&emsp;&emsp;当 G =（V，E）是一个<strong>网络图</strong>时，G 的邻接矩阵是具有如下性质的 n 阶方阵：<br>$$ A[i，j] = \begin{cases} \quad W_{ij} \quad 当 \ (v_i， v_j) \ 或 \ &lt;v_i，v_j&gt; \ \in E(G) \ \quad 0 \quad \quad 当 \ (v_i， v_j) \ 或 \ &lt;v_i，v_j&gt; \ \notin E(G) \ 且 \ i=j \ \quad \infty \quad \ \  当 \ (v_i， v_j) \ 或 \ &lt;v_i，v_j&gt; \ \notin E(G) \ 且 \ i \neq j \ \end{cases} $$<br>其中$W_{ij}$表示边上的 <strong>权值</strong>；$\infty$ 表示一个计算机 <strong>允许的、大于所有边上权值的数</strong> 。 </p>
+<h4 id="网络邻接矩阵"><a href="#网络邻接矩阵" class="headerlink" title="网络邻接矩阵"></a>网络邻接矩阵</h4><p>&emsp;&emsp;当 G =（V，E）是一个<strong>网络图</strong>时，G 的邻接矩阵是具有如下性质的 n 阶方阵：</p>
+<script type="math/tex; mode=display">
+  A[i，j] = 
+    \begin{cases} 
+      W_{ij} ， & 当 \ (v_i， v_j) \ 或 \ <v_i，v_j> \ \in E(G) \\ 
+      0 ， & 当 \ (v_i， v_j) \ 或 \ <v_i，v_j> \ \notin E(G) \ 且 \ i=j \\ 
+      \infty ， & 当 \ (v_i， v_j) \ 或 \ <v_i，v_j> \ \notin E(G) \ 且 \ i \neq j \\ 
+    \end{cases}</script><p>其中$W_{ij}$表示边上的 <strong>权值</strong>；$\infty$ 表示一个计算机 <strong>允许的、大于所有边上权值的数</strong> 。 </p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 640px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200428222711.png">
@@ -164,7 +182,7 @@
 </center>
 
 <h4 id="存储问题"><a href="#存储问题" class="headerlink" title="存储问题"></a>存储问题</h4><p>&emsp;&emsp;根据上面提到的，无向图的邻接矩阵是对称的，那么我们就可以思考一个问题：<strong>是否存在其他方法，在存储无向图时能节约更多的空间？</strong> 答案是： <strong>存在</strong> 。 根据对称性质，其实我们可以只 <strong>存储一半的数据</strong> ，那么当图的数据很大时，这节省下来的空间时十分客观的。</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>&emsp;&emsp;对于无向图 G ，我们可以用一个长度为 <strong>N(N+1)/2 的一维数组A存储</strong> $ \ \lbrace G_{00}，G_{10}，G_{11}，… \ ，G_{n-1 \quad 0}，… \ ，G_{n-1 \quad n-1} \rbrace $ ，则 $G_{ij}$ 在A中对应的下标是: $ \ (i * ( i + 1 ) / 2 + j ) $ 。而对于 <strong>网络</strong> ，只要把 <strong>G[i][j]的值</strong> 定义为 <strong>边 $ &lt;v_i，v_j&gt; $ 的权重</strong> 即可。若 $ (v_i，v_j) $ 之间 <strong>不存在边</strong> ，那么将其定义为 <strong>无穷</strong> 即可。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>&emsp;&emsp;对于无向图 G ，我们可以用一个长度为 <strong>N(N+1)/2 的一维数组A存储</strong> $ \lbrace G_{00}，G_{10}，G_{11}，…  ，G_{n-1 \quad 0}，…  ，G_{n-1 \quad n-1} \rbrace$ ，则 $G_{ij}$ 在A中对应的下标是: $(i ( i + 1 ) \div 2 + j )$ 。而对于 <strong>网络</strong> ，只要把 <strong>G[i][j]的值</strong> 定义为 <strong>边 $ &lt; v_i，v_j &gt; $ 的权重</strong> 即可。若 $(v_i，v_j)$ 之间 <strong>不存在边</strong> ，那么将其定义为 <strong>无穷</strong> 即可。</p>
 <h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
 <li><p>方便寻找 <strong>任一顶点</strong> 的 <strong>所有邻接点</strong> 。</p>
 </li>
@@ -216,27 +234,30 @@
 <p>III、<strong>可以有多个终端结点</strong>;</p>
 <p>&emsp;&emsp;因此，当我们判断一种数据类型是否为树时，只需观察：1)、子树是否 <strong>相交</strong> ; 2)、除了根结点外，每个结点是否有且只有 <strong>一个父节点</strong> ; 3)、一棵有N个结点的树，它的 <strong>边</strong> 是否为 <strong>N-1条</strong>。</p>
 <a id="more"></a>
-
-<h3 id="树形结构和线性结构的比较"><a href="#树形结构和线性结构的比较" class="headerlink" title="树形结构和线性结构的比较"></a>树形结构和线性结构的比较</h3><table>
+<h3 id="树形结构和线性结构的比较"><a href="#树形结构和线性结构的比较" class="headerlink" title="树形结构和线性结构的比较"></a>树形结构和线性结构的比较</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center"><strong>树结构</strong></th>
-<th align="center"><strong>线性结构</strong></th>
+<th style="text-align:center"><strong>树结构</strong></th>
+<th style="text-align:center"><strong>线性结构</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">根结点 ( 无前驱 )</td>
-<td align="center">第一个数据元素 ( 无前驱 )</td>
+<tbody>
+<tr>
+<td style="text-align:center">根结点 ( 无前驱 )</td>
+<td style="text-align:center">第一个数据元素 ( 无前驱 )</td>
 </tr>
 <tr>
-<td align="center">多个叶子结点 ( 无后继 )</td>
-<td align="center">最后一个数据元素 ( 无后继 )</td>
+<td style="text-align:center">多个叶子结点 ( 无后继 )</td>
+<td style="text-align:center">最后一个数据元素 ( 无后继 )</td>
 </tr>
 <tr>
-<td align="center">树中其他结点( 一个前驱, 多个后继 )</td>
-<td align="center">其他数据元素 ( 一个前驱,一个后继 )</td>
+<td style="text-align:center">树中其他结点( 一个前驱, 多个后继 )</td>
+<td style="text-align:center">其他数据元素 ( 一个前驱,一个后继 )</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200414194819.png">
@@ -270,7 +291,7 @@
 </li>
 </ul>
 <h3 id="树的逻辑结构"><a href="#树的逻辑结构" class="headerlink" title="树的逻辑结构"></a>树的逻辑结构</h3><ul>
-<li><p><strong>二元组表示法 :</strong> 一棵树 T = ( D, R)，其中 D = { A，B，C，D，E，F，G，H }，R = { r }， r = { &lt;A，B&gt; ，&lt;A，C&gt; ，&lt;A，D&gt; ，&lt;C，E&gt; ，&lt;C，F&gt; ，&lt;D，G&gt;， &lt;E， H&gt; } 。</p>
+<li><p><strong>二元组表示法 :</strong> 一棵树 T = ( D, R)，其中 D = { A，B，C，D，E，F，G，H }，R = { r }， r = { &lt; A，B &gt; ，&lt; A，C &gt; ，&lt; A，D &gt; ，&lt; C，E &gt; ，&lt; C，F &gt; ，&lt; D，G &gt;， &lt; E， H &gt; } 。</p>
 </li>
 <li><p><strong>树形表示法 :</strong> 上面提到的树 T 用树形表示法后，为以下形状：</p>
 </li>
@@ -307,77 +328,83 @@
 <h4 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h4><p>&emsp;&emsp;当树用 <strong>链式存储</strong> 时，可用 <strong>多重链表</strong> 来表示: 一个前驱指针，n 个后继指针。然而，我们可能<strong>无法合理的设计</strong>树中结点的结构类型样式: 1)、等长的结构可能太浪费，因为每个结点的度可能不同；2)、不等长的结构太复杂，因为需要定义好多种结构类型。</p>
 <h3 id="树的表示方法"><a href="#树的表示方法" class="headerlink" title="树的表示方法"></a>树的表示方法</h3><p>&emsp;&emsp;根据树的存储结构，我们可以用不同结构来表示同一颗树。其中，最常见的表示方法有: 双亲表示法、孩子表示法和孩子兄弟表示法。</p>
 <h5 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h5><p>&emsp;&emsp;在树中，除 <strong>根结点</strong> 没有双亲外，其他每个 <strong>结点的双亲</strong> 都是 <strong>唯一</strong> 的。根据树的这种性质，存储树中结点时，只需包含以下信息:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">结点的值</th>
-<th align="center">该结点的双亲下标</th>
+<th style="text-align:center">结点的值</th>
+<th style="text-align:center">该结点的双亲下标</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>data</strong></td>
-<td align="center"><strong>parent</strong></td>
-</tr>
-</tbody></table>
-<p>&emsp;&emsp;因此，我们可以将上述提到的树 T ，用双亲表示法为如下结构:</p>
-<table>
-<thead>
+<tbody>
 <tr>
-<th align="center">数组下标</th>
-<th align="center">data</th>
-<th align="center">parent</th>
+<td style="text-align:center"><strong>data</strong></td>
+<td style="text-align:center"><strong>parent</strong></td>
 </tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">A</td>
-<td align="center">-1 ( 根结点 )</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">B</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">C</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">D</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">E</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">F</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">G</td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">H</td>
-<td align="center">4</td>
-</tr>
-</tbody></table>
-<h4 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h4><p>&emsp;&emsp;采用孩子表示法表示一棵树时，树中 <strong>每个结点除了存储其自身的值之外， 还必须指出其所有子女的位置</strong> ，而根据子女位置的实现方法不同，孩子表示法可分为三种: 1)、指针方式; 2)、数组方式; 3)、链表方式。</p>
-<h5 id="指针方式"><a href="#指针方式" class="headerlink" title="指针方式"></a>指针方式</h5><table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">*child[ m ] ( 指针数组，数组元素指向每个子女 )</th>
-</tr>
-</thead>
+</tbody>
 </table>
+</div>
+<p>&emsp;&emsp;因此，我们可以将上述提到的树 T ，用双亲表示法为如下结构:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组下标</th>
+<th style="text-align:center">data</th>
+<th style="text-align:center">parent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">-1 ( 根结点 )</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h4><p>&emsp;&emsp;采用孩子表示法表示一棵树时，树中 <strong>每个结点除了存储其自身的值之外， 还必须指出其所有子女的位置</strong> ，而根据子女位置的实现方法不同，孩子表示法可分为三种: 1)、指针方式; 2)、数组方式; 3)、链表方式。</p>
+<h5 id="指针方式"><a href="#指针方式" class="headerlink" title="指针方式"></a>指针方式</h5><center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205456.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>指针方式的孩子表示法</strong> 表示为:</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 350px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -385,111 +412,109 @@
     <br>
 </center>
 
-<h5 id="数组方式"><a href="#数组方式" class="headerlink" title="数组方式"></a>数组方式</h5><table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">子女 1 下标</th>
-<th align="center">子女 2 下标</th>
-<th align="left">……</th>
-</tr>
-</thead>
-</table>
+<h5 id="数组方式"><a href="#数组方式" class="headerlink" title="数组方式"></a>数组方式</h5><center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205700.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>数组方式的孩子表示法</strong> 表示为:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数组下标</th>
-<th align="center">data</th>
-<th align="center">child[0]</th>
-<th align="center">child[1]</th>
-<th align="center">child[2]</th>
-<th align="center">……</th>
-<th align="center">child[n]</th>
+<th style="text-align:center">数组下标</th>
+<th style="text-align:center">data</th>
+<th style="text-align:center">child[0]</th>
+<th style="text-align:center">child[1]</th>
+<th style="text-align:center">child[2]</th>
+<th style="text-align:center">……</th>
+<th style="text-align:center">child[n]</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">A( root )</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">A( root )</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="center">B</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">C</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">D</td>
-<td align="center">6</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">E</td>
-<td align="center">7</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">F</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">G</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">H</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
-<td align="center">-1</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">-1</td>
 </tr>
-</tbody></table>
-<h5 id="链表方式"><a href="#链表方式" class="headerlink" title="链表方式"></a>链表方式</h5><p>&emsp;&emsp;由于指针方式和数组方式的孩子表示法均会造成 <strong>空间的浪费</strong>，因此链表方式是最合理利用空间的。链表方式分为两部: 1)、将每个结点存储在一 <strong>数组</strong> 中，每个数组元素 <strong>两个域</strong>，存储结构如下表; 2)、每个结点的子女形成一个 <strong>单链表</strong>，每个单链表的 <strong>头指针</strong>存放在数组元素 <strong>第二个域中</strong>。所以，n 个结点的树便有 n 个单链表。</p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">指向第一个孩子的指针</th>
-</tr>
-</thead>
+</tbody>
 </table>
+</div>
+<h5 id="链表方式"><a href="#链表方式" class="headerlink" title="链表方式"></a>链表方式</h5><p>&emsp;&emsp;由于指针方式和数组方式的孩子表示法均会造成 <strong>空间的浪费</strong>，因此链表方式是最合理利用空间的。链表方式分为两部: 1)、将每个结点存储在一 <strong>数组</strong> 中，每个数组元素 <strong>两个域</strong>，存储结构如下表; 2)、每个结点的子女形成一个 <strong>单链表</strong>，每个单链表的 <strong>头指针</strong>存放在数组元素 <strong>第二个域中</strong>。所以，n 个结点的树便有 n 个单链表。</p>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205807.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>链表方式的孩子表示法</strong> 表示为:</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -498,15 +523,12 @@
 </center>
 
 <h4 id="孩子兄弟表示法"><a href="#孩子兄弟表示法" class="headerlink" title="孩子兄弟表示法"></a>孩子兄弟表示法</h4><p>&emsp;&emsp;在存储树中 <strong>每个结点</strong> 时，除了包含该 <strong>结点的值</strong> 外，还设置了两个指针域 <strong>first child</strong> 和 <strong>right sibling</strong>，分别指向该结点的 <strong>第一个子女和其右兄弟</strong>，即以 <strong>二叉链表方式</strong> 加以存储，因此该方法也常被称为 <strong>二叉树表示法</strong>。</p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">first child</th>
-<th align="left">right sibling</th>
-</tr>
-</thead>
-</table>
+<center>
+    <img style="border-radius: 0.3125em; margin-top: 15px; width: 100%; height: 50px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200429205845.png">
+    </br>
+</center>
+
 <p>&emsp;&emsp;根据上面所画的结点结构，我们可将树 T 用 <strong>孩子兄弟表示法</strong> 表示为:</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 15px; width: 650px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -550,7 +572,6 @@
 </center>
 
 <a id="more"></a>
-
 <p>而第三个线索(那便是最后一句话)便是: 藏木于林。根据官方的提示，我们可以想到，要隐藏一段文字，那最好的方法便是将其融入背景，于是<strong>Cmd/Ctrl+A</strong>这个小提示便用上了。最后，我们便得到了这么一句话: <strong>This is our 20th year as a company,we have shared numbers in our JetBrains Annual report, sharing the section with 18,650 numbers will progress your quest.</strong></p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 180px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -565,11 +586,7 @@
     <br>
 </center>
 
-<h3 id="谜题三"><a href="#谜题三" class="headerlink" title="谜题三"></a>谜题三</h3><p>&emsp;&emsp;谜题三其实十分简单，线索也都在谜题三的答案中给我们了。首先，我们进入谜题三所给的网站，然后找到<strong>lego brainstorms</strong>这部分。观察这部分的内容，我们会发现图片中存在着这样一段文字：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">d1D j00 kN0w J378r41n2 12 4lW4Y2 H1R1N9? ch3CK 0u7 73h K4r33r2 P493 4nD 533 1f 7H3r3 12 4 J08 F0r J00 0R 4 KW357 cH4LL3n93 70 90 fUr7h3r @ l3457.</span><br></pre></td></tr></table></figure>
-<p>这句话其实是英语火星文，翻译过来便是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Did you know Jetbrains is always hiring? Check out the careers page and see if there is a job for you or for quest challenge to go further atleast.</span><br></pre></td></tr></table></figure>
-
+<h3 id="谜题三"><a href="#谜题三" class="headerlink" title="谜题三"></a>谜题三</h3><p>&emsp;&emsp;谜题三其实十分简单，线索也都在谜题三的答案中给我们了。首先，我们进入谜题三所给的网站，然后找到<strong>lego brainstorms</strong>这部分。观察这部分的内容，我们会发现图片中存在着这样一段文字：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">d1D j00 kN0w J378r41n2 12 4lW4Y2 H1R1N9? ch3CK 0u7 73h K4r33r2 P493 4nD 533 1f 7H3r3 12 4 J08 F0r J00 0R 4 KW357 cH4LL3n93 70 90 fUr7h3r @ l3457.</span><br></pre></td></tr></table></figure><br>这句话其实是英语火星文，翻译过来便是：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Did you know Jetbrains is always hiring? Check out the careers page and see if there is a job for you or for quest challenge to go further atleast.</span><br></pre></td></tr></table></figure></p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200312062210.png">
@@ -583,9 +600,7 @@
     <br>
 </center>
 
-<p>&emsp;&emsp;点击该页面后，在跳转的页面中，我们可以找到通往谜题五的线索，便是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">To progress with your quest what you’ll need:</span><br><span class="line">To check out what we have for game developers.</span><br><span class="line">Be geeky enough to remember how you used to cheat at Konami games.</span><br><span class="line">Try cheating on the page.</span><br></pre></td></tr></table></figure>
-
+<p>&emsp;&emsp;点击该页面后，在跳转的页面中，我们可以找到通往谜题五的线索，便是：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">To progress with your quest what you’ll need:</span><br><span class="line">To check out what we have for game developers.</span><br><span class="line">Be geeky enough to remember how you used to cheat at Konami games.</span><br><span class="line">Try cheating on the page.</span><br></pre></td></tr></table></figure></p>
 <h3 id="谜题五"><a href="#谜题五" class="headerlink" title="谜题五"></a>谜题五</h3><p>&emsp;&emsp;根据提示，我们打开进入谜题五的<a href="https://www.jetbrains.com/gamedev/" target="_blank" rel="noopener">页面</a>。此题的关键在于我们要知道科乐美的作弊码：<strong>↑↑↓↓←→←→BA</strong>(这秘籍应该没人不知道吧。在该页面中完成该秘籍后，会弹出一个弹球小游戏。击碎所有方块后，我们便能得到本次活动的激活码了。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -618,7 +633,6 @@
 </center>
 
 <a id="more"></a>
-
 <h3 id="解谜"><a href="#解谜" class="headerlink" title="解谜"></a>解谜</h3><p>&emsp;&emsp;整个活动由好几个谜题构成，下面我们就一个一个谜题展开来慢慢叙述吧。</p>
 <h4 id="谜题一"><a href="#谜题一" class="headerlink" title="谜题一"></a>谜题一</h4><p>&emsp;&emsp;第一个谜题其实就是解出上面推特中的隐藏信息。相信稍微了解<strong>CTF</strong>内容的人，都能很快的猜到，这串数字肯定是能转译成文字的（要不然根本没法往下面解啊。于是，我试了下将其翻译成<strong>ascii</strong>，结果还真一次就过了（随便搜一个十六进制转ascii码的网站就行了）。于是，我们便有了下一步的思路，那便是线索就在官网的代码中。</p>
 <center>
@@ -650,7 +664,6 @@
 
 <p>&emsp;&emsp;由内容可知，他们给出了一个链接（ <a href="https://jb.gg/###" target="_blank" rel="noopener">https://jb.gg/###</a> ），但是该链接目前有三位数字不知道。而我们的任务就是解答出他下面的问题：500 - 5000之间的<strong>质数</strong>有多少个。这里，我用欧拉筛快速查了遍，于是<a href="https://jb.gg/574" target="_blank" rel="noopener">前往第五个谜题的线索</a>就有了。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int MAXN &#x3D; 10000000 + 5;</span><br><span class="line"></span><br><span class="line">int book[MAXN], vis[MAXN];</span><br><span class="line"></span><br><span class="line">void find(int num) &#123;</span><br><span class="line">    int ct &#x3D; 1;</span><br><span class="line">    book[1] &#x3D; 2;</span><br><span class="line">    vis[1] &#x3D; 1;</span><br><span class="line">    for (int i &#x3D; 2; i &lt;&#x3D; num; i++) &#123;</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            book[ct++] &#x3D; i;</span><br><span class="line">        for (int j &#x3D; 1; j &lt;&#x3D; ct &amp;&amp; i * book[j] &lt;&#x3D; num; j++) &#123;</span><br><span class="line">            vis[i * book[j]] &#x3D; 1;</span><br><span class="line">            if (i % book[j] &#x3D;&#x3D; 0)</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    find(5000);</span><br><span class="line">    int cnt &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; 500; i &lt;&#x3D; 5000; ++i)</span><br><span class="line">        if (!vis[i])</span><br><span class="line">            ++cnt;</span><br><span class="line">    cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h4 id="谜题五"><a href="#谜题五" class="headerlink" title="谜题五"></a>谜题五</h4><p>&emsp;&emsp;这个谜题其实我是没有解出来，是特意去查了下的，因为该阶段需要你比较了解<strong>JetBrains</strong>的产品内容，而我对于 JetBrains 并不熟悉，只用过几款产品罢了。 </p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 500px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -665,18 +678,14 @@
     <br>
 </center>
 
-<h4 id="谜题六"><a href="#谜题六" class="headerlink" title="谜题六"></a>谜题六</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Qlfh$#Li#|rx#duh#uhdglqj#wklv#|rx#pxvw#kdyh#zrunhg#rxw#krz#wr#ghfu|sw#lw1#Wklv#lv#rxu#lvvxh#wudfnhu#ghvljqhg#iru#djloh#whdpv1#Lw#lv#iuhh#iru#xs#wr#6#xvhuv#lq#Forxg#dqg#iru#43#xvhuv#lq#Vwdqgdorqh&#x2F;#vr#li#|rx#zdqw#wr#jlyh#lw#d#jr#lq#|rxu#whdp#wkhq#zh#wrwdoo|#uhfrpphqg#lw1#|rx#kdyh#ilqlvkhg#wkh#iluvw#Txhvw&#x2F;#qrz#lw“v#wlph#wr#uhghhp#|rxu#iluvw#sul&#125;h1#Wkh#frgh#iru#wkh#iluvw#txhvw#lv#‟WkhGulyhWrGhyhors†1#Jr#wr#wkh#Txhvw#Sdjh#dqg#xvh#wkh#frgh#wr#fodlp#|rxu#sul&#125;h1#kwwsv&#x3D;22zzz1mhweudlqv1frp2surpr2txhvw2</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;在这个谜题里，官方告诉我们解题的关键便是要重新去思考。看到这，官方在谜题二中挖的一个坑在便被填上了。大家可以在看看谜题二中那篇文的最后一段。下图我已用红色圈出来了，这里有个key：<strong>Good luck! == Jrrg#oxfn$</strong>，而这个key就是我们解这题的关键。</p>
+<h4 id="谜题六"><a href="#谜题六" class="headerlink" title="谜题六"></a>谜题六</h4><p>&emsp;&emsp;这个谜题就是我们最后一个需要解答的问题了，答出后我们就能获取到三个月的激活码了。谜题是官方给出的一句话：<strong>The key is to think back to the beginning.” – The JetBrains Quest team</strong> 和一长串字符(乱码?)：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Qlfh$#Li#|rx#duh#uhdglqj#wklv#|rx#pxvw#kdyh#zrunhg#rxw#krz#wr#ghfu|sw#lw1#Wklv#lv#rxu#lvvxh#wudfnhu#ghvljqhg#iru#djloh#whdpv1#Lw#lv#iuhh#iru#xs#wr#6#xvhuv#lq#Forxg#dqg#iru#43#xvhuv#lq#Vwdqgdorqh&#x2F;#vr#li#|rx#zdqw#wr#jlyh#lw#d#jr#lq#|rxu#whdp#wkhq#zh#wrwdoo|#uhfrpphqg#lw1#|rx#kdyh#ilqlvkhg#wkh#iluvw#Txhvw&#x2F;#qrz#lw“v#wlph#wr#uhghhp#|rxu#iluvw#sul&#125;h1#Wkh#frgh#iru#wkh#iluvw#txhvw#lv#‟WkhGulyhWrGhyhors†1#Jr#wr#wkh#Txhvw#Sdjh#dqg#xvh#wkh#frgh#wr#fodlp#|rxu#sul&#125;h1#kwwsv&#x3D;22zzz1mhweudlqv1frp2surpr2txhvw2</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;在这个谜题里，官方告诉我们解题的关键便是要重新去思考。看到这，官方在谜题二中挖的一个坑在便被填上了。大家可以在看看谜题二中那篇文的最后一段。下图我已用红色圈出来了，这里有个key：<strong>Good luck! == Jrrg#oxfn$</strong>，而这个key就是我们解这题的关键。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311185916.png">
     <br>
 </center>
 
-<p>&emsp;&emsp;观察<strong>Good luck! == Jrrg#oxfn$</strong>这个字符串，我们可以发现它是一个等式，这便意味着我们解题的关键就在于为什么它们会相等。稍微思考片刻，我发现了一个疑点：<strong>oo</strong> –&gt; <strong>rr</strong>。凭此，我初步怀疑这是一个简单的解密题，而且还是个凯撒码。于是，我尝试着在草稿纸上模拟移位了下，发现确实如此。由此，我们就能很快的去解码官方给的那串字符了。这里我用C++简单模拟了下，如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    string str &#x3D; &quot;&quot;;&#x2F;&#x2F; 这里放官方那串字符</span><br><span class="line">    for (int i &#x3D; 0; i &lt; str.length(); ++i) &#123;</span><br><span class="line">        char c &#x3D; str[i];</span><br><span class="line">        if (isalpha(c)) &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if ((c &gt;&#x3D; 62 &amp;&amp; c &lt; 65) || (c &gt; 94 &amp;&amp; c &lt; 97))</span><br><span class="line">                c +&#x3D; 26;</span><br><span class="line">            else if ((c &gt; 90 &amp;&amp; c &lt;&#x3D; 93) || (c &gt; 122 &amp;&amp; c &lt;&#x3D; 125))</span><br><span class="line">                c -&#x3D; 26;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if (isalpha(c))</span><br><span class="line">                c &#x3D; toupper(c);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        str[i] &#x3D; c;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;运行程序后，我们便完成了本次活动。从运行结果中，我们可以获得本次活动的密钥以及<a href="https://www.jetbrains.com/promo/quest/" target="_blank" rel="noopener">激活的地址</a>。这里为了保留点乐趣，我把密钥打码了，大家可以自己试试。</p>
+<p>&emsp;&emsp;观察<strong>Good luck! == Jrrg#oxfn$</strong>这个字符串，我们可以发现它是一个等式，这便意味着我们解题的关键就在于为什么它们会相等。稍微思考片刻，我发现了一个疑点：<strong>oo</strong> —&gt; <strong>rr</strong>。凭此，我初步怀疑这是一个简单的解密题，而且还是个凯撒码。于是，我尝试着在草稿纸上模拟移位了下，发现确实如此。由此，我们就能很快的去解码官方给的那串字符了。这里我用C++简单模拟了下，如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    string str &#x3D; &quot;&quot;;&#x2F;&#x2F; 这里放官方那串字符</span><br><span class="line">    for (int i &#x3D; 0; i &lt; str.length(); ++i) &#123;</span><br><span class="line">        char c &#x3D; str[i];</span><br><span class="line">        if (isalpha(c)) &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if ((c &gt;&#x3D; 62 &amp;&amp; c &lt; 65) || (c &gt; 94 &amp;&amp; c &lt; 97))</span><br><span class="line">                c +&#x3D; 26;</span><br><span class="line">            else if ((c &gt; 90 &amp;&amp; c &lt;&#x3D; 93) || (c &gt; 122 &amp;&amp; c &lt;&#x3D; 125))</span><br><span class="line">                c -&#x3D; 26;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            c -&#x3D; 3;</span><br><span class="line">            if (isalpha(c))</span><br><span class="line">                c &#x3D; toupper(c);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        str[i] &#x3D; c;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;运行程序后，我们便完成了本次活动。从运行结果中，我们可以获得本次活动的密钥以及<a href="https://www.jetbrains.com/promo/quest/" target="_blank" rel="noopener">激活的地址</a>。这里为了保留点乐趣，我把密钥打码了，大家可以自己试试。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 100px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/20200311191201.png">
@@ -706,9 +715,7 @@
   <entry>
     <title>macOS Catalina 10.15版本下使用Parallels 15导致电脑无声音问题</title>
     <url>/2020/03/10/parallels-voice-problem/</url>
-    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑声音输出是正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐在后台是在正常播放的，但是却没办法输出，令人甚是头疼。</p>
-<a id="more"></a>
-
+    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>&emsp;&emsp;最近在使用<strong>Parallels 15</strong>时，经常发生笔记本无声音的问题。在未打开Parallels 15时，电脑声音输出是正常的，但是一打开这个软件，电脑声音就时有时无。因为我安装了<strong>Sound Control</strong>，所以我可以观察到音乐在后台是在正常播放的，但是却没办法输出，令人甚是头疼。<br><a id="more"></a></p>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>&emsp;&emsp;为了解决这个问题，我查找了挺多信息，找到了三种解决方法（确切的说是两种，因为前两种方法其实是一样的），但是却还是没整明白问题处在哪里。</p>
 <h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>&emsp;&emsp;第一种方法就是打开电脑的<strong>Activity Monitor</strong>，然后找到<strong>coreaudiod</strong>这个进程（它是MacOS的核心音频进程），找到后将其结束即可，它在被你结束进程后，将会自动启动。</p>
 <center>
@@ -756,7 +763,6 @@
     <url>/2020/02/23/microsoft-office/</url>
     <content><![CDATA[<p>&emsp;&emsp;记录下白嫖教育版 <strong>Microsoft Office 365</strong> 的经过，方便以后如果遗忘掉，在换新机或者重装后需要再找攻略。此方法是通过教育邮箱了获取教育版的Office 365，因此该方法的优势在于只要主账号不过期，那么子账号其实是可以一直用下去的，相当于永久账号了（一次注册，永久使用。</p>
 <a id="more"></a>
-
 <h3 id="第一步：-获取临时邮箱"><a href="#第一步：-获取临时邮箱" class="headerlink" title="第一步： 获取临时邮箱"></a>第一步： 获取临时邮箱</h3><p>&emsp;&emsp;首先，我们注册教育邮箱前，需要去获取个临时的邮箱来接受验证码。这里我是去<a href="http://24mail.chacuo.net/" target="_blank" rel="noopener">查错网</a>，生成了一个临时邮箱ID，你可以用自己创建的ID，也可以用站方随机生成的ID。如下图所示，在临时邮箱ID那个框框中，自定义一个自己的ID后，点击下设置邮箱即可。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 150px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -764,7 +770,7 @@
     <br>
 </center>
 
-<h3 id="第二部：注册-Office-365-教育版账号"><a href="#第二部：注册-Office-365-教育版账号" class="headerlink" title="第二部：注册 Office 365 教育版账号"></a>第二部：注册 Office 365 教育版账号</h3><p>&emsp;&emsp;首先，打开<strong>Office 365 教育版</strong>的<a href="https://signup.microsoft.com/signup?sku=faculty" target="_blank" rel="noopener">注册网页</a>。然后，在该网页中，你可以看见官方要求输入<strong>学校电子邮件地址</strong>的框框，这里你需要用到你在第一步申请的<strong>临时邮箱ID</strong>，例如：我在第一步中申请的临时邮箱ID - <strong>beqnlp82370</strong>。有了临时邮箱ID后，你只需在ID后跟 <strong>@stu.mao.office.gy</strong>，即 <strong><a href="mailto:beqnlp82370@stu.mao.office.gy">beqnlp82370@stu.mao.office.gy</a></strong>（这里的邮箱ID换成你自己的）。最后到达用户信息界面，如下图所示。</p>
+<h3 id="第二部：注册-Office-365-教育版账号"><a href="#第二部：注册-Office-365-教育版账号" class="headerlink" title="第二部：注册 Office 365 教育版账号"></a>第二部：注册 Office 365 教育版账号</h3><p>&emsp;&emsp;首先，打开<strong>Office 365 教育版</strong>的<a href="https://signup.microsoft.com/signup?sku=faculty" target="_blank" rel="noopener">注册网页</a>。然后，在该网页中，你可以看见官方要求输入<strong>学校电子邮件地址</strong>的框框，这里你需要用到你在第一步申请的<strong>临时邮箱ID</strong>，例如：我在第一步中申请的临时邮箱ID - <strong>beqnlp82370</strong>。有了临时邮箱ID后，你只需在ID后跟 <strong>@stu.mao.office.gy</strong>，即 <strong>beqnlp82370@stu.mao.office.gy</strong>（这里的邮箱ID换成你自己的）。最后到达用户信息界面，如下图所示。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 500px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/microsoft-office-img2.png">
@@ -812,16 +818,13 @@
   <entry>
     <title>最大子序列和</title>
     <url>/2020/02/15/maxSubSeqSum/</url>
-    <content><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>给定一个包含N个整数的序列：$$ {A_1, A_2, A_3……A_N}， $$ 求该序列中的子序列的最大和，即：$$ sum = max(0, \sum_j^{k=i}A_k) $$</p>
+    <content><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>给定一个包含N个整数的序列：<script type="math/tex">\{A_1, A_2, A_3……A_N\}，</script> 求该序列中的子序列的最大和，即：<script type="math/tex">sum = max(0, \sum_j^{k=i}A_k)</script></p>
 <h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p><strong>input</strong>: 4, -3, 5, -2, -1, 2, 6, -2<br><strong>output</strong>: 11</p>
 <a id="more"></a>
-
 <h3 id="暴力法一"><a href="#暴力法一" class="headerlink" title="暴力法一"></a>暴力法一</h3><p>&emsp;&emsp;暴力法一是最简单粗暴的方法，通过三重嵌套循环，枚举每个子序列的大小，然后记录并返回最终值，其复杂度: <strong>O(n^3)</strong>。<br>&emsp;&emsp;第一个循环 <strong>i</strong> 指定子列左端的下标，第二个循环 <strong>j</strong> 指定子列右端的下标，第三个循环 <strong>k</strong> 用来累加计算 i-&gt;j 的和，<strong>thisSum</strong> 记录A[i]-&gt; A[j]的子列和，<strong>maxSum</strong> 记录最大的累加和。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum, maxSum &#x3D; 0;</span><br><span class="line">    int i, j, k;</span><br><span class="line"></span><br><span class="line">    for (i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        for (j &#x3D; i; j &lt; N; ++j) &#123;</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">            for (k &#x3D; i; k &lt;&#x3D; j; ++k) &#123;</span><br><span class="line">                thisSum +&#x3D; A[k];</span><br><span class="line">                if (thisSum &gt; maxSum)</span><br><span class="line">                    maxSum &#x3D; thisSum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="暴力法二"><a href="#暴力法二" class="headerlink" title="暴力法二"></a>暴力法二</h3><p>&emsp;&emsp;暴力法二是在暴力法一的基础上进行了优化，将三重循环减到两重，大大减少了循环次数，因此其复杂度: <strong>O(n^2)</strong>。<br>&emsp;&emsp;这个方法少了第 k 个循环，合理优化了代码，对于相同的 i ，不同的 j ，只需<strong>在 j-1 次的基础上累加当前项</strong>即可。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum, maxSum &#x3D; 0;</span><br><span class="line">    int i, j;</span><br><span class="line"></span><br><span class="line">    for (i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        thisSum &#x3D; 0;</span><br><span class="line">        for (j &#x3D; i; j &lt; N; ++j) &#123;</span><br><span class="line">            thisSum +&#x3D; A[j];</span><br><span class="line">            if (thisSum &gt; maxSum)</span><br><span class="line">                maxSum &#x3D; thisSum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h3><p>&emsp;&emsp;运用分而治之的思想，主要是通过<strong>递归</strong>来实现的，当数据量很大时，会占用十分大的内存消耗，因此该方法并不能很好的工作，复杂度： <strong>O(nlogn)</strong>。</p>
 <p>&emsp;&emsp;<strong>解题思路</strong>：首先将整个序列不断<strong>切半分</strong>，直到得到个只含<strong>一个数的子序列</strong>，如下图所示。</p>
 <center>
@@ -852,7 +855,6 @@
 </center>
 
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int l, int r) &#123;</span><br><span class="line">    &#x2F;&#x2F; 当分割到只剩一个元素时，</span><br><span class="line">    &#x2F;&#x2F; 判断其是否大于0，如果大于0的话就保留其值并返回，否则返回0</span><br><span class="line">    if (l &#x3D;&#x3D; r)</span><br><span class="line">        if (A[l] &gt; 0)</span><br><span class="line">            return A[l];</span><br><span class="line">        else</span><br><span class="line">            return 0;</span><br><span class="line"></span><br><span class="line">    int mid &#x3D; (l + r) &#x2F; 2;</span><br><span class="line">    &#x2F;&#x2F; 获取每个阶段左右两边的最大值</span><br><span class="line">    int maxLeftSum &#x3D; maxSubSeqSum(A, l, mid);</span><br><span class="line">    int maxRightSum &#x3D; maxSubSeqSum(A, mid + 1, r);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 计算左边子序列和的最大值</span><br><span class="line">    int maxLeftBorderSum &#x3D; 0, leftBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid; i &gt;&#x3D; l; --i) &#123;</span><br><span class="line">        leftBorderSum +&#x3D; A[i];</span><br><span class="line">        if (leftBorderSum &gt; maxLeftBorderSum)</span><br><span class="line">            maxLeftBorderSum &#x3D; leftBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 计算右边子序列和的最大值</span><br><span class="line">    int maxRightBorderSum &#x3D; 0, rightBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid + 1; i &lt;&#x3D; r; ++i) &#123;</span><br><span class="line">        rightBorderSum +&#x3D; A[i];</span><br><span class="line">        if (rightBorderSum &gt; maxRightBorderSum)</span><br><span class="line">            maxRightBorderSum &#x3D; rightBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return max(maxLeftSum, </span><br><span class="line">            max(maxRightSum, </span><br><span class="line">                maxLeftBorderSum + maxRightBorderSum));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="动态规划-待更新"><a href="#动态规划-待更新" class="headerlink" title="动态规划(待更新)"></a>动态规划(待更新)</h3><h3 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h3><p>&emsp;&emsp;因为最大连续子序列和只可能是以数组下标0～N-1中某个作为结尾。当遍历到第i个元素时，将其和当前子序列和的值(thisSum)相加，然后判断其是否大于0：如果大于0，则更新最大子序列和(maxSum)的值；否则，更新当前子序列和的值为0，算法复杂度：<strong>O(n)</strong>。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum &#x3D; 0, maxSum &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    for (int i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        &#x2F;&#x2F; 向右累加</span><br><span class="line">        thisSum +&#x3D; A[i];</span><br><span class="line">        if (thisSum &gt; maxSum)</span><br><span class="line">            maxSum &#x3D; thisSum;</span><br><span class="line">        else if (thisSum &lt; 0)  &#x2F;&#x2F; 如果为负则舍弃</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
@@ -870,7 +872,6 @@
     <url>/2020/02/13/mac-vscode-c++/</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>&emsp;&emsp;vscode相比起IDE，其轻便、插件丰富、功能繁多是我选择其作为C++日常使用的编辑器的原因。对于我这种，只写写一些简单程序，用来学习算法和数据结构，并且空闲时间，还能写写python脚本和网站，vscode可谓首选。</p>
 <a id="more"></a>
-
 <h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><p>&emsp;&emsp;<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">vscode</a>十分的方便，直接去官网下载即可。下载后好，一路点击继续，等到安装结束即可。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -913,9 +914,7 @@
     <br>
 </center>
 
-<p>&emsp;&emsp;<strong>launch.json</strong>这个文件中的配置，<a href="https://go.microsoft.com/fwlink/?linkid=830387" target="_blank" rel="noopener">官方的文档</a>里有详细的说明。下面的配置，是我通过不断尝试所最终决定下来的。其中唯一特别的是这块：<code>&quot;program&quot;: &quot;${workspaceFolder}/tmp/${fileBasenameNoExtension}.out&quot;</code> 它会在当前目录下新建一个tmp的文件夹来存放编译后的文件，这样的好处是，有一个专门存放编译文件的地方，让程序所在的目录看起来清爽点。如果对以下配置有不接的地方，只要将<strong>鼠标长放在对应参数上</strong>就行了，它会显示出对应配置的说明。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;preLaunchTask&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;(lldb) Launch&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">            &quot;args&quot;: [],</span><br><span class="line">            &quot;stopAtEntry&quot;: false,</span><br><span class="line">            &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;,</span><br><span class="line">            &quot;environment&quot;: [],</span><br><span class="line">            &quot;externalConsole&quot;: true,</span><br><span class="line">            &quot;MIMode&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;logging&quot;: &#123;</span><br><span class="line">                &quot;trace&quot;: true,</span><br><span class="line">                &quot;traceResponse&quot;: true,</span><br><span class="line">                &quot;engineLogging&quot;: true,</span><br><span class="line">                &quot;programOutput&quot;: true,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>&emsp;&emsp;<strong>launch.json</strong>这个文件中的配置，<a href="https://go.microsoft.com/fwlink/?linkid=830387" target="_blank" rel="noopener">官方的文档</a>里有详细的说明。下面的配置，是我通过不断尝试所最终决定下来的。其中唯一特别的是这块：<code>&quot;program&quot;: &quot;${workspaceFolder}/tmp/${fileBasenameNoExtension}.out&quot;</code> 它会在当前目录下新建一个tmp的文件夹来存放编译后的文件，这样的好处是，有一个专门存放编译文件的地方，让程序所在的目录看起来清爽点。如果对以下配置有不接的地方，只要将<strong>鼠标长放在对应参数上</strong>就行了，它会显示出对应配置的说明。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;preLaunchTask&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;(lldb) Launch&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">            &quot;args&quot;: [],</span><br><span class="line">            &quot;stopAtEntry&quot;: false,</span><br><span class="line">            &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;,</span><br><span class="line">            &quot;environment&quot;: [],</span><br><span class="line">            &quot;externalConsole&quot;: true,</span><br><span class="line">            &quot;MIMode&quot;: &quot;lldb&quot;,</span><br><span class="line">            &quot;logging&quot;: &#123;</span><br><span class="line">                &quot;trace&quot;: true,</span><br><span class="line">                &quot;traceResponse&quot;: true,</span><br><span class="line">                &quot;engineLogging&quot;: true,</span><br><span class="line">                &quot;programOutput&quot;: true,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="配置-task-json"><a href="#配置-task-json" class="headerlink" title="配置 task.json"></a>配置 task.json</h4><p>&emsp;&emsp;这里我们直接使用快捷键<strong>command + P</strong>，然后在弹出的搜索框中输入 <strong>&gt;task</strong> 来新建一个生成任务即可。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 120px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -923,12 +922,9 @@
     <br>
 </center>
 
-<p>&emsp;&emsp;打开<strong>task.json</strong>这个文件，对其进行以下配置。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;g++&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;$&#123;file&#125;&quot;,</span><br><span class="line">                &quot;-std&#x3D;c++17&quot;,</span><br><span class="line">                &quot;-o&quot;,</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">                &quot;-g&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;group&quot;: &quot;build&quot;,</span><br><span class="line">            &quot;presentation&quot;: &#123;</span><br><span class="line">                &quot;echo&quot;: true,</span><br><span class="line">                &quot;focus&quot;: false,</span><br><span class="line">                &quot;panel&quot;: &quot;shared&quot;,</span><br><span class="line">                &quot;showReuseMessage&quot;: true,</span><br><span class="line">                &quot;clear&quot;: true,</span><br><span class="line">                &quot;reveal&quot;: &quot;silent&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>&emsp;&emsp;打开<strong>task.json</strong>这个文件，对其进行以下配置。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;c++&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;g++&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;$&#123;file&#125;&quot;,</span><br><span class="line">                &quot;-std&#x3D;c++17&quot;,</span><br><span class="line">                &quot;-o&quot;,</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;&#x2F;tmp&#x2F;$&#123;fileBasenameNoExtension&#125;.out&quot;,</span><br><span class="line">                &quot;-g&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;group&quot;: &quot;build&quot;,</span><br><span class="line">            &quot;presentation&quot;: &#123;</span><br><span class="line">                &quot;echo&quot;: true,</span><br><span class="line">                &quot;focus&quot;: false,</span><br><span class="line">                &quot;panel&quot;: &quot;shared&quot;,</span><br><span class="line">                &quot;showReuseMessage&quot;: true,</span><br><span class="line">                &quot;clear&quot;: true,</span><br><span class="line">                &quot;reveal&quot;: &quot;silent&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="测试配置"><a href="#测试配置" class="headerlink" title="测试配置"></a>测试配置</h3><p>&emsp;&emsp;上述步骤都正确完成后，那么就新建一个c++程序来测试下环境是否配置成功吧。</p>
 <h4 id="编写一个简单的demo"><a href="#编写一个简单的demo" class="headerlink" title="编写一个简单的demo"></a>编写一个简单的demo</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int a &#x3D; 1;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h4 id="设置断点，并编译代码"><a href="#设置断点，并编译代码" class="headerlink" title="设置断点，并编译代码"></a>设置断点，并编译代码</h4><p>&emsp;&emsp;vscode设置断点的方式和其他IDE一样，如果是在不清楚的话，建议搜一下。然后你可以选择在调试界面中，单击<strong>运行和调试旁的三角形</strong>，也可以直接使用快捷键<strong>FN + F5</strong>来进行调试。程序编译运行后，可以在<strong>vscode左边</strong>看见对应调试信息，然后可以在<strong>vscode上边</strong>看见控制工具栏。如果这些都能看见，并且弹出对应的控制台，那么环境就配置成功了。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -952,7 +948,6 @@
     <url>/2020/02/07/support-vector-vachine/</url>
     <content><![CDATA[<h2 id="SVM简介"><a href="#SVM简介" class="headerlink" title="SVM简介"></a>SVM简介</h2><p>&emsp;&emsp;在机器学习中，支持向量机是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。对于<strong>样本数很少</strong>的情况下，用SVM模型这个算法基本上都会得出一个<strong>比较好</strong>的结果。给定一组训练实例，每个训练实例被标记为属于两个类别中的一个或另一个，SVM训练算法创建一个将新的实例分配给两个类别之一的模型，使其成为非概率二元线性分类器。SVM模型是将实例表示为空间中的点，这样映射就使得单独类别的实例被尽可能宽的明显的间隔分开。然后，将新的实例映射到同一空间，并基于它们落在间隔的哪一侧来预测所属类别。</p>
 <a id="more"></a>
-
 <h2 id="SVM线性模型"><a href="#SVM线性模型" class="headerlink" title="SVM线性模型"></a>SVM线性模型</h2><h3 id="什么叫线性模型"><a href="#什么叫线性模型" class="headerlink" title="什么叫线性模型"></a>什么叫线性模型</h3><p>&emsp;&emsp;存在一组<strong>线性可分(Linear Separable)</strong>的数据样本集，其在空间中的分布如下图1所示。由图1可得知，该数据由两种训练样本所组成，将粉红色圆圈所代表的训练样本命名为class1，将蓝色圆圈所代表的训练样本命名为class2。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 400px; height: 250px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -990,7 +985,7 @@
     padding: 2px;">图 3、平移1号线</div>
 </center>
 
-<ol start="2">
+<ol>
 <li>其次，我们对1号线做<strong>性能指标</strong>，即1号线到其平移后得出的两条虚线的距离（也就是图4中的d），而这个1号线是使这个<strong>距离d</strong>最大的一条线。</li>
 </ol>
 <center>
@@ -1003,15 +998,15 @@
     padding: 2px;">图 4、对1号线做性能指标</div>
 </center>
 
-<ol start="3">
+<ol>
 <li>最后，当<strong>线的斜率</strong>一样时，即我们平移1号线后所得出的所有线，也能得到这个最大距离的值d，那么哪条才是我们需要的呢？因此，这里我们需要对1号线做一个<strong>限制</strong>，那就是一号线到其两条虚线的<strong>距离相等</strong>，这样得出来的线才是最优的。</li>
 </ol>
 <h3 id="线性模型的数学描述"><a href="#线性模型的数学描述" class="headerlink" title="线性模型的数学描述"></a>线性模型的数学描述</h3><h4 id="数学定义"><a href="#数学定义" class="headerlink" title="数学定义"></a>数学定义</h4><ol>
 <li>d：间隔(margin)，即上面提到的距离。</li>
 <li>支持向量(Support Vectors): 平行线插到的向量。</li>
-<li>训练数据及标签：$$ (x_1, y_1), (x_2, y_2), (x_3, y_3)……(x_n, y_n) $$<br>其中，<strong>x</strong>代表上面图中所描绘圆圈在坐标中的<strong>位置</strong>，即<strong>向量</strong>；<strong>y</strong>代表<strong>标签</strong>，以上述问题为例，数据样本集中只有两种分类，因此y只能<strong>表示为+1或-1</strong>。</li>
-<li>线性模型：<br>I. 超平面的参数：<strong>( 𝜔, b )</strong><br>II. 超平面(Hyper plane)的线性函数: $$ \omega^T * X + b = 0 $$<br>这里的ω也是一个<strong>向量</strong>，其<strong>维度与x相同</strong>，而b是一个<strong>常数</strong>。</li>
-<li>训练集线性可分的定义：<br> 对于所有的训练样本 $$ {(x_i, y_i)}_{i\in[1, n]} $$<br> 都 ∃ ( 𝜔, b ) ，使：<br> $$ 对\ \ \forall i \in [1, n]， $$<br> 有以下情况：<br> $$ I. 若\ \ y_i = +1，则\omega^T * x_i \geq 0 $$<br> $$ II. 若\ \ y_i = -1， 则\omega^T * x_i &lt; 0 $$<br> 因此，我们最终可得到一个公式：<br> $$ y_i[\omega^T * x_i + b] &gt;= 0 …………(公式1) $$</li>
+<li>训练数据及标签：<script type="math/tex">(x_1, y_1), (x_2, y_2), (x_3, y_3)……(x_n, y_n)</script><br>其中，<strong>x</strong>代表上面图中所描绘圆圈在坐标中的<strong>位置</strong>，即<strong>向量</strong>；<strong>y</strong>代表<strong>标签</strong>，以上述问题为例，数据样本集中只有两种分类，因此y只能<strong>表示为+1或-1</strong>。</li>
+<li>线性模型：<br>I. 超平面的参数：<strong>( 𝜔, b )</strong><br>II. 超平面(Hyper plane)的线性函数: <script type="math/tex">\omega^T * X + b = 0</script><br>这里的ω也是一个<strong>向量</strong>，其<strong>维度与x相同</strong>，而b是一个<strong>常数</strong>。</li>
+<li>训练集线性可分的定义：<br> 对于所有的训练样本 <script type="math/tex">\{(x_i, y_i)\}_{i\in[1, n]}</script><br> 都 ∃ ( 𝜔, b ) ，使：<script type="math/tex; mode=display">对\ \ \forall i \in [1, n]，</script> 有以下情况：<script type="math/tex; mode=display">I. 若\ \ y_i = +1，则\omega^T * x_i \geq 0</script><script type="math/tex; mode=display">II. 若\ \ y_i = -1， 则\omega^T * x_i < 0</script> 因此，我们最终可得到一个公式：<script type="math/tex; mode=display">y_i[\omega^T * x_i + b] >= 0 …………(公式1)</script></li>
 </ol>
 <h3 id="未完-有空再补上"><a href="#未完-有空再补上" class="headerlink" title="未完 有空再补上"></a>未完 有空再补上</h3>]]></content>
       <categories>
@@ -1028,7 +1023,6 @@
     <content><![CDATA[<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>&emsp;&emsp;这段时间因为疫情而一直呆在家里快无聊疯了，寻思着找点事干。刚好现在准备学点东西，然后想做做笔记什么的，于是就有了这个博客的诞生。</p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;博客是由<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>与<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>结合搭建的一个静态网站，由于之前完全没接触过<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>这个框架，于是乎就打算以此作为博客的第一篇文章，边学习边记录，并来记录下她诞生的过程。</p>
 <a id="more"></a>
-
 <h2 id="搭建需求"><a href="#搭建需求" class="headerlink" title="搭建需求"></a>搭建需求</h2><ul>
 <li>首先得有个<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>账号，登录后点击<strong>New repository</strong>来创建一个新仓库，仓库名必须为：用户名.github.io（<strong>这个用户名是你GitHub的账号名称</strong>）。下面这张图片，就是我创建的对应仓库。</li>
 </ul>
@@ -1053,16 +1047,11 @@
 <li>安装<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>，因为第二步的时候已经安装好了npm，所以现在我们可以直接通过npm来安装<strong>Hexo</strong>了，在终端中输入以下命令：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <ul>
 <li>这里注意下，安装过程中可能会报以下错误  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">┌───────────────────────────────────────────────────────────────────┐</span><br><span class="line">│                      npm update check failed                      │</span><br><span class="line">│                Try running with sudo or get access                │</span><br><span class="line">│               to the local update config store via                │</span><br><span class="line">│ sudo chown -R $USER:$(id -gn $USER) &#x2F;Users&#x2F;veritystothard&#x2F;.config │</span><br><span class="line">└───────────────────────────────────────────────────────────────────┘</span><br><span class="line">module.js:491</span><br><span class="line">    throw err;</span><br><span class="line">    ^</span><br><span class="line"></span><br><span class="line">Error: Cannot find module &#39;proto-list&#39;</span><br><span class="line">    at Function.Module._resolveFilename (module.js:489:15)</span><br><span class="line">    at Function.Module._load (module.js:439:25)</span><br><span class="line">    at Module.require (module.js:517:17)</span><br><span class="line">    at require (internal&#x2F;module.js:11:18)</span><br><span class="line">    at Object.&lt;anonymous&gt; (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;npm&#x2F;node_modules&#x2F;config-chain&#x2F;index.js:1:79)</span><br><span class="line">    at Module._compile (module.js:573:30)</span><br><span class="line">    at Object.Module._extensions..js (module.js:584:10)</span><br><span class="line">    at Module.load (module.js:507:32)</span><br><span class="line">    at tryModuleLoad (module.js:470:12)</span><br><span class="line">    at Function.Module._load (module.js:462:3)</span><br><span class="line"></span><br><span class="line">其解决方法就是更改下配置权限: sudo chown -R $USER:$(id -gn $USER) ~&#x2F;.config</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="初始化博客项目"><a href="#初始化博客项目" class="headerlink" title="初始化博客项目"></a>初始化博客项目</h2><p>&emsp;&emsp;在终端中进入项目想要创建的路径，然后输入：<code>hexo init blog(这里的blog可以更改为你想要的项目名)</code> 这里有一点需要注意下的是，安装过程中可能会因<strong>xcode-select</strong>的版本而报错，因此更新下版本就好了，在终端中依次输入以下命令即可：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rm -rf &#x2F;Library&#x2F;Developer&#x2F;CommandLineTools</span><br><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;项目安装结束后，我们来写第一篇文章来测试下效果吧。为了检测我们的网站雏形，分别按顺序输入以下三条命令（<strong>注意，所有的Hexo命令都要在对应blog的根目录出运行</strong>）：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n first</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>命令运行完成后，打开浏览器输入<a href="http://127.0.0.1:4000/" target="_blank" rel="noopener">127.0.0.1:4000</a>，即可了解网站的详细内容。</p>
+<h2 id="初始化博客项目"><a href="#初始化博客项目" class="headerlink" title="初始化博客项目"></a>初始化博客项目</h2><p>&emsp;&emsp;在终端中进入项目想要创建的路径，然后输入：<code>hexo init blog(这里的blog可以更改为你想要的项目名)</code> 这里有一点需要注意下的是，安装过程中可能会因<strong>xcode-select</strong>的版本而报错，因此更新下版本就好了，在终端中依次输入以下命令即可：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rm -rf &#x2F;Library&#x2F;Developer&#x2F;CommandLineTools</span><br><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;项目安装结束后，我们来写第一篇文章来测试下效果吧。为了检测我们的网站雏形，分别按顺序输入以下三条命令（<strong>注意，所有的Hexo命令都要在对应blog的根目录出运行</strong>）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n first</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>命令运行完成后，打开浏览器输入<a href="http://127.0.0.1:4000/" target="_blank" rel="noopener">127.0.0.1:4000</a>，即可了解网站的详细内容。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/B9B73842-F4E2-449D-966B-06D7D5DAA9F6.png">
@@ -1074,9 +1063,7 @@
 </center>
 
 <p>这里的first就是我们刚刚新建的文章。</p>
-<p>&emsp;&emsp;下面介绍下<strong>Hexo</strong>的常用命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g # 安装Hexo</span><br><span class="line">npm update hexo -g # 升级</span><br><span class="line">hexo init xxx # 初始化博客</span><br><span class="line"></span><br><span class="line">hexo n &quot;blog name&quot; # 新建文章，会在&#x2F;source&#x2F;_posts&#x2F;这个路径下生成一个新的md，因此文章内容按照Markdwon格式来写就行了</span><br><span class="line">hexo g &#x3D;&#x3D; hexo generate # 生成</span><br><span class="line">hexo s &#x3D;&#x3D; hexo server # 启动服务预览</span><br><span class="line">hexo d &#x3D;&#x3D; hexo deploy # 部署</span><br><span class="line"></span><br><span class="line">hexo server # Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s # 静态模式</span><br><span class="line">hexo server -p 5000 # 更改端口</span><br><span class="line">hexo server -i 192.168.1.1 # 自定义 IP</span><br><span class="line">hexo clean # 清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
-
+<p>&emsp;&emsp;下面介绍下<strong>Hexo</strong>的常用命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g # 安装Hexo</span><br><span class="line">npm update hexo -g # 升级</span><br><span class="line">hexo init xxx # 初始化博客</span><br><span class="line"></span><br><span class="line">hexo n &quot;blog name&quot; # 新建文章，会在&#x2F;source&#x2F;_posts&#x2F;这个路径下生成一个新的md，因此文章内容按照Markdwon格式来写就行了</span><br><span class="line">hexo g &#x3D;&#x3D; hexo generate # 生成</span><br><span class="line">hexo s &#x3D;&#x3D; hexo server # 启动服务预览</span><br><span class="line">hexo d &#x3D;&#x3D; hexo deploy # 部署</span><br><span class="line"></span><br><span class="line">hexo server # Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s # 静态模式</span><br><span class="line">hexo server -p 5000 # 更改端口</span><br><span class="line">hexo server -i 192.168.1.1 # 自定义 IP</span><br><span class="line">hexo clean # 清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure></p>
 <h2 id="更改网站的主题"><a href="#更改网站的主题" class="headerlink" title="更改网站的主题"></a>更改网站的主题</h2><p>&emsp;&emsp;我用的是<a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a>主题，如果想要试试其他主题的话，可以到Hexo官网的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题专栏</a>中找找有没有喜欢的。找到自己新颖的主题后，在终端用<strong>Git</strong>克隆对应主题到blog目录下即可，这里以Ayer主题为例，在终端输入：<code>git clone https://github.com/Shen-Yu/hexo-theme-ayer.git themes/ayer</code>。<br>&emsp;&emsp;耐心等待主题安装完成后，在终端中输入(路径为blog根目录)：<code>vi _config.yml</code>。在该配置文件中找到<strong>theme</strong>这个配置项，将其更改为<code>theme: ayer</code>就行了。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -1089,9 +1076,7 @@
 </center>
 
 <p>&emsp;&emsp;这里对于主题的配置不多介绍，每个主题都有对应的文档可以查看，而且挺多都是有中文文档的，因此绝对比我讲的更加清晰。</p>
-<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p>&emsp;&emsp;<a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">Hexo官方</a>给出了多种推送方式，这里我们用<strong>Git</strong>来推送网站。首先，我们安装下<strong>Git</strong>的部署插件，在终端中输入命令(<strong>blog根目录下</strong>)：<code>npm install hexo-deployer-git --save</code> 然后，我们在终端中输入：<code>vi _config.yml</code>，在该文件中找到<strong>deploy</strong>这一项，完成以下配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: 仓库的完整路径</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-
+<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p>&emsp;&emsp;<a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">Hexo官方</a>给出了多种推送方式，这里我们用<strong>Git</strong>来推送网站。首先，我们安装下<strong>Git</strong>的部署插件，在终端中输入命令(<strong>blog根目录下</strong>)：<code>npm install hexo-deployer-git --save</code> 然后，我们在终端中输入：<code>vi _config.yml</code>，在该文件中找到<strong>deploy</strong>这一项，完成以下配置：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: 仓库的完整路径</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 200px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/8EBEB1C6-61E5-4B7B-9CB9-9F55EA364450.png">
@@ -1102,9 +1087,7 @@
     padding: 2px;">需修改的配置</div>
 </center>
 
-<p>&emsp;&emsp;完成以上配置后，保存退出配置文档，在终端依次输入下面这三条命令后，等待命令运行结束，并观察终端是否显示上传成功的信息。如上传成功后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即<a href="http://xxx.github.io" target="_blank" rel="noopener">xxx.github.io</a> （这里的xxx是你的仓库名）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
+<p>&emsp;&emsp;完成以上配置后，保存退出配置文档，在终端依次输入下面这三条命令后，等待命令运行结束，并观察终端是否显示上传成功的信息。如上传成功后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即<a href="http://xxx.github.io" target="_blank" rel="noopener">xxx.github.io</a> （这里的xxx是你的仓库名）。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 700px; height: 400px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/D17E2895-E74B-4BF7-9A8F-0AE4EF3C991D.png ">
@@ -1117,10 +1100,9 @@
 
 <p>&emsp;&emsp;至此，我们的博客算是正式创建好了，之后就可以根据自己的需求进行个性化更改了。</p>
 <h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>&emsp;&emsp;博客的域名是可以自定义的，只要你有一个属于自己的域名，那么你就可以将GitHub提供的这个链接替换成自己的专属域名。如果需要的话，可以利用搜索引擎查找下，这类资料网上还是挺多的。</p>
-<a href= "https://github.com/zioang/zioang.github.io" target="_blank" style="margin-top: 20px; text-decoration: none;">
-    <img src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/github.png" style="width: 20px; height: 20px; margin-right: 6px; float: left">
-    <p style=" line-height: 20px; font-size: 16px; color: black; font-family: Hiragino Sans GB, WenQuanYi Micro Hei;">项目地址</p>
-</a>]]></content>
+<p><a href= "https://github.com/zioang/zioang.github.io" target="_blank" style="margin-top: 20px; text-decoration: none;"><br>    <img src="https://blog-1253514421.cos.ap-shanghai.myqcloud.com/github.png" style="width: 20px; height: 20px; margin-right: 6px; float: left"><br>    <p style=" line-height: 20px; font-size: 16px; color: black; font-family: Hiragino Sans GB, WenQuanYi Micro Hei;">项目地址</p>
+</a></p>
+]]></content>
       <categories>
         <category>日常折腾</category>
       </categories>
