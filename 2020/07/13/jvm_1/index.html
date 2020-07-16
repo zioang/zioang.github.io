@@ -103,7 +103,8 @@
       
 
       
-      <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>&emsp;&emsp;本系列笔记主要参考了 “<strong>深入理解Java虚拟机 - JVM高级特性与最佳实践</strong>“、”<strong>实战Java虚拟机 - JVM故障诊断与性能优化(第二版)</strong>“ 和相关博客。因此，若无特别说明jdk的版本，那么所使用的 jdk 版本为 1.7。 </p>
+      <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>&emsp;&emsp;本系列笔记主要参考了 “<strong>深入理解Java虚拟机 - JVM高级特性与最佳实践</strong>“、”<strong>实战Java虚拟机 - JVM故障诊断与性能优化(第二版)</strong>“ 和相关博客。因此，若无特别说明jdk的版本，那么所使用的 jdk 版本为 1.7。</p>
+<a id="more"></a>
 <h3 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h3><p>&emsp;&emsp;Java堆是被所有线程所共享的一块区域( Java虚拟机所管理的内存中最大的一块 )，几乎所有的对象实例都存放在堆中( <strong>由于栈上分配、标量替换优化技术的出现，导致不是那么的绝对</strong> )，且Java堆是完全自动化管理的，通过垃圾回收机制，垃圾对象会被自动清理，而不需要人为释放。<br>&emsp;&emsp;根据垃圾回收机制的不同，Java堆有可能会拥有不同的结构。其中，最为常见的一种是将其分为新生代和老年代。其中，新生代存放新生对象或年龄不大的对象，老年代则存放老年对象。如下表所示，新生代可分为 Eden、S0、S1，其中 S0 和 S1 被称为幸存者区 ( Survivor Space )， 它们分别又被称为 From 和 To 区域，它们是两块大小相等、可以互换的内存空间。</p>
 <center>
     <img style="border-radius: 0.3125em; margin-top: 10px; width: 600px; height: 300px; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -147,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/07/13/jvm_1/" data-id="ckcohk7gf00063bz5fkwie2ru"
+      <a data-url="https://www.zioang.fun/2020/07/13/jvm_1/" data-id="ckcohl39500016hz58mbe7thb"
         class="article-share-link">分享</a>
         
       
