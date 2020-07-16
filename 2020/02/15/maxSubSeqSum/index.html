@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.3k字</span>
+            <span class="post-count">1.2k字</span>
         </span>
     </span>
 
@@ -140,7 +140,7 @@
 </center>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int l, int r) &#123;</span><br><span class="line">    &#x2F;&#x2F; 当分割到只剩一个元素时，</span><br><span class="line">    &#x2F;&#x2F; 判断其是否大于0，如果大于0的话就保留其值并返回，否则返回0</span><br><span class="line">    if (l &#x3D;&#x3D; r)</span><br><span class="line">        if (A[l] &gt; 0)</span><br><span class="line">            return A[l];</span><br><span class="line">        else</span><br><span class="line">            return 0;</span><br><span class="line"></span><br><span class="line">    int mid &#x3D; (l + r) &#x2F; 2;</span><br><span class="line">    &#x2F;&#x2F; 获取每个阶段左右两边的最大值</span><br><span class="line">    int maxLeftSum &#x3D; maxSubSeqSum(A, l, mid);</span><br><span class="line">    int maxRightSum &#x3D; maxSubSeqSum(A, mid + 1, r);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 计算左边子序列和的最大值</span><br><span class="line">    int maxLeftBorderSum &#x3D; 0, leftBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid; i &gt;&#x3D; l; --i) &#123;</span><br><span class="line">        leftBorderSum +&#x3D; A[i];</span><br><span class="line">        if (leftBorderSum &gt; maxLeftBorderSum)</span><br><span class="line">            maxLeftBorderSum &#x3D; leftBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 计算右边子序列和的最大值</span><br><span class="line">    int maxRightBorderSum &#x3D; 0, rightBorderSum &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; mid + 1; i &lt;&#x3D; r; ++i) &#123;</span><br><span class="line">        rightBorderSum +&#x3D; A[i];</span><br><span class="line">        if (rightBorderSum &gt; maxRightBorderSum)</span><br><span class="line">            maxRightBorderSum &#x3D; rightBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return max(maxLeftSum, </span><br><span class="line">            max(maxRightSum, </span><br><span class="line">                maxLeftBorderSum + maxRightBorderSum));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="动态规划-待更新"><a href="#动态规划-待更新" class="headerlink" title="动态规划(待更新)"></a>动态规划(待更新)</h3><h3 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h3><p>&emsp;&emsp;因为最大连续子序列和只可能是以数组下标0～N-1中某个作为结尾。当遍历到第i个元素时，将其和当前子序列和的值(thisSum)相加，然后判断其是否大于0：如果大于0，则更新最大子序列和(maxSum)的值；否则，更新当前子序列和的值为0，算法复杂度：<strong>O(n)</strong>。</p>
+<h3 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h3><p>&emsp;&emsp;因为最大连续子序列和只可能是以数组下标0～N-1中某个作为结尾。当遍历到第i个元素时，将其和当前子序列和的值(thisSum)相加，然后判断其是否大于0：如果大于0，则更新最大子序列和(maxSum)的值；否则，更新当前子序列和的值为0，算法复杂度：<strong>O(n)</strong>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int maxSubSeqSum(int A[], int N) &#123;</span><br><span class="line">    int thisSum &#x3D; 0, maxSum &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    for (int i &#x3D; 0; i &lt; N; ++i) &#123;</span><br><span class="line">        &#x2F;&#x2F; 向右累加</span><br><span class="line">        thisSum +&#x3D; A[i];</span><br><span class="line">        if (thisSum &gt; maxSum)</span><br><span class="line">            maxSum &#x3D; thisSum;</span><br><span class="line">        else if (thisSum &lt; 0)  &#x2F;&#x2F; 如果为负则舍弃</span><br><span class="line">            thisSum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
       <!-- 打赏 -->
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.zioang.fun/2020/02/15/maxSubSeqSum/" data-id="ck9lcswc40004maz57iuy9t0j"
+      <a data-url="https://www.zioang.fun/2020/02/15/maxSubSeqSum/" data-id="ckcohk7gi000a3bz54ehig7dh"
         class="article-share-link">分享</a>
         
       
@@ -557,6 +557,21 @@
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
